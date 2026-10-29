@@ -1,0 +1,159 @@
+{
+  "timestamp": "2026-10-29T21:14:55.319Z",
+  "basis": "No HEAD/tracked files; inspect each authored file as a new-file diff without changing Git config.",
+  "whitespaceReviews": [
+    {
+      "path": "README.md",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "EVIDENCE.md",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": ".env.example",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "evidence/QLOO_CONTRACT.md",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "app\\api\\audit\\route.ts",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "app\\api\\entities\\search\\route.ts",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "app\\api\\health\\route.ts",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "app\\globals.css",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "app\\layout.tsx",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "app\\page.tsx",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "lib\\contracts.ts",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "lib\\http.ts",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "lib\\qloo\\client.mjs",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "lib\\qloo\\server.ts",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "lib\\qloo\\service.ts",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "lib\\report.ts",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "scripts\\qloo-smoke.mjs",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "scripts\\review-worktree.mjs",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "scripts\\verify-local.mjs",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "scripts\\verify-secrets.mjs",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "tests\\qloo-client.test.mjs",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "tests\\report.test.mjs",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "tests\\security.test.mjs",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "tests\\service.test.mjs",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    },
+    {
+      "path": "tests\\smoke.test.mjs",
+      "exitCode": 1,
+      "output": "",
+      "result": "PASS"
+    }
+  ],
+  "status": "?? .env.example\n?? .gitignore\n?? CODEX_MASTER_TASTEPROBE.md\n?? DEVPOST_SUBMISSION_DRAFT_EN.md\n?? EVIDENCE.md\n?? PLAN_24H_GATES.md\n?? README.md\n?? app/\n?? evidence/\n?? experiments/\n?? lib/\n?? next-env.d.ts\n?? package-lock.json\n?? package.json\n?? scripts/\n?? tests/\n?? tsconfig.json",
+  "gitWrite": "BLOCKED: index.lock permission denied",
+  "commit": null
+}
