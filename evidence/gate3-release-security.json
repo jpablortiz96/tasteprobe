@@ -1,0 +1,256 @@
+{
+  "timestamp": "2026-10-30T23:00:38.239Z",
+  "clientAssetsScanned": 58,
+  "configuredCredentials": 3,
+  "findings": [],
+  "environmentTracked": false,
+  "environmentIgnored": true,
+  "dependencyLicenses": [
+    {
+      "path": "node_modules/@emnapi/runtime",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@img/colour",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@img/sharp-darwin-arm64",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@img/sharp-darwin-x64",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@img/sharp-freebsd-wasm32",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@img/sharp-libvips-darwin-arm64",
+      "license": "LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@img/sharp-libvips-darwin-x64",
+      "license": "LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@img/sharp-libvips-linux-arm",
+      "license": "LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@img/sharp-libvips-linux-arm64",
+      "license": "LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@img/sharp-libvips-linux-ppc64",
+      "license": "LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@img/sharp-libvips-linux-riscv64",
+      "license": "LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@img/sharp-libvips-linux-s390x",
+      "license": "LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@img/sharp-libvips-linux-x64",
+      "license": "LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@img/sharp-libvips-linuxmusl-arm64",
+      "license": "LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@img/sharp-libvips-linuxmusl-x64",
+      "license": "LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@img/sharp-linux-arm",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@img/sharp-linux-arm64",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@img/sharp-linux-ppc64",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@img/sharp-linux-riscv64",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@img/sharp-linux-s390x",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@img/sharp-linux-x64",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@img/sharp-linuxmusl-arm64",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@img/sharp-linuxmusl-x64",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@img/sharp-wasm32",
+      "license": "Apache-2.0 AND LGPL-3.0-or-later AND MIT"
+    },
+    {
+      "path": "node_modules/@img/sharp-webcontainers-wasm32",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@img/sharp-win32-arm64",
+      "license": "Apache-2.0 AND LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@img/sharp-win32-ia32",
+      "license": "Apache-2.0 AND LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@img/sharp-win32-x64",
+      "license": "Apache-2.0 AND LGPL-3.0-or-later"
+    },
+    {
+      "path": "node_modules/@next/env",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@next/swc-darwin-arm64",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@next/swc-darwin-x64",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@next/swc-linux-arm64-gnu",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@next/swc-linux-arm64-musl",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@next/swc-linux-x64-gnu",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@next/swc-linux-x64-musl",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@next/swc-win32-arm64-msvc",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@next/swc-win32-x64-msvc",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@swc/helpers",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/@types/node",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@types/react",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/@types/react-dom",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/baseline-browser-mapping",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/caniuse-lite",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "node_modules/client-only",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/csstype",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/detect-libc",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/nanoid",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/next",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/picocolors",
+      "license": "ISC"
+    },
+    {
+      "path": "node_modules/postcss",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/react",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/react-dom",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/scheduler",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/semver",
+      "license": "ISC"
+    },
+    {
+      "path": "node_modules/sharp",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/source-map-js",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "path": "node_modules/styled-jsx",
+      "license": "MIT"
+    },
+    {
+      "path": "node_modules/tslib",
+      "license": "0BSD"
+    },
+    {
+      "path": "node_modules/typescript",
+      "license": "Apache-2.0"
+    },
+    {
+      "path": "node_modules/undici-types",
+      "license": "MIT"
+    }
+  ],
+  "trackedVisualAssets": [
+    "docs/screenshots/README.md",
+    "public/tmdb-logo.svg"
+  ],
+  "arbitraryHosts": "Fixed server allowlists; no model/browser URL argument; existing regression suite retained.",
+  "publicDeployment": "BLOCKED_SHARED_QUOTA_JUDGE_ALLOWANCE_AND_ORIGIN_ACCEPTANCE"
+}

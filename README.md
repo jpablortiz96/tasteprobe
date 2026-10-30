@@ -51,10 +51,10 @@ npm.cmd run typecheck
 npm.cmd run build
 npm.cmd run test:integration
 npm.cmd audit
-node --env-file=.env.local scripts/verify-secrets.mjs gate2h2
+node --env-file=.env.local scripts/verify-secrets.mjs gate3
 ~~~
 
-Current checks preserve the original suites: **105 tests, six isolated MOCK HTTP E2E**, typecheck/build and audit pass. Gate 2H.2 built a source-only snapshot without touching the operator's active Next build. Tests do not substitute for real-browser acceptance; [EVIDENCE.md](EVIDENCE.md) and [GATE 2H.2 review](evidence/GATE2H2_REVIEW.md) distinguish operator observations, downloaded LIVE exports, protocol tests and actual Codex client events.
+Current checks preserve the original suites: **106 tests, six isolated MOCK HTTP E2E**, typecheck/build and audit pass. Gate 2H.2 built a source-only snapshot without touching the operator's active Next build. Tests do not substitute for real-browser acceptance; [EVIDENCE.md](EVIDENCE.md) and [GATE 2H.2 review](evidence/GATE2H2_REVIEW.md) distinguish operator observations, downloaded LIVE exports, protocol tests and actual Codex client events.
 
 [TMDB integration](docs/TMDB_INTEGRATION.md) documents identity matching, actual provider checks and required attribution. Arrival (2016) currently retains fallback because TMDB has two same-title/year/original-title movies and no trusted Qloo external-ID binding is available. No poster is chosen by popularity or a guessed URL.
 
@@ -68,4 +68,51 @@ For no-API UI review, set TASTEPROBE_VISUAL_REVIEW=synthetic and run dev on a se
 - Reports preserve source, request reference, retrieval date, candidate coverage, observed scores, limitations and actual tool events. They exclude authorization proofs and private model reasoning.
 - Operator LIVE budgets are explicit and independent of technical caps. Do not replay historical smoke scripts or A/B experiments without fresh authorization.
 
-No public deployment, remote repository or push is performed by these gates. Before publication, complete final browser acceptance, choose an appropriate source-code license, review provider attribution/rights, and address shared public quotas and stable proof/session state for multiple instances. Historical gates, failed probes and offline evidence verifiers remain in [EVIDENCE.md](EVIDENCE.md) and the evidence directory.
+Original source is licensed under [MIT](LICENSE). Provider artwork, data and branding are governed separately; see [third-party notices](THIRD_PARTY_NOTICES.md). Public LIVE deployment remains blocked by shared consumption controls, judge quota verification and hosting Origin/session acceptance. No remote, push or deploy is performed. See [deployment preparation](docs/DEPLOYMENT.md), [Devpost draft](docs/DEVPOST_FINAL.md) and [EVIDENCE.md](EVIDENCE.md).
+
+## Architecture
+
+```mermaid
+flowchart LR
+  Human[Movie lover / human identity confirmation] --> UI[Discover or Audit / React]
+  UI --> API[Same-origin Next.js API / validation]
+  API --> Q[Server-only Qloo REST adapter]
+  Q --> QS[Qloo Search / Insights]
+  API --> T[Independent TMDB visual adapter / cache]
+  T --> TM[TMDB metadata / artwork]
+  API --> Tools[Bounded audit tools / server-held evidence]
+  Agent[Compatible agent / Codex CLI] --> MCP[Local MCP stdio / zero budget by default]
+  MCP --> Tools
+  UI --> Passport[Browser JSON Evidence Passport / human decision]
+```
+
+Only Qloo supplies cultural ranking and observed affinity. TMDB imagery cannot affect ordering. The agent chooses bounded tools; missing evidence produces structured abstention. Human approval never automatically replaces the source ranking. Runtime sessions, signing secrets and counters are process-local, so this diagram does not imply distributed production readiness.
+
+## Controlled cultural stress test
+
+The historical October 30, 2026 A/B capture changed Arrival (2016) to Paddington 2 (2017) while retaining Interstellar, Blade Runner 2049 and Her as candidates. Both scenarios returned 3/3; actual order and observed query.affinity differed. This is dated evidence of a signal-dependent response, not a claim of causal preference or a superior list. No historical data is hardcoded as a current LIVE recommendation.
+
+```powershell
+node scripts/verify-gate2a1.mjs
+```
+
+This verifier is offline. [Captured parameters, request ledger and results](evidence/gate2a1-ab.json) permit independent inspection without using another API request.
+
+## Release candidate acceptance
+
+The operator verified Chrome Discover, the correct Audit 3/3 result, Rescue, approval and Passport download, including desktop 1440x900 and mobile 390x844. Same-analysis Reject serialization is verified offline with an explicitly SYNTHETIC fixture and network disabled; the original LIVE Reject export is unavailable. This distinction is retained in the evidence ledger.
+
+No authentic screenshot files have been supplied to the repository. [Screenshot checklist](docs/screenshots/README.md) identifies the captures still needed; no synthetic screenshot is presented as LIVE evidence. No demo or repository URL is invented.
+
+For source and history checks without provider requests:
+
+```powershell
+node --env-file=.env.local scripts/verify-secrets.mjs gate3
+node --env-file=.env.local scripts/verify-release-history.mjs
+```
+
+Do not run smoke:qloo or LIVE runners without a new explicit budget. Copy .env.example to ignored .env.local and populate values manually; never put credentials in client variables, source, logs or screenshots. Existing validation scripts may write dated evidence artifacts; review their diff before committing.
+
+## Credits
+
+This product uses the TMDB API but is not endorsed or certified by TMDB. The application Credits section displays the approved TMDB logo. Non-commercial attribution conditions and separate artwork rights apply; [TMDB FAQ](https://developer.themoviedb.org/docs/faq). Qloo is the cultural evidence provider. TasteProbe is not a guarantee of personal satisfaction.

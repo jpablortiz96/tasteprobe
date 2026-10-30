@@ -1,0 +1,250 @@
+{
+  "mode": "TEST_SYNTHETIC_NOT_LIVE",
+  "networkRequests": 0,
+  "approved": {
+    "product": "TasteProbe Evidence Passport",
+    "generatedAt": "2026-10-30T00:00:00.000Z",
+    "mode": "TEST_SYNTHETIC",
+    "autonomousLLM": false,
+    "caller": "human-ui",
+    "intent": "TEST ONLY controlled offline decision",
+    "liveValidation": "TEST_NOT_LIVE",
+    "evaluation": {
+      "status": "SUCCESS",
+      "coverage": {
+        "returned": 3,
+        "total": 3
+      },
+      "rows": [
+        {
+          "id": "TEST-0",
+          "name": "TEST alpha",
+          "year": 2001,
+          "originalRank": 1,
+          "qlooRank": 2,
+          "shift": -1,
+          "affinity": 0.25
+        },
+        {
+          "id": "TEST-1",
+          "name": "TEST beta",
+          "year": 2002,
+          "originalRank": 2,
+          "qlooRank": 1,
+          "shift": 1,
+          "affinity": 0.75
+        },
+        {
+          "id": "TEST-2",
+          "name": "TEST gamma",
+          "year": 2003,
+          "originalRank": 3,
+          "qlooRank": 3,
+          "shift": 0,
+          "affinity": null
+        }
+      ],
+      "identities": [
+        {
+          "id": "TEST-SIGNAL",
+          "name": "TEST favorite",
+          "year": 2000,
+          "searchedAt": "TEST ONLY"
+        }
+      ],
+      "provenance": {
+        "source": "SYNTHETIC fixture",
+        "host": "offline.invalid",
+        "endpoint": "TEST ONLY",
+        "timestamp": "2026-10-30T00:00:00.000Z",
+        "parameters": {
+          "mode": "TEST"
+        },
+        "requestId": "TEST-SAME-ANALYSIS",
+        "httpStatus": 0
+      },
+      "limitations": [
+        "TEST / SYNTHETIC / NOT LIVE. No Qloo identities or signatures."
+      ]
+    },
+    "challenge": null,
+    "proposal": {
+      "status": "PROPOSED",
+      "before": [
+        "TEST alpha",
+        "TEST beta",
+        "TEST gamma"
+      ],
+      "after": [
+        "TEST beta",
+        "TEST alpha",
+        "TEST gamma"
+      ],
+      "why": "These same confirmed candidates are ordered exactly as returned by Qloo for the confirmed cultural signal. This is a proposal for human review, not proof of satisfaction.",
+      "sourceRequestId": "TEST-SAME-ANALYSIS"
+    },
+    "events": [
+      {
+        "tool": "evaluate_candidates",
+        "timestamp": "2026-10-30T00:00:00.000Z",
+        "outcome": "COMPLETED",
+        "summary": "SUCCESS; coverage 3/3",
+        "inputSummary": {
+          "interestCount": 0,
+          "candidateCount": 0
+        },
+        "caller": "human-ui"
+      },
+      {
+        "tool": "propose_evidence_based_revision",
+        "timestamp": "2026-10-30T00:00:00.000Z",
+        "outcome": "COMPLETED",
+        "summary": "PROPOSED",
+        "inputSummary": {},
+        "caller": "human-ui"
+      }
+    ],
+    "budget": {
+      "used": 1,
+      "maximum": 12,
+      "steps": 2,
+      "maximumSteps": 16
+    },
+    "limitations": [
+      "Tool choice belongs to the caller. No hosted LLM is configured.",
+      "No private model reasoning is collected.",
+      "Affinity is not a probability of satisfaction.",
+      "Human approval is required; no list is replaced automatically."
+    ],
+    "decision": {
+      "value": "APPROVED",
+      "actor": "human-ui",
+      "timestamp": "2026-10-30T00:01:00.000Z",
+      "appliedAutomatically": false
+    }
+  },
+  "rejected": {
+    "product": "TasteProbe Evidence Passport",
+    "generatedAt": "2026-10-30T00:00:00.000Z",
+    "mode": "TEST_SYNTHETIC",
+    "autonomousLLM": false,
+    "caller": "human-ui",
+    "intent": "TEST ONLY controlled offline decision",
+    "liveValidation": "TEST_NOT_LIVE",
+    "evaluation": {
+      "status": "SUCCESS",
+      "coverage": {
+        "returned": 3,
+        "total": 3
+      },
+      "rows": [
+        {
+          "id": "TEST-0",
+          "name": "TEST alpha",
+          "year": 2001,
+          "originalRank": 1,
+          "qlooRank": 2,
+          "shift": -1,
+          "affinity": 0.25
+        },
+        {
+          "id": "TEST-1",
+          "name": "TEST beta",
+          "year": 2002,
+          "originalRank": 2,
+          "qlooRank": 1,
+          "shift": 1,
+          "affinity": 0.75
+        },
+        {
+          "id": "TEST-2",
+          "name": "TEST gamma",
+          "year": 2003,
+          "originalRank": 3,
+          "qlooRank": 3,
+          "shift": 0,
+          "affinity": null
+        }
+      ],
+      "identities": [
+        {
+          "id": "TEST-SIGNAL",
+          "name": "TEST favorite",
+          "year": 2000,
+          "searchedAt": "TEST ONLY"
+        }
+      ],
+      "provenance": {
+        "source": "SYNTHETIC fixture",
+        "host": "offline.invalid",
+        "endpoint": "TEST ONLY",
+        "timestamp": "2026-10-30T00:00:00.000Z",
+        "parameters": {
+          "mode": "TEST"
+        },
+        "requestId": "TEST-SAME-ANALYSIS",
+        "httpStatus": 0
+      },
+      "limitations": [
+        "TEST / SYNTHETIC / NOT LIVE. No Qloo identities or signatures."
+      ]
+    },
+    "challenge": null,
+    "proposal": {
+      "status": "PROPOSED",
+      "before": [
+        "TEST alpha",
+        "TEST beta",
+        "TEST gamma"
+      ],
+      "after": [
+        "TEST beta",
+        "TEST alpha",
+        "TEST gamma"
+      ],
+      "why": "These same confirmed candidates are ordered exactly as returned by Qloo for the confirmed cultural signal. This is a proposal for human review, not proof of satisfaction.",
+      "sourceRequestId": "TEST-SAME-ANALYSIS"
+    },
+    "events": [
+      {
+        "tool": "evaluate_candidates",
+        "timestamp": "2026-10-30T00:00:00.000Z",
+        "outcome": "COMPLETED",
+        "summary": "SUCCESS; coverage 3/3",
+        "inputSummary": {
+          "interestCount": 0,
+          "candidateCount": 0
+        },
+        "caller": "human-ui"
+      },
+      {
+        "tool": "propose_evidence_based_revision",
+        "timestamp": "2026-10-30T00:00:00.000Z",
+        "outcome": "COMPLETED",
+        "summary": "PROPOSED",
+        "inputSummary": {},
+        "caller": "human-ui"
+      }
+    ],
+    "budget": {
+      "used": 1,
+      "maximum": 12,
+      "steps": 2,
+      "maximumSteps": 16
+    },
+    "limitations": [
+      "Tool choice belongs to the caller. No hosted LLM is configured.",
+      "No private model reasoning is collected.",
+      "Affinity is not a probability of satisfaction.",
+      "Human approval is required; no list is replaced automatically."
+    ],
+    "decision": {
+      "value": "REJECTED",
+      "actor": "human-ui",
+      "timestamp": "2026-10-30T00:02:00.000Z",
+      "appliedAutomatically": false
+    }
+  },
+  "sourceUnchanged": true,
+  "independentSessionAbstained": true
+}

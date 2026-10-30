@@ -1,0 +1,646 @@
+TAP version 13
+# Subtest: MOCK actual tool dispatch resolves ambiguity, evaluates, proposes and exports factual events without proofs
+ok 1 - MOCK actual tool dispatch resolves ambiguity, evaluates, proposes and exports factual events without proofs
+  ---
+  duration_ms: 49.7824
+  type: 'test'
+  ...
+# Subtest: MOCK compare executes two Insights with only the signal changing
+ok 2 - MOCK compare executes two Insights with only the signal changing
+  ---
+  duration_ms: 8.581
+  type: 'test'
+  ...
+# Subtest: MOCK same evidence is inconclusive, not causal confirmation
+ok 3 - MOCK same evidence is inconclusive, not causal confirmation
+  ---
+  duration_ms: 5.1652
+  type: 'test'
+  ...
+# Subtest: MOCK partial A abstains and does not call B; proposal never fabricates missing order
+ok 4 - MOCK partial A abstains and does not call B; proposal never fabricates missing order
+  ---
+  duration_ms: 3.394
+  type: 'test'
+  ...
+# Subtest: MOCK auth failure is recorded, stops session, and never retries
+ok 5 - MOCK auth failure is recorded, stops session, and never retries
+  ---
+  duration_ms: 2.7902
+  type: 'test'
+  ...
+# Subtest: arguments cannot select arbitrary endpoints or inject proposal evidence
+ok 6 - arguments cannot select arbitrary endpoints or inject proposal evidence
+  ---
+  duration_ms: 0.7553
+  type: 'test'
+  ...
+# Subtest: tool sessions expire and creation is process bounded
+ok 7 - tool sessions expire and creation is process bounded
+  ---
+  duration_ms: 1.4675
+  type: 'test'
+  ...
+# Subtest: tool step cap applies even to offline proposals
+ok 8 - tool step cap applies even to offline proposals
+  ---
+  duration_ms: 1.1656
+  type: 'test'
+  ...
+# Subtest: MOCK no key and unconfirmed identities cannot produce Qloo evidence
+ok 9 - MOCK no key and unconfirmed identities cannot produce Qloo evidence
+  ---
+  duration_ms: 4.0973
+  type: 'test'
+  ...
+# Subtest: Qloo budget is enforced independently of session intent
+ok 10 - Qloo budget is enforced independently of session intent
+  ---
+  duration_ms: 5.556
+  type: 'test'
+  ...
+# Subtest: concurrent tool execution cannot race the session budget
+ok 11 - concurrent tool execution cannot race the session budget
+  ---
+  duration_ms: 1.2785
+  type: 'test'
+  ...
+# Subtest: MOCK observed numeric zero is preserved; nonnumeric affinity is rejected instead of coerced
+ok 12 - MOCK observed numeric zero is preserved; nonnumeric affinity is rejected instead of coerced
+  ---
+  duration_ms: 4.2983
+  type: 'test'
+  ...
+# Subtest: textarea placeholder meets 4.5:1 contrast on its authored solid background
+ok 13 - textarea placeholder meets 4.5:1 contrast on its authored solid background
+  ---
+  duration_ms: 2.5556
+  type: 'test'
+  ...
+# Subtest: highest observed affinity is dynamic, stable on ties and never changes provider order
+ok 14 - highest observed affinity is dynamic, stable on ties and never changes provider order
+  ---
+  duration_ms: 4.8266
+  type: 'test'
+  ...
+# Subtest: null, nonfinite, zero, empty and incomplete affinities abstain correctly
+ok 15 - null, nonfinite, zero, empty and incomplete affinities abstain correctly
+  ---
+  duration_ms: 0.5257
+  type: 'test'
+  ...
+# Subtest: Passport dashboard and featured identity derive from the same evidence; synthetic remains explicit
+ok 16 - Passport dashboard and featured identity derive from the same evidence; synthetic remains explicit
+  ---
+  duration_ms: 2.1775
+  type: 'test'
+  ...
+# Subtest: image matching requires exact title/year/movie and consistent external identity, never ambiguous selection
+ok 17 - image matching requires exact title/year/movie and consistent external identity, never ambiguous selection
+  ---
+  duration_ms: 1.089
+  type: 'test'
+  ...
+# Subtest: missing, incorrect, unauthorized or failed image uses fallback without touching ranking
+ok 18 - missing, incorrect, unauthorized or failed image uses fallback without touching ranking
+  ---
+  duration_ms: 0.796
+  type: 'test'
+  ...
+# Subtest: real result components render dashboard, dynamic feature, every movie once and illustrative fallback without image requests
+ok 19 - real result components render dashboard, dynamic feature, every movie once and illustrative fallback without image requests
+  ---
+  duration_ms: 12.7265
+  type: 'test'
+  ...
+# Subtest: rendered missing affinities and empty results never claim a numeric top affinity
+ok 20 - rendered missing affinities and empty results never claim a numeric top affinity
+  ---
+  duration_ms: 6.5705
+  type: 'test'
+  ...
+# Subtest: artwork renders only matched TMDB posters, with dimensions, alt text and a failed-image handler; mismatches fall back
+ok 21 - artwork renders only matched TMDB posters, with dimensions, alt text and a failed-image handler; mismatches fall back
+  ---
+  duration_ms: 1.8306
+  type: 'test'
+  ...
+# Subtest: four KPI icons are small decorative SVGs; metric text and numeric evidence remain accessible
+ok 22 - four KPI icons are small decorative SVGs; metric text and numeric evidence remain accessible
+  ---
+  duration_ms: 5.9645
+  type: 'test'
+  ...
+# Subtest: Audit entry still renders its comparison workflow with explicit confirmation rather than a Discover flow
+ok 23 - Audit entry still renders its comparison workflow with explicit confirmation rather than a Discover flow
+  ---
+  duration_ms: 2.5036
+  type: 'test'
+  ...
+# Subtest: historical response contract replays offline through validator and browser JSON without weakening IDs
+ok 24 - historical response contract replays offline through validator and browser JSON without weakening IDs
+  ---
+  duration_ms: 58.4652
+  type: 'test'
+  ...
+# Subtest: local application errors remain distinct from provider HTTP, malformed JSON and identity errors
+ok 25 - local application errors remain distinct from provider HTTP, malformed JSON and identity errors
+  ---
+  duration_ms: 5.5756
+  type: 'test'
+  ...
+# Subtest: synthetic visual transport makes zero fetches and exports an unmistakably non-LIVE passport
+ok 26 - synthetic visual transport makes zero fetches and exports an unmistakably non-LIVE passport
+  ---
+  duration_ms: 515.4956
+  type: 'test'
+  ...
+# Subtest: synthetic empty and error scenarios do not create recommendations or automatic retries
+ok 27 - synthetic empty and error scenarios do not create recommendations or automatic retries
+  ---
+  duration_ms: 509.8605
+  type: 'test'
+  ...
+# Subtest: MOCK discovery excludes input IDs, requests 8 without candidate filter, preserves observed evidence
+ok 28 - MOCK discovery excludes input IDs, requests 8 without candidate filter, preserves observed evidence
+  ---
+  duration_ms: 51.3455
+  type: 'test'
+  ...
+# Subtest: MOCK discovery removes favorites, duplicates, invalid IDs/types and invalid affinities without inventing replacements
+ok 29 - MOCK discovery removes favorites, duplicates, invalid IDs/types and invalid affinities without inventing replacements
+  ---
+  duration_ms: 2.2236
+  type: 'test'
+  ...
+# Subtest: MOCK empty discovery abstains; missing affinity stays null and zero remains zero
+ok 30 - MOCK empty discovery abstains; missing affinity stays null and zero remains zero
+  ---
+  duration_ms: 2.8438
+  type: 'test'
+  ...
+# Subtest: discovery rejects candidate filters, unconfirmed identities and duplicate signals before Insights
+ok 31 - discovery rejects candidate filters, unconfirmed identities and duplicate signals before Insights
+  ---
+  duration_ms: 3.5686
+  type: 'test'
+  ...
+# Subtest: MOCK discovery errors do not retry; missing key performs no upstream call
+ok 32 - MOCK discovery errors do not retry; missing key performs no upstream call
+  ---
+  duration_ms: 2.3801
+  type: 'test'
+  ...
+# Subtest: discovery passport projects identities and only actual provided events; product errors hide internal codes
+ok 33 - discovery passport projects identities and only actual provided events; product errors hide internal codes
+  ---
+  duration_ms: 2.2632
+  type: 'test'
+  ...
+# Subtest: MOCK discovery timeout abstains without retrying
+ok 34 - MOCK discovery timeout abstains without retrying
+  ---
+  duration_ms: 1.2634
+  type: 'test'
+  ...
+# Subtest: attribution explanation uses only confirmed IDs and valid observed positive scores
+ok 35 - attribution explanation uses only confirmed IDs and valid observed positive scores
+  ---
+  duration_ms: 0.4799
+  type: 'test'
+  ...
+# Subtest: MOCK documented Search 404 becomes empty choices with actual HTTP provenance
+ok 36 - MOCK documented Search 404 becomes empty choices with actual HTTP provenance
+  ---
+  duration_ms: 43.9954
+  type: 'test'
+  ...
+# Subtest: MOCK browser network failure is actionable and does not expose exception details
+ok 37 - MOCK browser network failure is actionable and does not expose exception details
+  ---
+  duration_ms: 1.9271
+  type: 'test'
+  ...
+# Subtest: MOCK browser timeout is distinguished from connectivity failure
+ok 38 - MOCK browser timeout is distinguished from connectivity failure
+  ---
+  duration_ms: 0.8474
+  type: 'test'
+  ...
+# Subtest: MOCK malformed response and unrecognized remote messages never become raw UI text
+ok 39 - MOCK malformed response and unrecognized remote messages never become raw UI text
+  ---
+  duration_ms: 4.162
+  type: 'test'
+  ...
+# Subtest: readiness can be retried after failure without a live Qloo probe
+ok 40 - readiness can be retried after failure without a live Qloo probe
+  ---
+  duration_ms: 1.6024
+  type: 'test'
+  ...
+# Subtest: MOCK Insights 404 remains an error rather than being interpreted as empty Search evidence
+ok 41 - MOCK Insights 404 remains an error rather than being interpreted as empty Search evidence
+  ---
+  duration_ms: 5.7054
+  type: 'test'
+  ...
+# Subtest: selection and Audit reuse an in-flight visual identity across batches without confirming Qloo identities
+ok 42 - selection and Audit reuse an in-flight visual identity across batches without confirming Qloo identities
+  ---
+  duration_ms: 43.1915
+  type: 'test'
+  ...
+# Subtest: ambiguous/unavailable imagery remains fallback across roles, never a reason to select an identity
+ok 43 - ambiguous/unavailable imagery remains fallback across roles, never a reason to select an identity
+  ---
+  duration_ms: 1.1108
+  type: 'test'
+  ...
+# Subtest: Approve and Reject export distinct decisions while retaining original Qloo ranks, proposal and abstention limits
+ok 44 - Approve and Reject export distinct decisions while retaining original Qloo ranks, proposal and abstention limits
+  ---
+  duration_ms: 1.0855
+  type: 'test'
+  ...
+# Subtest: MCP initialize, discovery and strict loopback transport; high-cost tools blocked at default zero allowance
+ok 45 - MCP initialize, discovery and strict loopback transport; high-cost tools blocked at default zero allowance
+  ---
+  duration_ms: 2.8355
+  type: 'test'
+  ...
+# Subtest: MCP invokes real existing operation schema and returns structured abstention; no session value exposed
+ok 46 - MCP invokes real existing operation schema and returns structured abstention; no session value exposed
+  ---
+  duration_ms: 39.4218
+  type: 'test'
+  ...
+# Subtest: MCP notifications cannot invoke tools; bad arguments and upstream errors fail closed without retries
+ok 47 - MCP notifications cannot invoke tools; bad arguments and upstream errors fail closed without retries
+  ---
+  duration_ms: 0.5436
+  type: 'test'
+  ...
+# Subtest: MCP explicit allowance reserves provider cost before dispatch and never permits an extra operation
+ok 48 - MCP explicit allowance reserves provider cost before dispatch and never permits an extra operation
+  ---
+  duration_ms: 2.1635
+  type: 'test'
+  ...
+# Subtest: same-origin localhost and 127.0.0.1 requests pass, including Next loopback URL reconstruction
+ok 49 - same-origin localhost and 127.0.0.1 requests pass, including Next loopback URL reconstruction
+  ---
+  duration_ms: 40.2108
+  type: 'test'
+  ...
+# Subtest: foreign origins, loopback port mismatch, Host mismatch and cross-site requests are refused
+ok 50 - foreign origins, loopback port mismatch, Host mismatch and cross-site requests are refused
+  ---
+  duration_ms: 2.776
+  type: 'test'
+  ...
+# Subtest: frontend cannot select an absolute or protocol-relative API origin
+ok 51 - frontend cannot select an absolute or protocol-relative API origin
+  ---
+  duration_ms: 0.8408
+  type: 'test'
+  ...
+# Subtest: MOCK A/B with unchanged evidence is inconclusive
+ok 52 - MOCK A/B with unchanged evidence is inconclusive
+  ---
+  duration_ms: 6.6844
+  type: 'test'
+  ...
+# Subtest: MOCK A/B detects raw affinity change even when order is unchanged
+ok 53 - MOCK A/B detects raw affinity change even when order is unchanged
+  ---
+  duration_ms: 0.4905
+  type: 'test'
+  ...
+# Subtest: A/B refuses extra changed parameters
+ok 54 - A/B refuses extra changed parameters
+  ---
+  duration_ms: 3.4557
+  type: 'test'
+  ...
+# Subtest: MOCK partial, duplicate or missing numeric evidence is inconclusive
+ok 55 - MOCK partial, duplicate or missing numeric evidence is inconclusive
+  ---
+  duration_ms: 1.8191
+  type: 'test'
+  ...
+# Subtest: missing key abstains without making a network request
+ok 56 - missing key abstains without making a network request
+  ---
+  duration_ms: 3.9934
+  type: 'test'
+  ...
+# Subtest: rejects alternate hosts before exposing credentials
+ok 57 - rejects alternate hosts before exposing credentials
+  ---
+  duration_ms: 0.3788
+  type: 'test'
+  ...
+# Subtest: MOCK transport verifies GET, exact host, header, and encoded search
+ok 58 - MOCK transport verifies GET, exact host, header, and encoded search
+  ---
+  duration_ms: 52.0987
+  type: 'test'
+  ...
+# Subtest: MOCK HTTP 401 abstains, redacts upstream text, and never retries
+ok 59 - MOCK HTTP 401 abstains, redacts upstream text, and never retries
+  ---
+  duration_ms: 1.2048
+  type: 'test'
+  ...
+# Subtest: MOCK HTTP 403 abstains, redacts upstream text, and never retries
+ok 60 - MOCK HTTP 403 abstains, redacts upstream text, and never retries
+  ---
+  duration_ms: 0.5642
+  type: 'test'
+  ...
+# Subtest: MOCK HTTP 429 abstains, redacts upstream text, and never retries
+ok 61 - MOCK HTTP 429 abstains, redacts upstream text, and never retries
+  ---
+  duration_ms: 0.396
+  type: 'test'
+  ...
+# Subtest: MOCK HTTP 500 abstains, redacts upstream text, and never retries
+ok 62 - MOCK HTTP 500 abstains, redacts upstream text, and never retries
+  ---
+  duration_ms: 0.3578
+  type: 'test'
+  ...
+# Subtest: MOCK HTTP 400 abstains, redacts upstream text, and never retries
+ok 63 - MOCK HTTP 400 abstains, redacts upstream text, and never retries
+  ---
+  duration_ms: 0.357
+  type: 'test'
+  ...
+# Subtest: MOCK TimeoutError becomes safe TIMEOUT
+ok 64 - MOCK TimeoutError becomes safe TIMEOUT
+  ---
+  duration_ms: 0.8908
+  type: 'test'
+  ...
+# Subtest: MOCK TypeError becomes safe NETWORK
+ok 65 - MOCK TypeError becomes safe NETWORK
+  ---
+  duration_ms: 0.9245
+  type: 'test'
+  ...
+# Subtest: MOCK malformed JSON is rejected
+ok 66 - MOCK malformed JSON is rejected
+  ---
+  duration_ms: 1.413
+  type: 'test'
+  ...
+# Subtest: MOCK response size is bounded
+ok 67 - MOCK response size is bounded
+  ---
+  duration_ms: 3.1072
+  type: 'test'
+  ...
+# Subtest: MOCK request budget stops at six and obsolete paths are rejected
+ok 68 - MOCK request budget stops at six and obsolete paths are rejected
+  ---
+  duration_ms: 2.5428
+  type: 'test'
+  ...
+# Subtest: TEST ONLY: same-analysis Approve then Reject survives JSON export without provider calls or cross-analysis data
+ok 69 - TEST ONLY: same-analysis Approve then Reject survives JSON export without provider calls or cross-analysis data
+  ---
+  duration_ms: 16.0674
+  type: 'test'
+  ...
+# Subtest: blocked export keeps original input order and abstains without fabricated evidence
+ok 70 - blocked export keeps original input order and abstains without fabricated evidence
+  ---
+  duration_ms: 4.128
+  type: 'test'
+  ...
+# Subtest: export strips identity authorization proofs and marks a failed evaluation as abstained
+ok 71 - export strips identity authorization proofs and marks a failed evaluation as abstained
+  ---
+  duration_ms: 0.3917
+  type: 'test'
+  ...
+# Subtest: MOCK upstream cannot echo the API credential into a normalized response
+ok 72 - MOCK upstream cannot echo the API credential into a normalized response
+  ---
+  duration_ms: 33.5149
+  type: 'test'
+  ...
+# Subtest: stalled incoming request is bounded by the real body deadline
+ok 73 - stalled incoming request is bounded by the real body deadline
+  ---
+  duration_ms: 3006.5802
+  type: 'test'
+  ...
+# Subtest: regression: development cache replaces a pre-Discover service after factory reload
+ok 74 - regression: development cache replaces a pre-Discover service after factory reload
+  ---
+  duration_ms: 1.2619
+  type: 'test'
+  ...
+# Subtest: same factory preserves service identity, signing state and request budgets across requests
+ok 75 - same factory preserves service identity, signing state and request budgets across requests
+  ---
+  duration_ms: 0.2243
+  type: 'test'
+  ...
+# Subtest: factory replacement refreshes dependent tool sessions instead of retaining obsolete service closure
+ok 76 - factory replacement refreshes dependent tool sessions instead of retaining obsolete service closure
+  ---
+  duration_ms: 0.1774
+  type: 'test'
+  ...
+# Subtest: changing the service dependency refreshes the tools even when their factory is unchanged
+ok 77 - changing the service dependency refreshes the tools even when their factory is unchanged
+  ---
+  duration_ms: 0.2047
+  type: 'test'
+  ...
+# Subtest: service without credential abstains and makes zero calls
+ok 78 - service without credential abstains and makes zero calls
+  ---
+  duration_ms: 5.0313
+  type: 'test'
+  ...
+# Subtest: MOCK full flow preserves original order, compares returned order, and never invents affinity
+ok 79 - MOCK full flow preserves original order, compares returned order, and never invents affinity
+  ---
+  duration_ms: 36.2382
+  type: 'test'
+  ...
+# Subtest: strict search validation rejects unsupported fields, control characters, size, and wrong types before network
+ok 80 - strict search validation rejects unsupported fields, control characters, size, and wrong types before network
+  ---
+  duration_ms: 0.8994
+  type: 'test'
+  ...
+# Subtest: MOCK Search returns ambiguous choices without selecting them and filters non-movies
+ok 81 - MOCK Search returns ambiguous choices without selecting them and filters non-movies
+  ---
+  duration_ms: 2.6419
+  type: 'test'
+  ...
+# Subtest: MOCK empty Search is empty evidence
+ok 82 - MOCK empty Search is empty evidence
+  ---
+  duration_ms: 0.9448
+  type: 'test'
+  ...
+# Subtest: unconfirmed, fabricated, edited, expired, or duplicate identities cannot reach Insights
+ok 83 - unconfirmed, fabricated, edited, expired, or duplicate identities cannot reach Insights
+  ---
+  duration_ms: 3.172
+  type: 'test'
+  ...
+# Subtest: identity proofs from a different server session are rejected
+ok 84 - identity proofs from a different server session are rejected
+  ---
+  duration_ms: 1.3242
+  type: 'test'
+  ...
+# Subtest: audit list boundaries and unexpected input fields are rejected
+ok 85 - audit list boundaries and unexpected input fields are rejected
+  ---
+  duration_ms: 0.5507
+  type: 'test'
+  ...
+# Subtest: MOCK partial coverage 0/3 abstains from revised ranking and uses null for missing evidence
+ok 86 - MOCK partial coverage 0/3 abstains from revised ranking and uses null for missing evidence
+  ---
+  duration_ms: 2.1421
+  type: 'test'
+  ...
+# Subtest: MOCK partial coverage 1/3 abstains from revised ranking and uses null for missing evidence
+ok 87 - MOCK partial coverage 1/3 abstains from revised ranking and uses null for missing evidence
+  ---
+  duration_ms: 1.6814
+  type: 'test'
+  ...
+# Subtest: MOCK partial coverage 2/3 abstains from revised ranking and uses null for missing evidence
+ok 88 - MOCK partial coverage 2/3 abstains from revised ranking and uses null for missing evidence
+  ---
+  duration_ms: 1.4034
+  type: 'test'
+  ...
+# Subtest: MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected
+ok 89 - MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected
+  ---
+  duration_ms: 1.4648
+  type: 'test'
+  ...
+# Subtest: MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected
+ok 90 - MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected
+  ---
+  duration_ms: 3.4021
+  type: 'test'
+  ...
+# Subtest: MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected
+ok 91 - MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected
+  ---
+  duration_ms: 1.428
+  type: 'test'
+  ...
+# Subtest: MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected
+ok 92 - MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected
+  ---
+  duration_ms: 1.4068
+  type: 'test'
+  ...
+# Subtest: MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected
+ok 93 - MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected
+  ---
+  duration_ms: 1.3863
+  type: 'test'
+  ...
+# Subtest: shared request budgets survive client recreation and cap the process at 60 calls
+ok 94 - shared request budgets survive client recreation and cap the process at 60 calls
+  ---
+  duration_ms: 4.7115
+  type: 'test'
+  ...
+# Subtest: HTTP input bounds, content type, origin and malformed JSON are enforced
+ok 95 - HTTP input bounds, content type, origin and malformed JSON are enforced
+  ---
+  duration_ms: 4.2599
+  type: 'test'
+  ...
+# Subtest: CLI persists honest BLOCKED_LIVE evidence without a key
+ok 96 - CLI persists honest BLOCKED_LIVE evidence without a key
+  ---
+  duration_ms: 111.8145
+  type: 'test'
+  ...
+# Subtest: MOCK credential cannot bypass documentation review
+ok 97 - MOCK credential cannot bypass documentation review
+  ---
+  duration_ms: 95.0779
+  type: 'test'
+  ...
+# Subtest: TMDB unique punctuation-normalized title/exact year gives actual configuration URLs; ambiguity and wrong identity abstain
+ok 98 - TMDB unique punctuation-normalized title/exact year gives actual configuration URLs; ambiguity and wrong identity abstain
+  ---
+  duration_ms: 2.5972
+  type: 'test'
+  ...
+# Subtest: Bearer preferred; API key fallback stays server-side; fixed hosts, GET, no redirects or retries
+ok 99 - Bearer preferred; API key fallback stays server-side; fixed hosts, GET, no redirects or retries
+  ---
+  duration_ms: 29.9736
+  type: 'test'
+  ...
+# Subtest: missing credential makes zero calls; 401/403/429 halt subsequent upstream calls and redact errors
+ok 100 - missing credential makes zero calls; 401/403/429 halt subsequent upstream calls and redact errors
+  ---
+  duration_ms: 2.8761
+  type: 'test'
+  ...
+# Subtest: TMDB missing matches, malformed data, timeout and network failure degrade without Qloo calls or altered ranking
+ok 101 - TMDB missing matches, malformed data, timeout and network failure degrade without Qloo calls or altered ranking
+  ---
+  duration_ms: 8.722
+  type: 'test'
+  ...
+# Subtest: Passport keeps optional TMDB metadata separate from Qloo evidence and never exports unbound image identities
+ok 102 - Passport keeps optional TMDB metadata separate from Qloo evidence and never exports unbound image identities
+  ---
+  duration_ms: 1.2418
+  type: 'test'
+  ...
+# Subtest: captured TMDB Arrival same-title/year ambiguity abstains offline rather than selecting by popularity
+ok 103 - captured TMDB Arrival same-title/year ambiguity abstains offline rather than selecting by popularity
+  ---
+  duration_ms: 8.1673
+  type: 'test'
+  ...
+# Subtest: transport diagnostics preserve only allowlisted nested DNS/TLS codes, never exception text
+ok 104 - transport diagnostics preserve only allowlisted nested DNS/TLS codes, never exception text
+  ---
+  duration_ms: 35.8223
+  type: 'test'
+  ...
+# Subtest: unknown exception codes are redacted; upstream HTTP status remains distinguishable
+ok 105 - unknown exception codes are redacted; upstream HTTP status remains distinguishable
+  ---
+  duration_ms: 3.086
+  type: 'test'
+  ...
+# Subtest: browser keeps safe request diagnostics and distinguishes local transport from backend transport
+ok 106 - browser keeps safe request diagnostics and distinguishes local transport from backend transport
+  ---
+  duration_ms: 2.9459
+  type: 'test'
+  ...
+1..106
+# tests 106
+# suites 0
+# pass 106
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3620.2593

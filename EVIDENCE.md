@@ -1,3 +1,21 @@
+# TasteProbe - GATE 3 Release candidate preparation
+
+2026-10-30. **AT_RISK for public LIVE publication. Offline release preparation complete.** Features frozen; no runtime/backend/UI or dependency changes, no provider requests, remote, push or deploy.
+
+Reject **OFFLINE_PASS**: one controlled SYNTHETIC analysis uses the real proposal tool and Passport serializer; Approve then Reject retains identical identities, ranks, affinities and source reference. A second session abstains without cross-analysis data. No network, signatures or LIVE provenance are fabricated. The lost original LIVE Reject export remains unverified; no new visual PASS is claimed.
+
+Quality: **106 tests PASS**, **6 MOCK HTTP E2E PASS**, typecheck/build PASS, npm audit **0 vulnerabilities**. /review returns 404 in production. History: three prior commits / 298 blobs, no configured-secret or pattern findings; 58 client assets checked without configured credentials. .env.local remains ignored/untracked. Isolated build preserved the running app.
+
+Added MIT license and separate third-party notices, English README/Mermaid, deployment assessment and Devpost draft. Actual MCP demonstration is documented as grounded ABSTAINED, not a complete autonomous LIVE audit. Authentic screenshot files are still absent; prior desktop/mobile usability is operator-confirmed.
+
+**Real release blockers:** shared durable aggregate abuse/spend controls are absent; provider allowance/judge reserve is unknown; signing/session state is process-local; public HTTPS Origin/Host behavior is unverified. Prefer a single Railway process for the existing state model, with separately verified external controls. Vercel/multiple instances are not ready unchanged. No provider budget is assumed.
+
+[Full release review](evidence/GATE3_RELEASE_REVIEW.md) | [Deployment blockers](docs/DEPLOYMENT.md) | [Devpost draft](docs/DEVPOST_FINAL.md) | [Secret/history scope](evidence/gate3-history-review.json)
+
+Historical evidence below is preserved with its original dates/status; the release review above supersedes its open offline Reject item without rewriting historical LIVE evidence.
+
+---
+
 # TasteProbe - GATE 2H.2 Audit + real Codex MCP acceptance
 
 2026-10-30. **AT_RISK: correct Audit/MCP verified; matching Reject export and budget-control closure pending.** No new Qloo call was made by Codex. No Qloo/TMDB backend, signing, CSRF or result-validation change was made.
