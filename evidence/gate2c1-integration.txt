@@ -1,0 +1,16 @@
+
+> tasteprobe@0.0.0 test:integration
+> node --test tests/integration/*.test.mjs
+
+✔ MOCK HTTP Discover: loopback origins, confirmation, new identities, integrity and Passport (902.2058ms)
+✔ HTTP missing credential stays BLOCKED_LIVE without mock fallback (623.2195ms)
+✔ MOCK HTTP external caller executes all four tools, error abstention and passport export (1064.1576ms)
+✔ MOCK HTTP integration: ambiguous Search → human confirmation → Insights → comparison → serialized report (860.7018ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1645.831

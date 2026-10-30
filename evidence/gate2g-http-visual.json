@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-10-30T19:34:37.006Z",
+  "method": "POST",
+  "path": "/api/visuals",
+  "origin": "http://127.0.0.1:60765",
+  "httpStatus": 200,
+  "status": "IMAGE_PROVIDER_READY",
+  "visual": {
+    "provider": "TMDB",
+    "tmdbId": 274870,
+    "name": "Passengers",
+    "year": 2016,
+    "posterUrl": "https://image.tmdb.org/t/p/w500/jK9S6HANSf2no64v1x1HxfcpmcA.jpg",
+    "backdropUrl": "https://image.tmdb.org/t/p/w1280/gHz4ZQytRs8YGrqFMwB3Vrr8pig.jpg",
+    "overview": "A spacecraft traveling to a distant colony planet and transporting thousands of people has a malfunction in its sleep chambers. As a result, two passengers are awakened 90 years early.",
+    "retrievedAt": "2026-10-30T19:34:37.005Z",
+    "matchedBy": "EXACT_TITLE_YEAR"
+  },
+  "credentialFoundInResponse": false,
+  "liveQlooRequests": 0,
+  "qlooDisabledInTestProcess": true,
+  "limitation": "Real local HTTP/TMDB integration; not a browser visual test or new Qloo recommendation"
+}

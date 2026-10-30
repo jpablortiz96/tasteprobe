@@ -67,7 +67,12 @@ test('MOCK HTTP integration: ambiguous Search → human confirmation → Insight
   const empty = await post('/api/entities/search', { query: 'MOCK missing' });
   assert.deepEqual(empty.entities, []);
   assert.equal(empty.provenance.httpStatus, 404);
-  assert.deepEqual(await post('/api/entities/search', { query: 'MOCK auth error' }, 502), { error: 'AUTH', abstained: true });
+  const authError = await post('/api/entities/search', { query: 'MOCK auth error' }, 502);
+  assert.deepEqual({ error: authError.error, abstained: authError.abstained }, { error: 'AUTH', abstained: true });
+  assert.equal(authError.diagnostic.upstreamStatus, 401);
+  assert.equal(authError.diagnostic.upstreamAttempted, true);
+  assert.equal(authError.diagnostic.transportCode, null);
+  assert.match(authError.diagnostic.requestId, /^[0-9a-f-]{36}$/);
   assert.ok(!log.includes('MOCK_TEST_ONLY_NOT_A_CREDENTIAL'));
   // Persist only test assertions, never a response/report that could be mistaken for live evidence.
   await writeFile('evidence/gate1b-mock-integration.json', JSON.stringify({ mode: 'MOCK_INTEGRATION_TEST_ONLY', timestamp: new Date().toISOString(), liveQlooRequests: 0, browserUsed: false, checks: ['ambiguous choices', 'confirmation required', 'complete comparison', 'report serialization without proofs or credential', 'partial abstention', 'documented Search 404', 'redacted auth failure'], observations }, null, 2) + '\n');

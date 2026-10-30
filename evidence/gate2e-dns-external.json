@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-30T17:55:13.338Z",
+  "httpRequests": 0,
+  "dns": "RESOLVED",
+  "addressCount": 3,
+  "families": [
+    4,
+    4,
+    4
+  ]
+}

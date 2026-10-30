@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-10-30T20:19:09.499Z",
+  "phase": "A_PREPARATION_ONLY",
+  "liveQlooRequests": 0,
+  "tmdbRequests": 0,
+  "keyPresent": true,
+  "tmdbConfigured": true,
+  "officialQlooHost": true,
+  "observations": [
+    {
+      "path": "/api/health",
+      "method": "GET",
+      "httpStatus": 200,
+      "health": {
+        "status": "CONFIGURED_NOT_VERIFIED",
+        "liveVerified": false
+      }
+    },
+    {
+      "path": "/api/tools",
+      "method": "GET",
+      "httpStatus": 200,
+      "tools": [
+        "resolve_entities",
+        "evaluate_candidates",
+        "compare_cultural_signals",
+        "propose_evidence_based_revision"
+      ],
+      "autonomousLLM": false
+    },
+    {
+      "path": "/review",
+      "method": "GET",
+      "httpStatus": 404
+    },
+    {
+      "path": "/api/tools",
+      "method": "POST",
+      "httpStatus": 403
+    },
+    {
+      "path": "/api/entities/search",
+      "method": "POST",
+      "httpStatus": 400
+    }
+  ],
+  "applicationFingerprint": {
+    "url": "http://127.0.0.1:3000",
+    "httpStatus": 200,
+    "tasteProbe": true,
+    "discoverMode": true,
+    "auditMode": true
+  }
+}

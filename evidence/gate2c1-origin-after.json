@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-10-30T15:38:07.986Z",
+  "liveQlooRequests": 0,
+  "observations": [
+    {
+      "origin": "http://127.0.0.1:3005",
+      "host": "127.0.0.1:3005",
+      "httpStatus": 200,
+      "error": null,
+      "sessionCreated": true
+    },
+    {
+      "origin": "http://localhost:3005",
+      "host": "localhost:3005",
+      "httpStatus": 200,
+      "error": null,
+      "sessionCreated": true
+    }
+  ]
+}

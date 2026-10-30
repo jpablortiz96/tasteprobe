@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-10-30T16:56:43.748Z",
+  "results": [
+    {
+      "name": "tests",
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "exitCode": 0
+    },
+    {
+      "name": "build",
+      "exitCode": 0
+    },
+    {
+      "name": "integration",
+      "exitCode": 0
+    },
+    {
+      "name": "audit",
+      "exitCode": 0,
+      "source": "Previously completed separate npm audit command; see gate2c2-audit-pass.json. No audit network call in this run."
+    }
+  ],
+  "clientFilesScanned": 27,
+  "configuredKeyPresent": true,
+  "credentialFoundInClient": false,
+  "liveQlooRequests": 0,
+  "hostedLLMCalls": 0,
+  "browserVisualQA": "VISUAL_REVIEW_BLOCKED: browser access host unavailable",
+  "limitation": "This gate made zero Qloo calls. Stale-cache recovery and single-favorite discovery were verified with isolated fixtures. Browser visual QA remains blocked."
+}

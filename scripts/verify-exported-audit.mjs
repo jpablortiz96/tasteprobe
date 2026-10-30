@@ -1,0 +1,23 @@
+// Offline inspection of operator-downloaded reports. Never sends data or prints credentials/proofs.
+import {readFile,writeFile} from 'node:fs/promises';
+import {basename} from 'node:path';
+const file=process.argv[2],label=process.argv[3]??'report';
+if(!file?.endsWith('.json')||!['report','approved','rejected'].includes(label))throw Error('JSON_FILE_AND_VALID_LABEL_REQUIRED');
+const text=await readFile(file,'utf8');
+if(text.length>512000||['QLOO_API_KEY','TMDB_READ_ACCESS_TOKEN','TMDB_API_KEY'].some(n=>process.env[n]?.trim()&&text.includes(process.env[n].trim())))throw Error('UNSAFE_OR_OVERSIZED_EXPORT');
+const data=JSON.parse(text),evaluation=data.evaluation;
+if(!evaluation?.provenance||!Array.isArray(evaluation.rows))throw Error('EVALUATION_REQUIRED');
+if(/"proof"\s*:/.test(text))throw Error('PROOF_IN_EXPORT');
+const expected=[['Interstellar',2014],['Blade Runner 2049',2017],['Her',2013]];
+const signalIds=String(evaluation.provenance.parameters?.['signal.interests.entities']??'').split(',');
+const candidateIds=String(evaluation.provenance.parameters?.['filter.results.entities']??'').split(',');
+const arrivalConfirmed=Array.isArray(evaluation.identities)&&evaluation.identities.some(m=>m.name==='Arrival'&&m.year===2016&&signalIds.includes(m.id));
+const candidateIdsConsistent=evaluation.rows.length===3&&new Set(evaluation.rows.map(r=>r.id)).size===3&&candidateIds.length===3&&evaluation.rows.every((r,i)=>candidateIds.includes(r.id)&&r.originalRank===i+1);
+const intendedCase=arrivalConfirmed&&candidateIdsConsistent&&expected.every(([name,year],i)=>evaluation.rows[i]?.name===name&&evaluation.rows[i]?.year===year)&&evaluation.rows.length===3;
+const fullCoverage=evaluation.status==='SUCCESS'&&evaluation.coverage.returned===3&&evaluation.coverage.total===3;
+const proposalConsistent=data.proposal?.status==='PROPOSED'?fullCoverage&&JSON.stringify(data.proposal.after)===JSON.stringify([...evaluation.rows].sort((a,b)=>a.qlooRank-b.qlooRank).map(r=>r.name)):data.proposal?.status==='ABSTAINED'||!data.proposal;
+const decision=data.decision??null;
+const summary={timestamp:new Date().toISOString(),file:basename(file),status:intendedCase&&fullCoverage?'VALID_COMPLETE_EVIDENCE':'VALID_PARTIAL_OR_DIFFERENT_CASE_NOT_ACCEPTANCE',source:evaluation.provenance.source,upstreamHttpStatus:evaluation.provenance.httpStatus,requestId:evaluation.provenance.requestId,retrievedAt:evaluation.provenance.timestamp,intendedCase,arrivalConfirmed,candidateIdsConsistent,coverage:evaluation.coverage,rows:evaluation.rows.map(({name,year,originalRank,qlooRank,shift,affinity})=>({name,year,originalRank,qlooRank,shift,affinity})),proposalStatus:data.proposal?.status??null,proposalConsistent,decision,credentialFound:false,proofFound:false,limitation:'File inspection checks internal consistency, not independent provider attestation or desktop/mobile visual acceptance. Partial/different-case evidence does not close target-case acceptance.'};
+if(!proposalConsistent||decision&&decision.appliedAutomatically!==false)throw Error('EXPORT_INTEGRITY_ERROR');
+await writeFile(`evidence/gate2h2-export-${label}.json`,JSON.stringify(summary,null,2)+'\n');
+console.log(JSON.stringify(summary,null,2));

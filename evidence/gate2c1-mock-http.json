@@ -1,0 +1,69 @@
+{
+  "timestamp": "2026-10-30T20:47:17.517Z",
+  "mode": "MOCK_HTTP_TEST_ONLY",
+  "liveQlooRequests": 0,
+  "observations": [
+    {
+      "path": "/api/tools",
+      "httpStatus": 200,
+      "origin": "http://127.0.0.1:60305"
+    },
+    {
+      "path": "/api/tools",
+      "httpStatus": 200,
+      "origin": "http://localhost:60305"
+    },
+    {
+      "path": "/api/tools",
+      "httpStatus": 403,
+      "origin": "https://evil.example"
+    },
+    {
+      "path": "/api/tools",
+      "httpStatus": 403,
+      "origin": "http://127.0.0.1:60306"
+    },
+    {
+      "path": "/api/entities/search",
+      "httpStatus": 200,
+      "origin": "http://127.0.0.1:60305"
+    },
+    {
+      "path": "/api/discover",
+      "httpStatus": 400,
+      "origin": "http://127.0.0.1:60305"
+    },
+    {
+      "path": "/api/discover",
+      "httpStatus": 200,
+      "origin": "http://127.0.0.1:60305"
+    },
+    {
+      "path": "/api/entities/search",
+      "httpStatus": 200,
+      "origin": "http://127.0.0.1:60305"
+    },
+    {
+      "path": "/api/discover",
+      "httpStatus": 200,
+      "origin": "http://127.0.0.1:60305"
+    },
+    {
+      "path": "/api/entities/search",
+      "httpStatus": 502,
+      "origin": "http://127.0.0.1:60305"
+    }
+  ],
+  "checks": [
+    "both loopback origins pass",
+    "foreign and wrong port blocked",
+    "human confirmation required",
+    "new valid unique movies only",
+    "input excluded",
+    "observed affinity retained",
+    "passport excludes proof",
+    "empty abstention",
+    "Qloo auth error redacted",
+    "Discover is default; Rescue absent before analysis"
+  ]
+}

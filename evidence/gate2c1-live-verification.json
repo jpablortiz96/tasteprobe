@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-10-30T16:08:02.423Z",
+  "verification": "PASS",
+  "mode": "OFFLINE_ONLY",
+  "liveAttemptsObserved": 4,
+  "httpStatuses": [
+    200,
+    200,
+    200,
+    200
+  ],
+  "sameOrderAndAffinitiesRepeated": true,
+  "discoveryCount": 8,
+  "favoriteExcluded": true,
+  "duplicateIDs": false,
+  "allParametersVerified": true,
+  "explainabilityCount": 8,
+  "additionalHTTPRequests": 0
+}

@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-10-30T17:25:44.720Z",
+  "results": [
+    {
+      "name": "tests",
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "exitCode": 0
+    },
+    {
+      "name": "build",
+      "exitCode": 0
+    },
+    {
+      "name": "integration",
+      "exitCode": 0
+    },
+    {
+      "name": "audit",
+      "exitCode": 0,
+      "source": "Previously completed separate npm audit command; see gate2d-audit-pass.json. No audit network call in this run."
+    }
+  ],
+  "clientFilesScanned": 27,
+  "configuredKeyPresent": true,
+  "credentialFoundInClient": false,
+  "liveQlooRequests": 0,
+  "hostedLLMCalls": 0,
+  "browserVisualQA": "VISUAL_OPERATOR_REQUIRED: browser access host unavailable",
+  "limitation": "This gate made zero Qloo calls. Discover, Audit, signed identity and synthetic-production exclusion tests are retained. VISUAL_OPERATOR_REQUIRED for desktop and mobile."
+}

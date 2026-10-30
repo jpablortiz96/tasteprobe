@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 const skip = new Set(['node_modules', '.next', '.git', '.npm-cache', '.codex', '.agents', '.aws', 'private']);
 const findings = [];
 const gate = process.argv[2] ?? 'gate1a';
-assert.ok(['gate1a', 'gate1b', 'gate2a', 'gate2a1'].includes(gate));
+assert.ok(['gate1a', 'gate1b', 'gate2a', 'gate2a1', 'gate2b', 'gate2c1', 'gate2c2', 'gate2d', 'gate2e', 'gate2f', 'gate2g', 'gate2h', 'gate2h2'].includes(gate));
 let files = 0;
 async function scan(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -15,8 +15,10 @@ async function scan(directory) {
       const text = await readFile(path, 'utf8'); files++;
       if (/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/.test(text) || /(?:sk-proj-|ghp_|github_pat_)[A-Za-z0-9_]{24,}/.test(text)) findings.push({ path, reason: 'credential-like material' });
       if (entry.name === '.env.example' && /^QLOO_API_KEY=.+/m.test(text)) findings.push({ path, reason: 'nonempty example credential' });
-      const key = process.env.QLOO_API_KEY?.trim();
-      if (key && text.includes(key)) findings.push({ path, reason: 'configured Qloo key appears in file' });
+      for (const name of ['QLOO_API_KEY','TMDB_READ_ACCESS_TOKEN','TMDB_API_KEY']) {
+        const key = process.env[name]?.trim();
+        if (key && text.includes(key)) findings.push({ path, reason: 'configured provider credential appears in file' });
+      }
     }
   }
 }

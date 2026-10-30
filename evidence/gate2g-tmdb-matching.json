@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-10-30T19:25:42.815Z",
+  "provider": "TMDB",
+  "additionalRequests": 1,
+  "totalPages": 1,
+  "totalResults": 4,
+  "rows": [
+    {
+      "id": 329865,
+      "title": "Arrival",
+      "releaseDate": "2016-11-10",
+      "mediaType": null,
+      "adult": false,
+      "posterPath": "/pEzNVQfdzYDzVK0XqxERIw2x2se.jpg",
+      "backdropPath": "/8MUZz7oPXQftFTslZpRP3CVMOoq.jpg"
+    },
+    {
+      "id": 472349,
+      "title": "Arrival",
+      "releaseDate": "2016-05-25",
+      "mediaType": null,
+      "adult": false,
+      "posterPath": "/yRkKfIrNQRqX2MIzckFNAtGWEOd.jpg",
+      "backdropPath": "/6mKbzl17vk7sXpPtPaxE0NiBRkm.jpg"
+    },
+    {
+      "id": 401867,
+      "title": "The Arrival",
+      "releaseDate": "2016-05-10",
+      "mediaType": null,
+      "adult": false,
+      "posterPath": "/gZtE2nBLYfCuHyqC9ZmMvmwlsFd.jpg",
+      "backdropPath": null
+    },
+    {
+      "id": 457908,
+      "title": "Monument of Arrival and Return",
+      "releaseDate": "2016-01-01",
+      "mediaType": null,
+      "adult": false,
+      "posterPath": "/wKRIP1hNfu2OatpJjs0uXCfqr3d.jpg",
+      "backdropPath": null
+    }
+  ],
+  "liveQlooRequests": 0
+}

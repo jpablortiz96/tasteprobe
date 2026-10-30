@@ -1,0 +1,55 @@
+﻿✖ regression: development cache replaces a pre-Discover service after factory reload (2.2946ms)
+✔ same factory preserves service identity, signing state and request budgets across requests (0.23ms)
+✖ factory replacement refreshes dependent tool sessions instead of retaining obsolete service closure (0.3087ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 1
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 133.8231
+
+✖ failing tests:
+
+test at tests\server-cache.test.mjs:4:1
+✖ regression: development cache replaces a pre-Discover service after factory reload (2.2946ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'undefined'
+  - 'function'
+  
+      at TestContext.<anonymous> (file:///D:/hackathons/TasteProbe/tests/server-cache.test.mjs:9:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'undefined',
+    expected: 'function',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests\server-cache.test.mjs:17:1
+✖ factory replacement refreshes dependent tool sessions instead of retaining obsolete service closure (0.3087ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  'old' !== 'current'
+  
+      at TestContext.<anonymous> (file:///D:/hackathons/TasteProbe/tests/server-cache.test.mjs:20:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'old',
+    expected: 'current',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

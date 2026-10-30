@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-10-30T16:05:41.525Z",
+  "results": [
+    {
+      "name": "tests",
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "exitCode": 0
+    },
+    {
+      "name": "build",
+      "exitCode": 0
+    },
+    {
+      "name": "integration",
+      "exitCode": 0
+    },
+    {
+      "name": "audit",
+      "exitCode": 0,
+      "source": "Previously completed external npm audit command; see gate2c1-audit-pass.json. No audit network call in this run."
+    }
+  ],
+  "clientFilesScanned": 25,
+  "configuredKeyPresent": true,
+  "credentialFoundInClient": false,
+  "liveQlooRequests": 0,
+  "hostedLLMCalls": 0,
+  "browserVisualQA": "VISUAL_REVIEW_BLOCKED: browser access host unavailable",
+  "limitation": "Live discovery is verified separately in gate2c1-http-live.json; these checks make zero Qloo calls. Browser automation ended because its URL could not be verified."
+}

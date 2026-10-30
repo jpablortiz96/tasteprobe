@@ -17,11 +17,26 @@ globalThis.fetch = async (input, init) => {
     const query = url.searchParams.get('query');
     if (query === 'MOCK missing') return new Response('MOCK no results', { status: 404 });
     if (query === 'MOCK auth error') return new Response('MOCK private detail', { status: 401 });
-    const number = Number(query?.match(/^MOCK ([1-4])$/)?.[1]);
-    assert.ok(number >= 1 && number <= 4);
+    const number = Number(query?.match(/^MOCK ([1-6])$/)?.[1]);
+    assert.ok(number >= 1 && number <= 6);
     return Response.json({ results: number === 1 ? [movie(1), movie(5)] : [movie(number)] });
   }
   assert.equal(url.pathname, '/v2/insights');
+  if (url.searchParams.has('filter.exclude.entities')) {
+    const params=Object.fromEntries(url.searchParams);
+    assert.equal(params['filter.type'],'urn:entity:movie');assert.equal(params.take,'8');assert.equal(params['feature.explainability'],'true');
+    assert.equal(params['filter.exclude.entities'],params['signal.interests.entities']);assert.equal(params['filter.results.entities'],undefined);assert.equal(Object.keys(params).length,5);
+    return Response.json({results:{entities:params['signal.interests.entities']===id(6)?[]:[movie(1),{...movie(2),query:{affinity:.8,explainability:{observed:true}}},movie(2),{...movie(5),subtype:'urn:entity:artist'},movie(3)]}});
+  }
+  if (url.searchParams.get('feature.explainability') === 'true') {
+    const params = Object.fromEntries(url.searchParams);
+    assert.ok([id(1),id(5),id(6)].includes(params['signal.interests.entities']));
+    assert.equal(params['filter.type'],'urn:entity:movie');
+    assert.equal(params['filter.results.entities'],[id(2),id(3),id(4)].join(','));
+    assert.equal(params.take,'3');
+    assert.equal(Object.keys(params).length,5);
+    return Response.json({ success: true, results: { entities: (params['signal.interests.entities'] === id(6) ? [4] : params['signal.interests.entities'] === id(1) ? [4,2,3] : [4,3,2]).map(i => ({ ...movie(i), query: { affinity: i/10, explainability: { verifiedFixture: true } } })) } });
+  }
   assert.deepEqual(Object.fromEntries(url.searchParams), { 'filter.type': 'urn:entity:movie', 'signal.interests.entities': id(1), 'filter.results.entities': [id(2),id(3),id(4)].join(','), take: '3' });
   insights++;
   return Response.json({ success: true, results: { entities: insights === 1 ? [movie(4), movie(2), movie(3)] : [movie(4)] } });

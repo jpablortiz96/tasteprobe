@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-10-30T17:59:06.371Z",
+  "status": "AT_RISK",
+  "originalFailure": {
+    "source": "OPERATOR_CHROME",
+    "localUrl": "http://127.0.0.1:3000/api/entities/search",
+    "method": "POST",
+    "localHttpStatus": 502,
+    "code": "NETWORK_ERROR",
+    "layer": "qloo-transport",
+    "reason": "NETWORK",
+    "requestId": null,
+    "upstreamHttpStatus": null,
+    "underlyingCause": "NOT_CAPTURED_IN_ORIGINAL_ERROR"
+  },
+  "observations": [
+    "Local port 3000 is owned by Node PID 25880, child of Next dev PID 23124",
+    "Process health reports CONFIGURED_NOT_VERIFIED",
+    "Sandbox DNS lookup returned ENOTFOUND; external DNS resolved three IPv4 addresses",
+    "First bounded HTTP Search returned local 200 and Qloo 200",
+    "No original-failure transport cause is recoverable from available logs"
+  ],
+  "conclusion": "Backend DNS resolution failed in the operator reproduction. Original historical cause not recoverable; current reproduction is ENOTFOUND. Local server restarted outside sandbox; no upstream recovery test after restart.",
+  "changes": "Safe error diagnostics only; no transport retry, host, origin, timeout, signature or result-validation relaxation",
+  "browser": "UNAVAILABLE_HOST",
+  "liveAttemptsConfirmed": 2,
+  "operatorAdditionalSearch": "CONFIRMED_FAILED",
+  "confirmedReproduction": {
+    "source": "OPERATOR_CHROME",
+    "requestId": "f29f868c-4e4c-4ce8-8de1-dcb3dfae7dde",
+    "localHttpStatus": 502,
+    "category": "NETWORK",
+    "layer": "qloo-transport",
+    "transportCode": "ENOTFOUND",
+    "upstreamAttempted": true,
+    "upstreamStatus": null
+  }
+}

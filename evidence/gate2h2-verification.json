@@ -1,0 +1,34 @@
+{
+  "timestamp": "2026-10-30T22:40:33.746Z",
+  "gate": "2H.2",
+  "status": "AT_RISK",
+  "functionalAudit": "PASS_OPERATOR_AND_APPROVED_EXPORT_3_OF_3",
+  "mcpAgent": "PASS_REAL_CODEX_INVOCATION_AND_ABSTENTION",
+  "reject": "PENDING_MATCHING_FILE",
+  "desktop": "PASS_OPERATOR_CONFIRMED",
+  "mobile": "PASS_OPERATOR_CONFIRMED",
+  "screenshots": "NONE_RECEIVED",
+  "tests": {
+    "passed": 105,
+    "previous101Retained": true
+  },
+  "httpE2E": {
+    "passed": 6,
+    "mode": "MOCK_ONLY"
+  },
+  "typecheck": "PASS",
+  "isolatedBuild": "PASS_ACTIVE_BUILD_UNCHANGED",
+  "auditVulnerabilities": 0,
+  "clientFilesScanned": 56,
+  "credentialFindings": 0,
+  "codexQlooRequests": 0,
+  "tmdbDiagnosticRequests": 2,
+  "budget": "AT_LEAST_15_OPERATOR_COSTED_OPERATIONS_OBSERVED_VS_10_DISCLOSED_AUTHORIZATION_MAXIMA_NO_REMAINING_ALLOWANCE",
+  "publicDeployment": "NOT_AUTHORIZED",
+  "limitations": [
+    "Current rejection candidate file belongs to another partial Her (2024) analysis; must not be relabeled as rejection of the correct case",
+    "No independent browser screenshots captured by Codex",
+    "No full autonomous Qloo agent evaluation claimed",
+    "A public release still needs source-license selection and shared usage controls"
+  ]
+}

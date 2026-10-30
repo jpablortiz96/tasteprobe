@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-10-30T20:43:48.254Z",
+  "status": "MCP_PROTOCOL_PASS",
+  "transport": "MCP_STDIO_JSON_RPC",
+  "protocolVersion": "2025-06-18",
+  "discoveredTools": [
+    "resolve_entities",
+    "evaluate_candidates",
+    "compare_cultural_signals",
+    "propose_evidence_based_revision"
+  ],
+  "blockedSearch": "BLOCKED_BUDGET",
+  "operation": "propose_evidence_based_revision",
+  "arguments": {},
+  "output": {
+    "status": "ABSTAINED",
+    "before": [],
+    "after": [],
+    "why": "Complete verified Qloo coverage is required. No revised order is proposed.",
+    "sourceRequestId": null
+  },
+  "toolEvents": [
+    {
+      "tool": "propose_evidence_based_revision",
+      "timestamp": "2026-10-30T20:43:48.256Z",
+      "outcome": "COMPLETED",
+      "summary": "ABSTAINED",
+      "inputSummary": {},
+      "caller": "external-agent"
+    }
+  ],
+  "connectionBudget": {
+    "used": 0,
+    "maximum": 0,
+    "steps": 1
+  },
+  "stderrBytes": 0,
+  "liveQlooRequests": 0,
+  "limitation": "Protocol client test only; actual Codex model execution is separately recorded."
+}

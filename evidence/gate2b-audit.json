@@ -1,0 +1,10 @@
+{
+  "message": "request to https://registry.npmjs.org/-/npm/v1/security/advisories/bulk failed, reason: ",
+  "error": {
+    "summary": "",
+    "detail": ""
+  }
+}
+npm warn audit request to https://registry.npmjs.org/-/npm/v1/security/advisories/bulk failed, reason: 
+npm error audit endpoint returned an error
+npm error A complete log of this run can be found in: D:\hackathons\TasteProbe\.npm-cache\_logs\2026-10-30T15_10_53_743Z-debug-0.log

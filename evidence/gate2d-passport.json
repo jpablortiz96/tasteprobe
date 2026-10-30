@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-10-30T17:23:53.803Z",
+  "mode": "OFFLINE_SYNTHETIC_EXPORT_CHECK",
+  "liveQlooRequests": 0,
+  "browserDownloadClicked": false,
+  "checks": [
+    {
+      "scenario": "success",
+      "result": "PASS",
+      "recommendations": 8,
+      "limitationsPresent": true,
+      "syntheticNotLive": true
+    },
+    {
+      "scenario": "empty",
+      "result": "PASS",
+      "recommendations": 0,
+      "limitationsPresent": true,
+      "syntheticNotLive": true
+    },
+    {
+      "scenario": "error",
+      "result": "PASS",
+      "recommendations": null,
+      "limitationsPresent": true,
+      "syntheticNotLive": true
+    },
+    {
+      "scenario": "timeout",
+      "result": "PASS",
+      "recommendations": null,
+      "limitationsPresent": true,
+      "syntheticNotLive": true
+    }
+  ]
+}

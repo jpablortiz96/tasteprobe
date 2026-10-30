@@ -1,93 +1,71 @@
 # TasteProbe
 
-A movie shortlist auditor: prepare cultural interests, confirm film identities through Qloo, compare your original order with the returned order, and export a report with provenance and limitations.
+Discover new movies from films you love, or audit another AI's shortlist with verifiable cultural evidence.
 
-**GATE 2A.1: PASS for the bounded LIVE A/B control on 2026-10-30.** Three authorized attempts (one Search, two Insights) all returned HTTP 200. Keeping the three candidates and all other parameters identical, changing Arrival to Paddington 2 changed all three observed affinity values and swapped Her/Interstellar in the returned order. Explainability identifies each scenario's active signal. No public deployment or event eligibility is claimed; browser visual review remains pending.
+**Qloo provides discovery, ranking and observed affinity. TMDB provides optional artwork.** TasteProbe keeps identity confirmation, cultural evidence, visual metadata and human review separate. Affinity is never presented as a probability of satisfaction.
 
-The product is a deterministic tool operated by a human. It has no autonomous agent, agent framework or existing-agent integration. Mode (a), an agentic tool, is a candidate interpretation requiring confirmation; it is not established eligibility. See [the modality review](evidence/AGENTIC_REVIEW.md).
+## Two product modes
+
+- **Discover for me:** enter one to three favorite films, search and confirm their identities, discover new movies, inspect explanations and download an Evidence Passport.
+- **Audit another AI:** supply favorites and an original shortlist, confirm every identity, compare the actual Qloo order and observed affinities, then use Rescue My Recommendations to propose a verified reordering. Approve/Reject records a local human decision; it never overwrites the source evidence automatically.
+
+Missing, ambiguous or incomplete evidence produces abstention. Movies or scores are not invented. Historical/synthetic demonstrations are labeled and never substituted for a current LIVE response.
 
 ## Run locally
 
-Use Node **24.13+** (the tests import erasable TypeScript directly), npm and the checked-in lockfile. On Windows PowerShell, use `npm.cmd` if execution policy blocks `npm.ps1`.
+Use Node **24.13+** and npm. On Windows PowerShell use npm.cmd/codex.cmd if script execution policy blocks their .ps1 wrappers.
 
-```powershell
+~~~powershell
 npm.cmd ci
 npm.cmd test
 npm.cmd run typecheck
 npm.cmd run build
 npm.cmd start
-```
+~~~
 
-Open [the local workspace](http://127.0.0.1:3000). `npm.cmd run dev` is also available. Both bind to loopback only. No deployment was performed.
+Open http://127.0.0.1:3000. Both dev/start bind to loopback. Do not rebuild or restart during an active acceptance session: in-memory sessions and signed confirmations expire on restart.
 
-With no key, the app clearly shows **BLOCKED_LIVE**. You can edit interests and your original ordered list, load sample **inputs**, prepare the identity-confirmation step and export your work. No sample output or automatic mock mode exists. The original list is user supplied; TasteProbe does not claim to have generated it with an AI model.
+Configure ignored .env.local manually, never through chat or browser:
 
-For live use, copy `.env.example` to `.env.local` and set your own authorized event `QLOO_API_KEY` locally. Never paste a credential into the browser, chat, source, screenshot, or a command argument. Restart the server after changing environment variables. A configured key is shown as **CONFIGURED_NOT_VERIFIED** until actual calls establish evidence; health never contacts Qloo or certifies a credential.
+- QLOO_API_KEY: authorized Qloo event credential; official host https://hackathon.api.qloo.com.
+- TMDB_READ_ACCESS_TOKEN preferred; TMDB_API_KEY is a server-only fallback.
 
-The user reports that Qloo Support confirmed direct backend REST and the hackathon host. The live requests accepted the configured event credential at `https://hackathon.api.qloo.com`. See [the contract review](evidence/QLOO_CONTRACT.md) for the distinction between user-supplied support confirmation, official reference retrieval and actual live findings.
+Do not prefix credentials with NEXT_PUBLIC. Without Qloo access the UI shows BLOCKED_LIVE; missing TMDB credentials or ambiguous artwork retains the illustrative fallback. Restart after configuring credentials, before starting the acceptance flow. A configured server is not proof of LIVE access.
 
-## Product workflow
+## Connect an AI agent
 
-1. Enter 1–3 interest movies and 3–5 recommendations, one title per line in original order. Edit line order to change the baseline.
-2. Select each title and choose **Find matches in Qloo**. Check the actual title and year, then explicitly confirm the identity. No choice is accepted automatically, including a single result.
-3. Evaluate after all identities are confirmed. The server verifies signed identities, their expiration, uniqueness and movie domain before one Insights request for the same candidates.
-4. Compare original order with returned order. Full coverage allows rank-shift explanations; partial coverage displays **INSUFFICIENT_EVIDENCE** and abstains from proposing a revised ranking. Missing movies are never scored as zero.
-5. Export JSON from any step. Reports preserve inputs, actual evidence when available, request provenance and limitations. Identity authorization proofs and server credentials are excluded.
+TasteProbe has an actual local **MCP stdio** adapter and four tools: resolve_entities, evaluate_candidates, compare_cultural_signals, propose_evidence_based_revision. The default MCP Qloo allowance is **zero**. No additional LLM or agent framework is embedded in the app.
 
-The live response exposed numeric `query.affinity` per Insights entity; the captured returned order is descending by those actual values. The current product deliberately remains rank-only and exports `affinity: null`; score normalization, broader semantics and Qloo explainability are not enabled. Aggregate cultural relationships do not prove an individual's preferences, satisfaction, or future behavior.
+~~~powershell
+node scripts/verify-mcp-stdio.mjs
+node scripts/codex-mcp-demo.mjs
+~~~
 
-## Backend and safeguards
+The first command checks MCP protocol/tool execution, not model behavior. The second connects an actual authenticated Codex CLI session using ephemeral configuration and demonstrates model-selected, structured abstention without Qloo calls. An actual Codex session was verified; raw private reasoning is not recorded. See [Connect an AI agent](docs/CONNECT_AN_AI_AGENT.md) for exact prerequisites, evidence and limitations. The older stdin/HTTP bridge remains available; it is not misrepresented as MCP.
 
-| Route | Behavior |
-|---|---|
-| `GET /api/health` | Readiness only; no outbound request or credential values |
-| `POST /api/entities/search` | JSON `{ "query": "movie title" }`; 2–80 characters; up to 5 movie identities and signed confirmation proofs |
-| `POST /api/audit` | Arrays `interests` and `recommendations`, each item `{ id, proof, confirmed: true }`; only server-issued identities accepted |
+## Verification
 
-The server-only wrapper reads the credential. Transport pins `https://hackathon.api.qloo.com`, `/search` and `/v2/insights`, disables redirects and caching, uses an 8-second timeout and 512,000-byte response cap, and never retries automatically. Errors expose categories only. JSON input is limited to 8,192 bytes and 3 seconds; cross-origin browser submissions are refused.
-
-Quota is shared in a local process: **12 upstream attempts/minute, 60/process lifetime**. Failures count. Signed identities expire after 30 minutes and on restart. These conservative local controls are not a substitute for a shared quota and stable proof key before any multi-instance deployment.
-
-## Verification and evidence
-
-```powershell
+~~~powershell
 npm.cmd test
 npm.cmd run typecheck
 npm.cmd run build
+npm.cmd run test:integration
 npm.cmd audit
-npm.cmd run test:integration        # compiled Next HTTP routes, isolated MOCK provider, zero live Qloo calls
-# With the compiled local server running WITHOUT a key:
-npm.cmd run verify:local
-node scripts/verify-secrets.mjs
-```
+node --env-file=.env.local scripts/verify-secrets.mjs gate2h2
+~~~
 
-Tests use fictional **MOCK** transports only in `tests/`. The local route verifier exercises the real Next.js build, confirms abstention without a key, rejects forged identities and cross-origin/oversized requests, and scans client bundles for server transport and credential markers. This does not replace browser QA or live Qloo verification.
+Current checks preserve the original suites: **105 tests, six isolated MOCK HTTP E2E**, typecheck/build and audit pass. Gate 2H.2 built a source-only snapshot without touching the operator's active Next build. Tests do not substitute for real-browser acceptance; [EVIDENCE.md](EVIDENCE.md) and [GATE 2H.2 review](evidence/GATE2H2_REVIEW.md) distinguish operator observations, downloaded LIVE exports, protocol tests and actual Codex client events.
 
-The integration suite starts a separate loopback Next.js process with a test-only preload. It intercepts provider `fetch` calls and supplies fictional identities; no production mock switch is added. It verifies ambiguous choices, explicit confirmation, complete/partial comparisons, report serialization and safe errors. Its artifact is labeled `MOCK_INTEGRATION_TEST_ONLY`; no mock response/report is saved as live evidence. The browser download click and the rendered success/loading/partial views remain untested until browser access returns.
+[TMDB integration](docs/TMDB_INTEGRATION.md) documents identity matching, actual provider checks and required attribution. Arrival (2016) currently retains fallback because TMDB has two same-title/year/original-title movies and no trusted Qloo external-ID binding is available. No poster is chosen by popularity or a guessed URL.
 
-Search's documented HTTP 404 is normalized to empty choices while preserving HTTP 404 provenance. Insights 404 remains an error. Browser connectivity errors now use bounded requests, safe messages and a retry for readiness. The textarea placeholder color meets 4.5:1 against its authored background; this is a static check, not a full accessibility audit.
+For no-API UI review, set TASTEPROBE_VISUAL_REVIEW=synthetic and run dev on a separate loopback port, then open /review. It remains disabled in production. Cultural values stay SYNTHETIC / NOT LIVE; an optional dated artwork sample may load from TMDB CDN. The operator's real-browser and download checks remain the acceptance criterion.
 
-[EVIDENCE.md](EVIDENCE.md) records current results and blockers; [GATE0_HISTORY.md](evidence/GATE0_HISTORY.md) preserves the earlier evidence. The bounded manual G0 probe remains available as `npm.cmd run smoke:qloo`, with explicit documentation-review and execution flags. A single HTTP success does not pass its falsifier.
+## Security and evidence boundaries
 
-## GATE 2A recovery and reproduction
+- Qloo transport is server-only, fixed host/endpoints, eight-second timeout, bounded response, no redirects or automatic retries. Signed movie identities require human confirmation. Browser requests use relative same-origin paths with strict origin/port validation.
+- Local Qloo cap: 12 attempts/minute and 60/process, including failures. Tool sessions: 12 conservative reservations, 16 steps, 20 minutes. Identity proofs expire after 30 minutes or restart. MCP additionally enforces its own explicit allowance before dispatch.
+- TMDB is independently bounded/cache-backed and cannot change Qloo ranking or affinity. Credentials and raw provider headers are not returned to the browser or Passport.
+- Reports preserve source, request reference, retrieval date, candidate coverage, observed scores, limitations and actual tool events. They exclude authorization proofs and private model reasoning.
+- Operator LIVE budgets are explicit and independent of technical caps. Do not replay historical smoke scripts or A/B experiments without fresh authorization.
 
-`BLOCKED_DOCUMENTATION` is produced by the smoke script when `--reference-reviewed` is missing. After reviewing the references, its explicit invocation is:
-
-```powershell
-npm.cmd run smoke:qloo -- --reference-reviewed --execute --request-file experiments/search.request.json
-```
-
-That command consumes a real request and still exits 2 after HTTP success, because the probe requires manual review. **Do not rerun it as part of the completed initial experiment**: six remote HTTP responses were captured, alongside four no-response network attempts. No API key value is printed or stored in the artifacts.
-
-The live session used `node --env-file=.env.local scripts/gate2a-session.mjs`. It runs the existing compiled Next server and the HTTP client in one execution; no mock provider or alternate backend is introduced. It selects only the exact user-confirmed title/year matches and uses normal server-signed identity proofs. `gate2a-observe.mjs` forwards actual native fetch requests and records a bounded, redacted response structure. Separate persistent test processes encountered DNS failures; the one-shot authorized session succeeded. The completed-session guard now refuses replay, preserving the budget and evidence.
-
-You can reproduce the evidence checks **offline, without another Qloo request**, with:
-
-```powershell
-node scripts/verify-gate2a.mjs
-node --env-file=.env.local scripts/verify-secrets.mjs gate2a
-```
-
-The original Gate 2A captured one Insights response. Its missing control is now addressed by [the Gate 2A.1 A/B capture](evidence/gate2a1-ab.json): one new signal lookup and two comparable Insights requests, including explainability in both. It is a bounded consistency test, not statistical replication or proof of personal satisfaction. No further gate is started automatically.
-
-Verify the A/B report offline with `node scripts/verify-gate2a1.mjs`. The LIVE runner refuses replay once its artifact exists, counts each attempt before fetch, and stops on errors; the three-attempt budget is exhausted. Do not rerun `scripts/gate2a1-ab.mjs` or clear its ledger without a new explicit budget.
+No public deployment, remote repository or push is performed by these gates. Before publication, complete final browser acceptance, choose an appropriate source-code license, review provider attribution/rights, and address shared public quotas and stable proof/session state for multiple instances. Historical gates, failed probes and offline evidence verifiers remain in [EVIDENCE.md](EVIDENCE.md) and the evidence directory.

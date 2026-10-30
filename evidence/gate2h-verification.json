@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-10-30T20:00:34.167Z",
+  "status": "AT_RISK",
+  "tests": {
+    "unit": 101,
+    "passed": 101,
+    "retainedPrevious": 96
+  },
+  "httpE2E": {
+    "passed": 6,
+    "mode": "MOCK_ONLY"
+  },
+  "typecheck": "PASS",
+  "build": "PASS",
+  "auditVulnerabilities": 0,
+  "clientFilesScanned": 28,
+  "credentialFindings": 0,
+  "localServer": [
+    {
+      "path": "/api/health",
+      "httpStatus": 200
+    },
+    {
+      "path": "/api/tools",
+      "httpStatus": 200
+    },
+    {
+      "path": "/review",
+      "httpStatus": 404
+    }
+  ],
+  "liveQlooRequests": 0,
+  "liveTmdbRequests": 0,
+  "budget": "UNRECONCILED_OPERATOR_ADDITIONAL_COUNT_UNKNOWN",
+  "auditBrowser": "LIVE_ACCEPTANCE_PENDING",
+  "visualQA": "VISUAL_OPERATOR_REQUIRED",
+  "agent": "Real Codex-directed zero-Qloo bridge invocation: ABSTAINED; no hosted autonomy claimed",
+  "screenshots": "NONE_SUPPLIED_OR_CAPTURED"
+}

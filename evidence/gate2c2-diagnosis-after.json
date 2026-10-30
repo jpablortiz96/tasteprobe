@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-30T17:00:57.173Z",
+  "liveQlooRequests": 0,
+  "observations": [
+    {
+      "port": 3000,
+      "health": "CONFIGURED_NOT_VERIFIED",
+      "httpStatus": 400,
+      "error": "INVALID_INPUT",
+      "probe": "EMPTY_INTERESTS_NO_QLOO"
+    },
+    {
+      "port": 3001,
+      "probe": "UNAVAILABLE_LOCAL_PROCESS"
+    }
+  ]
+}

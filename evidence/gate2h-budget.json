@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-10-30T19:59:37.340Z",
+  "gate": "2H",
+  "lastRecordedGate": "2E.1",
+  "lastAuthorizedMaximum": 7,
+  "lastRecordedAttempts": 2,
+  "laterOperatorAttempts": "UNKNOWN_OPERATOR_CONFIRMED",
+  "remainingAuthorizedAttempts": "UNRECONCILED_DO_NOT_USE",
+  "liveQlooRequestsThisGate": 0,
+  "liveTmdbRequestsThisGate": 0,
+  "status": "LIVE_ACCEPTANCE_PENDING",
+  "proposedFreshAuditMaximum": 5,
+  "distribution": {
+    "resolveEntities": 4,
+    "evaluateCandidates": 1,
+    "rescueProposal": 0,
+    "approveRejectExport": 0
+  },
+  "continuationRequires": "Explicit fresh approval; stop on authentication/quota/transport/contract failure; no automatic retries"
+}

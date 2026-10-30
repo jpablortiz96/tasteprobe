@@ -1,0 +1,121 @@
+{
+  "mode": "MOCK_HTTP_TEST_ONLY",
+  "timestamp": "2026-10-30T20:47:17.734Z",
+  "liveQlooRequests": 0,
+  "hostedLLMCalls": 0,
+  "autonomousAgent": false,
+  "toolsExecuted": [
+    "resolve_entities",
+    "resolve_entities",
+    "resolve_entities",
+    "resolve_entities",
+    "resolve_entities",
+    "evaluate_candidates",
+    "compare_cultural_signals",
+    "propose_evidence_based_revision"
+  ],
+  "checks": [
+    "tool discovery",
+    "local stdin bridge",
+    "ambiguous choices require caller confirmation",
+    "signed identity evaluation",
+    "two controlled Insights",
+    "server-held evidence revision",
+    "passport without proofs",
+    "auth stops session",
+    "partial A stops B and proposal abstains",
+    "no model autonomy claimed"
+  ],
+  "observations": [
+    {
+      "action": "create",
+      "tool": null,
+      "httpStatus": 200
+    },
+    {
+      "action": "invoke",
+      "tool": "resolve_entities",
+      "httpStatus": 200
+    },
+    {
+      "action": "invoke",
+      "tool": "resolve_entities",
+      "httpStatus": 200
+    },
+    {
+      "action": "invoke",
+      "tool": "resolve_entities",
+      "httpStatus": 200
+    },
+    {
+      "action": "invoke",
+      "tool": "resolve_entities",
+      "httpStatus": 200
+    },
+    {
+      "action": "invoke",
+      "tool": "resolve_entities",
+      "httpStatus": 200
+    },
+    {
+      "action": "invoke",
+      "tool": "evaluate_candidates",
+      "httpStatus": 200
+    },
+    {
+      "action": "invoke",
+      "tool": "compare_cultural_signals",
+      "httpStatus": 200
+    },
+    {
+      "action": "invoke",
+      "tool": "propose_evidence_based_revision",
+      "httpStatus": 200
+    },
+    {
+      "action": "passport",
+      "tool": null,
+      "httpStatus": 200
+    },
+    {
+      "action": "create",
+      "tool": null,
+      "httpStatus": 200
+    },
+    {
+      "action": "invoke",
+      "tool": "resolve_entities",
+      "httpStatus": 502
+    },
+    {
+      "action": "invoke",
+      "tool": "propose_evidence_based_revision",
+      "httpStatus": 429
+    },
+    {
+      "action": "passport",
+      "tool": null,
+      "httpStatus": 200
+    },
+    {
+      "action": "create",
+      "tool": null,
+      "httpStatus": 200
+    },
+    {
+      "action": "invoke",
+      "tool": "resolve_entities",
+      "httpStatus": 200
+    },
+    {
+      "action": "invoke",
+      "tool": "compare_cultural_signals",
+      "httpStatus": 200
+    },
+    {
+      "action": "invoke",
+      "tool": "propose_evidence_based_revision",
+      "httpStatus": 200
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-10-30T15:19:47.696Z",
+  "results": [
+    {
+      "name": "tests",
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "exitCode": 0
+    },
+    {
+      "name": "build",
+      "exitCode": 0
+    },
+    {
+      "name": "integration",
+      "exitCode": 0
+    },
+    {
+      "name": "audit",
+      "exitCode": 0,
+      "source": "Previously completed external npm audit command; see gate2b-audit-pass.json. No audit network call in this run."
+    }
+  ],
+  "clientFilesScanned": 24,
+  "configuredKeyPresent": true,
+  "credentialFoundInClient": false,
+  "liveQlooRequests": 0,
+  "hostedLLMCalls": 0,
+  "browserVisualQA": "VISUAL_REVIEW_BLOCKED: browser access host unavailable",
+  "limitation": "MOCK tool callers verify dispatch and HTTP integration, not autonomous LLM decisions."
+}

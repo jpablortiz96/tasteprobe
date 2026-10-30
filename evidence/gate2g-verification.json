@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-10-30T19:33:06.108Z",
+  "status": "AT_RISK",
+  "results": [
+    {
+      "name": "tests",
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "exitCode": 0
+    },
+    {
+      "name": "build",
+      "exitCode": 0
+    },
+    {
+      "name": "integration",
+      "exitCode": 0
+    },
+    {
+      "name": "audit",
+      "vulnerabilities": 0,
+      "source": "Separate npm audit command, gate2g-audit-pass.json"
+    }
+  ],
+  "clientFilesScanned": 28,
+  "clientCredentialFindings": 0,
+  "liveQlooRequests": 0,
+  "imageProvider": {
+    "qloo": "BLOCKED_RIGHTS",
+    "tmdb": "IMAGE_PROVIDER_READY",
+    "active": "OPTIONAL_TMDB_WITH_FALLBACK"
+  },
+  "tmdbApiRequests": 7,
+  "posterCdnChecks": 1,
+  "browser": "VISUAL_OPERATOR_REQUIRED",
+  "baseline": "Operator reports Discover Chrome LIVE success in GATE 2F prompt; not re-tested LIVE by Codex",
+  "limitations": [
+    "TMDB metadata and CDN verified; actual browser image rendering remains pending",
+    "No browser host access; desktop/mobile acceptance and screenshots pending",
+    "Server-render tests and MOCK HTTP E2E do not establish LIVE browser acceptance"
+  ],
+  "realLocalVisualHttp": "PASS: POST /api/visuals with live TMDB; Qloo disabled"
+}

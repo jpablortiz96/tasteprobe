@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-10-30T18:01:50.672Z",
+  "serverMode": "production local loopback only",
+  "loadedEnvFile": true,
+  "keyPresent": true,
+  "officialHost": true,
+  "upstreamHttpRequests": 0,
+  "observations": [
+    {
+      "path": "/api/health",
+      "status": 200,
+      "body": {
+        "status": "CONFIGURED_NOT_VERIFIED",
+        "liveVerified": false
+      }
+    },
+    {
+      "path": "/review",
+      "status": 404
+    },
+    {
+      "path": "/api/entities/search",
+      "status": 403
+    }
+  ]
+}

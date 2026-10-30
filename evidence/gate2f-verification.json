@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-10-30T18:21:10.957Z",
+  "status": "AT_RISK",
+  "results": [
+    {
+      "name": "tests",
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "exitCode": 0
+    },
+    {
+      "name": "build",
+      "exitCode": 0
+    },
+    {
+      "name": "integration",
+      "exitCode": 0
+    },
+    {
+      "name": "audit",
+      "vulnerabilities": 0,
+      "source": "Separate npm audit command, gate2f-audit-pass.json"
+    }
+  ],
+  "clientFilesScanned": 27,
+  "clientCredentialFindings": 0,
+  "liveQlooRequests": 0,
+  "imageProvider": {
+    "qloo": "BLOCKED_RIGHTS",
+    "tmdb": "BLOCKED_CREDENTIAL",
+    "active": "ORIGINAL_ILLUSTRATIONS"
+  },
+  "browser": "VISUAL_OPERATOR_REQUIRED",
+  "baseline": "Operator reports Discover Chrome LIVE success in GATE 2F prompt; not re-tested LIVE by Codex",
+  "limitations": [
+    "No authorized real posters displayed",
+    "No browser host access; desktop/mobile acceptance and screenshots pending",
+    "Server-render tests and MOCK HTTP E2E do not establish LIVE browser acceptance"
+  ]
+}

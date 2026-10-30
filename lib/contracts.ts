@@ -1,7 +1,9 @@
 export type Entity = { id: string; name: string; year: number | null; type: 'urn:entity:movie'; proof: string };
 export type Selection = { id: string; proof: string; confirmed: true };
-export type Provenance = { source: 'Qloo REST'; host: string; endpoint: string; timestamp: string; parameters: Record<string, string>; requestId: string; httpStatus: number };
+export type Provenance = { source: 'Qloo REST' | 'SYNTHETIC fixture'; host: string; endpoint: string; timestamp: string; parameters: Record<string, string>; requestId: string; httpStatus: number };
 export type SearchResult = { entities: Entity[]; provenance: Provenance };
-export type Comparison = { id: string; name: string; year: number | null; originalRank: number; qlooRank: number | null; shift: number | null; affinity: null };
-export type AuditResult = { status: 'SUCCESS' | 'INSUFFICIENT_EVIDENCE'; rows: Comparison[]; coverage: { returned: number; total: number }; provenance: Provenance; identities: { id: string; name: string; year: number | null; searchedAt: string }[]; limitations: string[] };
+export type Comparison = { id: string; name: string; year: number | null; originalRank: number; qlooRank: number | null; shift: number | null; affinity: number | null };
+export type AuditResult = { status: 'SUCCESS' | 'INSUFFICIENT_EVIDENCE'; rows: Comparison[]; coverage: { returned: number; total: number }; provenance: Provenance; identities: { id: string; name: string; year: number | null; searchedAt: string }[]; limitations: string[]; queryEvidence?: { explainability: unknown; warnings: unknown; entities: { id: string; explainability: unknown; warnings: unknown }[] } };
 export type Health = { status: 'BLOCKED_LIVE' | 'CONFIGURED_NOT_VERIFIED'; liveVerified: false };
+export type DiscoveredMovie = Omit<Entity, 'proof'> & { rank: number; affinity: number | null; explainability: unknown };
+export type DiscoveryResult = { mode: 'DISCOVER'; status: 'SUCCESS' | 'INSUFFICIENT_EVIDENCE'; movies: DiscoveredMovie[]; favorites: { id: string; name: string; year: number | null; searchedAt: string }[]; provenance: Provenance; requested: 8; returned: number; discarded: number; warnings: unknown; explainability: unknown; limitations: string[] };

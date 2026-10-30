@@ -1,0 +1,11 @@
+﻿✔ regression: development cache replaces a pre-Discover service after factory reload (1.2678ms)
+✔ same factory preserves service identity, signing state and request budgets across requests (0.4016ms)
+✔ factory replacement refreshes dependent tool sessions instead of retaining obsolete service closure (0.1775ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 143.4031

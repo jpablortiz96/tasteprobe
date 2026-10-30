@@ -1,0 +1,210 @@
+{
+  "gate": "2H.2",
+  "timestamp": "2026-10-30T20:45:20.846Z",
+  "previousArrival": {
+    "humanConfirmed": true,
+    "year": 2016,
+    "attemptCount": "UNKNOWN_OPERATOR_CONFIRMED",
+    "httpStatus": null,
+    "requestId": null
+  },
+  "freshOperatorAuthorization": {
+    "maximum": 4,
+    "scope": "CHROME_ONLY",
+    "searchMaximum": 3,
+    "insightsMaximum": 1,
+    "failuresCount": true,
+    "automaticRetries": false
+  },
+  "codexQlooRequests": 0,
+  "confirmedNewOperatorAttempts": null,
+  "operatorExecution": "REPORTED_SESSION_HAS_5_COSTED_OPERATIONS",
+  "stopOn": [
+    "NETWORK",
+    "AUTH",
+    "RATE_LIMIT",
+    "UNEXPECTED_CONTRACT",
+    "SESSION_EXPIRED"
+  ],
+  "acceptance": {
+    "Search": "PASS_OPERATOR_OBSERVED",
+    "fourIdentities": "PASS_OPERATOR_REPORTED_AFTER_HER_2013_CORRECTION",
+    "auditLive": "PASS_OPERATOR_OBSERVED_CORRECT_CASE_3_OF_3",
+    "ranking": "PASS_OPERATOR_OBSERVED_2_TO_1_1_TO_2_3_UNCHANGED",
+    "rescue": "PASS_PROPOSED_ORDER_VALIDATED_FROM_APPROVED_EXPORT",
+    "approveReject": {
+      "approve": "PASS_VALIDATED_EXPORT",
+      "reject": "PENDING_CORRECT_TAB_NO_LONGER_AVAILABLE_OPERATOR_CONFIRMED"
+    },
+    "passport": "PASS_APPROVED_DOWNLOADED_AND_VALIDATED",
+    "desktopMobile": "PASS_OPERATOR_CONFIRMED_BOTH_VIEWPORTS"
+  },
+  "remainingBeforeUnreportedOperatorActions": null,
+  "warning": "No confirmed action count after fresh authorization yet; do not interpret this as a traffic counter.",
+  "operatorSessionReport": {
+    "source": "OPERATOR_CHROME_PASTED_UI",
+    "searchEvents": [
+      {
+        "query": "Arrival",
+        "timestamp": "2026-10-30T20:46:34.030Z",
+        "matches": 2
+      },
+      {
+        "query": "Interstellar",
+        "timestamp": "2026-10-30T20:46:48.568Z",
+        "matches": 1
+      },
+      {
+        "query": "Blade Runner 2049",
+        "timestamp": "2026-10-30T20:46:54.350Z",
+        "matches": 1
+      },
+      {
+        "query": "Her",
+        "timestamp": "2026-10-30T20:47:00.176Z",
+        "matches": 2
+      }
+    ],
+    "evaluation": {
+      "timestamp": "2026-10-30T20:47:08.276Z",
+      "upstreamHttpStatus": 200,
+      "localHttpStatus": null,
+      "requestId": "4f2f8e91-6032-4124-ad3a-c15e2c48d5f9",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "coverage": {
+        "returned": 2,
+        "total": 3
+      },
+      "original": [
+        {
+          "name": "Interstellar",
+          "year": 2014
+        },
+        {
+          "name": "Blade Runner 2049",
+          "year": 2017
+        },
+        {
+          "name": "Her",
+          "year": 2024
+        }
+      ],
+      "returned": [
+        {
+          "name": "Blade Runner 2049",
+          "rank": 1,
+          "displayedAffinity": 0.9133
+        },
+        {
+          "name": "Interstellar",
+          "rank": 2,
+          "displayedAffinity": 0.8368
+        }
+      ],
+      "affinityPrecision": "Rounded UI values only; full exported values not received"
+    },
+    "rescue": {
+      "timestamp": "2026-10-30T20:47:37.593Z",
+      "status": "ABSTAINED"
+    },
+    "qlooReservations": 5
+  },
+  "budgetReconciliation": "At least 15 costed Qloo operations are now observable across three distinct operator sessions, versus 10 attempts explicitly authorized in the discussed budgets. Earlier Arrival attempts remain unknown. No further Qloo requests or remaining allowance are assumed. Codex Qloo calls remain zero.",
+  "stop": true,
+  "correction": {
+    "source": "OPERATOR_CONFIRMED",
+    "name": "Her",
+    "year": 2013,
+    "method": "SELECTED_EXISTING_SEARCH_MATCH",
+    "additionalSearchRequests": 0
+  },
+  "additionalAuthorization": {
+    "maximum": 1,
+    "operation": "Insights ONLY",
+    "operatorApproved": true,
+    "status": "CORRECTED_CASE_RESULT_REPORTED_WITH_NEW_SEARCH_SESSION",
+    "automaticRetries": false
+  },
+  "correctedCaseOperatorReport": {
+    "source": "OPERATOR_CHROME_PASTED_UI",
+    "counter": "4/4",
+    "status": "SUCCESS",
+    "coverage": {
+      "returned": 3,
+      "total": 3
+    },
+    "signal": {
+      "name": "Arrival",
+      "year": 2016
+    },
+    "original": [
+      {
+        "name": "Interstellar",
+        "year": 2014
+      },
+      {
+        "name": "Blade Runner 2049",
+        "year": 2017
+      },
+      {
+        "name": "Her",
+        "year": 2013
+      }
+    ],
+    "returned": [
+      {
+        "name": "Blade Runner 2049",
+        "rank": 1,
+        "displayedAffinity": 0.9133,
+        "shift": 1
+      },
+      {
+        "name": "Interstellar",
+        "rank": 2,
+        "displayedAffinity": 0.8368,
+        "shift": -1
+      },
+      {
+        "name": "Her",
+        "rank": 3,
+        "displayedAffinity": 0.8014,
+        "shift": 0
+      }
+    ],
+    "evaluationTimestamp": "2026-10-30T21:06:24.250Z",
+    "upstreamHttpStatus": 200,
+    "requestId": "e824d996-c7ce-4968-bd2b-337f83edad4b",
+    "toolSessionQlooReservations": 5,
+    "searchEventTimes": [
+      "2026-10-30T21:05:43.194Z",
+      "2026-10-30T21:05:50.179Z",
+      "2026-10-30T21:06:06.229Z",
+      "2026-10-30T21:06:10.505Z"
+    ],
+    "affinityPrecision": "Rounded UI values; exact exported values pending",
+    "exportValidated": true
+  },
+  "observedCostedOperationsAcrossTwoReportedSessions": 10,
+  "additionalUnmatchedExport": {
+    "file": "tasteprobe-evidence-passport (1).json",
+    "requestId": "22475f10-c29b-4072-a65d-f47847faaa74",
+    "retrievedAt": "2026-10-30T22:19:28.339Z",
+    "status": "INSUFFICIENT_EVIDENCE",
+    "herYear": 2024,
+    "decision": "PENDING",
+    "proposal": "ABSTAINED",
+    "sessionCostedOperations": 5,
+    "notARejectionOfApprovedCase": true
+  },
+  "observedCostedOperationsAcrossThreeReportedSessions": 15,
+  "authorizedMaximaDiscussed": [
+    5,
+    4,
+    1
+  ],
+  "aggregateDiscussedMaximum": 10,
+  "operatorCorrectTabAvailable": false,
+  "gateStatus": "AT_RISK",
+  "remainingAuthorizedQlooRequests": 0,
+  "nextQlooAction": "NONE: no new authorization requested or assumed"
+}

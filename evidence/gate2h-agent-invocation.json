@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-10-30T19:54:31.139Z",
+  "caller": "Codex via scripts/agent-tool.mjs",
+  "mode": "REAL_LOCAL_TOOL_INVOCATION_NO_PROVIDER_CALL",
+  "tool": "propose_evidence_based_revision",
+  "arguments": {},
+  "session": "REDACTED",
+  "output": {
+    "status": "ABSTAINED",
+    "before": [],
+    "after": [],
+    "why": "Complete verified Qloo coverage is required. No revised order is proposed.",
+    "sourceRequestId": null
+  },
+  "events": [
+    {
+      "tool": "propose_evidence_based_revision",
+      "timestamp": "2026-10-30T19:54:31.115Z",
+      "outcome": "COMPLETED",
+      "summary": "ABSTAINED",
+      "inputSummary": {},
+      "caller": "external-agent"
+    }
+  ],
+  "budget": {
+    "used": 0,
+    "maximum": 12,
+    "steps": 1,
+    "maximumSteps": 16
+  },
+  "agentUse": "Retain abstention; no revised ranking is proposed and no Search or Insights is invoked while LIVE budget is unknown.",
+  "autonomousLLM": false,
+  "hostedModelCalls": 0,
+  "liveQlooRequests": 0,
+  "toolInterface": "TOOL_INTERFACE_PASS",
+  "limitation": "Actual Codex-directed bridge invocation demonstrates missing-evidence handling, not autonomous LLM planning or a complete LIVE agent audit."
+}

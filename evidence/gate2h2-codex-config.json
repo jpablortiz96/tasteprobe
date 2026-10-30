@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-30T20:43:48.716Z",
+  "cli": "codex-cli 0.165.0",
+  "command": "codex -c <ephemeral tasteprobe configuration> mcp get tasteprobe --json",
+  "accepted": true,
+  "name": "tasteprobe",
+  "enabled": true,
+  "transport": "stdio",
+  "globalConfigurationModified": false,
+  "credentialsConfiguredInMcp": false
+}

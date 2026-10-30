@@ -1,5 +1,21 @@
 # Qloo REST contract review
 
+## Gate 2C.1 Discover contract — LIVE verified 2026-10-30
+
+Discovery is separate from candidate auditing. Official [parameter reference](https://github.com/qloo/docs-public/blob/main/reference/parameters.md) and [Movie parameter table](https://github.com/qloo/docs-public/blob/main/reference/available-parameters-by-entity-type.md#movie) document `filter.exclude.entities` for movies and movie interest signals. The [Insights deep dive](https://github.com/qloo/docs-public/blob/main/reference/insights-api-deep-dive.md) documents take 1–50 and global explainability (already operationally verified for Movie in Gate 2A.1). Only the new discovery contract was reviewed; prior Search/audit research was retained.
+
+Verified exact request: `GET /v2/insights`, `filter.type=urn:entity:movie`, `signal.interests.entities=<confirmed Arrival UUID>`, `filter.exclude.entities=<same UUID>`, `take=8`, `feature.explainability=true`. **No `filter.results.entities`**. This explores new recommendations; the audit route continues to constrain its known candidates.
+
+Exactly **4/4 new attempts** were made, all HTTP 200: Search/Discover through the service, then Search/Discover through actual Next HTTP with matching browser Origin. No retries. Two independently returned lists matched order and raw affinities. Both returned 8 valid movie identities, excluding Arrival and duplicates, with numeric query.affinity and per-movie explainability. [Redacted service capture](gate2c1-live.json), [HTTP capture](gate2c1-http-live.json), [offline integrity verifier](gate2c1-live-verification.json). These observations do not imply personal satisfaction or causality. No new LIVE Audit query was made in this budget.
+
+Invalid, wrong-type, duplicate and input-matching rows are excluded; fewer valid results remain fewer, without invented replacements. Nonnumeric affinity is never coerced. New identities come exclusively from Qloo; no genres, plots, image URLs or scores are generated. Why this movie names only confirmed signal IDs with valid observed positive attribution scores; otherwise it abstains from specific attribution.
+
+Image presence: all 8 real rows included `properties.image`, consistent with the deep dive's documented image property. [Qloo terms](https://www.qloo.com/legal/terms) do not establish the specific third-party poster permissions needed here; display authorization remains unverified. Images are intentionally omitted from the public normalized contract/UI and replaced by labeled CSS graphics. The absence of licensed imagery does not block recommendations.
+
+## Gate 2B adapter use, 2026-10-30
+
+No Qloo reference investigation was repeated and no new LIVE request was sent. The agent-invocable tools use the verified movie Search/Insights contract below. The optional evidence-enabled audit path sends `feature.explainability=true`, preserves only finite observed numeric `query.affinity`, keeps missing values null and exports upstream explainability/warnings. The legacy `/api/audit` remains rank-only. Two-signal comparison generates identical parameters except `signal.interests.entities` and retains the exact candidate IDs/order. Partial A prevents B; missing/unchanged evidence is inconclusive. All four new tools were exercised through actual local HTTP with explicitly MOCK provider responses; no autonomous LLM tool choice is claimed. See [Gate 2B evidence](../EVIDENCE.md) and [tool documentation](../docs/AGENT_TOOLS.md).
+
 ## Latest result — GATE 2A.1, 2026-10-30: PASS
 
 The independent bounded A/B control is now captured in [gate2a1-ab.json](gate2a1-ab.json), with [offline verification](gate2a1-verification.json). This supersedes the previous gate's pending signal-control finding for this specific movie case; it does not certify unrelated release gates.

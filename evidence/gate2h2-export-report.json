@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-10-30T21:02:42.459Z",
+  "file": "tasteprobe-report.json",
+  "status": "VALID_PARTIAL_OR_DIFFERENT_CASE_NOT_ACCEPTANCE",
+  "source": "Qloo REST",
+  "upstreamHttpStatus": 200,
+  "requestId": "4f2f8e91-6032-4124-ad3a-c15e2c48d5f9",
+  "retrievedAt": "2026-10-30T20:47:08.276Z",
+  "intendedCase": false,
+  "arrivalConfirmed": true,
+  "candidateIdsConsistent": true,
+  "coverage": {
+    "returned": 2,
+    "total": 3
+  },
+  "rows": [
+    {
+      "name": "Interstellar",
+      "year": 2014,
+      "originalRank": 1,
+      "qlooRank": 2,
+      "shift": null,
+      "affinity": 0.8368126484416831
+    },
+    {
+      "name": "Blade Runner 2049",
+      "year": 2017,
+      "originalRank": 2,
+      "qlooRank": 1,
+      "shift": null,
+      "affinity": 0.9132748362394222
+    },
+    {
+      "name": "Her",
+      "year": 2024,
+      "originalRank": 3,
+      "qlooRank": null,
+      "shift": null,
+      "affinity": null
+    }
+  ],
+  "proposalStatus": null,
+  "proposalConsistent": true,
+  "decision": null,
+  "credentialFound": false,
+  "proofFound": false,
+  "limitation": "File inspection checks internal consistency, not independent provider attestation or desktop/mobile visual acceptance. Partial/different-case evidence does not close target-case acceptance."
+}

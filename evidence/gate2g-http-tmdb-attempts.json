@@ -1,0 +1,17 @@
+{
+  "attempts": [
+    {
+      "index": 1,
+      "endpoint": "/3/configuration",
+      "httpStatus": 200,
+      "error": null
+    },
+    {
+      "index": 2,
+      "endpoint": "/3/search/movie",
+      "httpStatus": 200,
+      "error": null
+    }
+  ],
+  "liveQlooRequests": 0
+}

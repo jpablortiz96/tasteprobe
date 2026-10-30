@@ -1,0 +1,52 @@
+{
+  "gate": "2H.1",
+  "timestamp": "2026-10-30T20:19:45.582Z",
+  "authorizedMaximum": 5,
+  "limits": {
+    "search": 4,
+    "insights": 1
+  },
+  "confirmedConsumed": null,
+  "pendingOperatorAttempt": null,
+  "availableUnreserved": null,
+  "status": "OPERATOR_ARRIVAL_CONFIRMED_ATTEMPT_COUNT_UNKNOWN",
+  "stopOn": [
+    "NETWORK",
+    "AUTH",
+    "RATE_LIMIT",
+    "UNEXPECTED_CONTRACT"
+  ],
+  "automaticRetries": false,
+  "attempts": [
+    {
+      "index": 1,
+      "operation": "Search Arrival",
+      "status": "OPERATOR_CONFIRMED_SUCCESS_COUNT_UNKNOWN",
+      "localHttpStatus": null,
+      "upstreamHttpStatus": null,
+      "requestId": null,
+      "result": {
+        "name": "Arrival",
+        "year": 2016,
+        "humanConfirmed": true,
+        "visual": "ILLUSTRATIVE_FALLBACK",
+        "counter": "1/4",
+        "source": "OPERATOR_REPORT_GATE2H2"
+      },
+      "remainingAfterIfConsumed": 4
+    }
+  ],
+  "acceptance": {
+    "Search": "PENDING",
+    "Identity confirmation": "PENDING: 1/4 confirmed",
+    "Audit LIVE": "PENDING",
+    "Before/After": "PENDING",
+    "Rescue": "PENDING",
+    "Approve": "PENDING",
+    "Reject": "PENDING",
+    "Passport downloaded": "PENDING",
+    "Desktop": "PENDING",
+    "Mobile": "PENDING"
+  },
+  "note": "Operator cannot confirm the number of Search attempts; old remaining authorization is not assumed."
+}

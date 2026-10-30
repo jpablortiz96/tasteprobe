@@ -1,4 +1,16 @@
-# Agentic modality review — GATE 1B
+# Agentic modality review — GATE 2B
+
+Current status, **2026-10-30: AT_RISK**. The [official rules](https://qloo.devpost.com/rules) were rechecked for modality only; the prior Qloo transport research was not repeated. They permit a working application functioning as an agentic tool, built with an agent framework, or integrating Qloo into an existing agent.
+
+TasteProbe now targets **tool modality (a)** with an executable interface, not definitions alone: `/api/tools` dispatches resolve_entities, evaluate_candidates, compare_cultural_signals and propose_evidence_based_revision. GET publishes argument schemas; POST invokes server operations with budgets, signed confirmations, timeouts and abstention. The local stdin bridge works against the production server. Isolated HTTP tests actually invoke all four tools, compare signals, export evidence, and verify error/partial abstention. Their caller is a scripted test client, not a model.
+
+Provider presence checks found no configured OpenAI/Anthropic/Google/Gemini/Azure OpenAI credential. There is no hosted LLM, autonomous planner, agent framework or demonstrated autonomous model selection. Human UI chooses its tools; an external agent may choose calls using the documented interface. Decision events record tool executions and summarized inputs/results only, never private model reasoning. These facts support agent-tool positioning; they do not certify organizer acceptance or autonomous behavior.
+
+Qloo supplies identities and cultural evidence; without verified Qloo evaluation the revision tool abstains. The existing authentic LIVE A/B capture remains dated historical evidence; new Gate 2B tool/HTTP tests are MOCK only, zero new LIVE requests. See [usage](../docs/AGENT_TOOLS.md) and [current evidence](../EVIDENCE.md). Browser visual review and final modality/submission wording review remain pending.
+
+---
+
+# Historical GATE 1B review (superseded where noted above)
 
 GATE 2A update (2026-10-30): one real Qloo Search/Insights HTTP case now exists; see current EVIDENCE.md. The earlier missing-live-credential statements below are historical. No autonomous agent/framework/integration was added, so agentic modality acceptance remains unestablished. Direct backend REST authorization is now reported by the user as confirmed by Qloo Support; acceptance of mode (a) is a separate question.
 

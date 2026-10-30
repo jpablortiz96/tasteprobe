@@ -1,0 +1,300 @@
+{
+  "gate": "2C.1",
+  "timestamp": "2026-10-30T15:55:37.134Z",
+  "mode": "LIVE_DISCOVERY",
+  "maximumAttempts": 4,
+  "status": "PASS",
+  "noRetries": true,
+  "attempts": [
+    {
+      "index": 1,
+      "timestamp": "2026-10-30T15:55:37.137Z",
+      "endpoint": "/search",
+      "parameters": {
+        "query": "Arrival",
+        "take": "5"
+      },
+      "httpStatus": 200
+    },
+    {
+      "index": 2,
+      "timestamp": "2026-10-30T15:55:38.774Z",
+      "endpoint": "/v2/insights",
+      "parameters": {
+        "filter.type": "urn:entity:movie",
+        "signal.interests.entities": "sha256:432ed4114652e2ba",
+        "filter.exclude.entities": "sha256:432ed4114652e2ba",
+        "take": "8",
+        "feature.explainability": "true"
+      },
+      "httpStatus": 200
+    },
+    {
+      "index": 3,
+      "timestamp": "2026-10-30T15:59:37.233Z",
+      "endpoint": "/search",
+      "parameters": {
+        "query": "Arrival",
+        "take": "5"
+      },
+      "httpStatus": 200,
+      "via": "LOCAL_HTTP_E2E"
+    },
+    {
+      "index": 4,
+      "timestamp": "2026-10-30T15:59:37.741Z",
+      "endpoint": "/v2/insights",
+      "parameters": {
+        "filter.type": "urn:entity:movie",
+        "signal.interests.entities": "sha256:432ed4114652e2ba",
+        "filter.exclude.entities": "sha256:432ed4114652e2ba",
+        "take": "8",
+        "feature.explainability": "true"
+      },
+      "httpStatus": 200,
+      "via": "LOCAL_HTTP_E2E"
+    }
+  ],
+  "discovery": {
+    "mode": "DISCOVER",
+    "status": "SUCCESS",
+    "movies": [
+      {
+        "id": "sha256:9b11b682ccb2bfd5",
+        "name": "Passengers",
+        "year": 2016,
+        "type": "urn:entity:movie",
+        "rank": 1,
+        "affinity": 0.9429151905073924,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "sha256:432ed4114652e2ba",
+              "score": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "sha256:6f3d9012c8bb3cbe",
+        "name": "Alien: Covenant",
+        "year": 2017,
+        "type": "urn:entity:movie",
+        "rank": 2,
+        "affinity": 0.9156606072764641,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "sha256:432ed4114652e2ba",
+              "score": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "sha256:a58cc62302cb572e",
+        "name": "Blade Runner 2049",
+        "year": 2017,
+        "type": "urn:entity:movie",
+        "rank": 3,
+        "affinity": 0.9132748362394222,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "sha256:432ed4114652e2ba",
+              "score": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "sha256:fd4f274f6bbe179a",
+        "name": "Life",
+        "year": 2017,
+        "type": "urn:entity:movie",
+        "rank": 4,
+        "affinity": 0.9111431939684876,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "sha256:432ed4114652e2ba",
+              "score": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "sha256:3aee10b5afa949c7",
+        "name": "10 Cloverfield Lane",
+        "year": 2016,
+        "type": "urn:entity:movie",
+        "rank": 5,
+        "affinity": 0.9047973930498805,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "sha256:432ed4114652e2ba",
+              "score": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "sha256:42496559d79c02f1",
+        "name": "The Discovery",
+        "year": 2017,
+        "type": "urn:entity:movie",
+        "rank": 6,
+        "affinity": 0.9030368330534584,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "sha256:432ed4114652e2ba",
+              "score": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "sha256:3ed006a1e9d39662",
+        "name": "Ghost in the Shell",
+        "year": 2017,
+        "type": "urn:entity:movie",
+        "rank": 7,
+        "affinity": 0.9017654911373728,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "sha256:432ed4114652e2ba",
+              "score": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "sha256:e5c11d50da711463",
+        "name": "Nocturnal Animals",
+        "year": 2016,
+        "type": "urn:entity:movie",
+        "rank": 8,
+        "affinity": 0.9010065069606542,
+        "explainability": {
+          "signal.interests.entities": [
+            {
+              "entity_id": "sha256:432ed4114652e2ba",
+              "score": 1
+            }
+          ]
+        }
+      }
+    ],
+    "favorites": [
+      {
+        "id": "sha256:432ed4114652e2ba",
+        "name": "Arrival",
+        "year": 2016,
+        "searchedAt": "2026-10-30T15:55:38.773Z"
+      }
+    ],
+    "provenance": {
+      "source": "Qloo REST",
+      "host": "https://hackathon.api.qloo.com",
+      "endpoint": "/v2/insights",
+      "parameters": {
+        "filter.type": "urn:entity:movie",
+        "signal.interests.entities": "sha256:432ed4114652e2ba",
+        "filter.exclude.entities": "sha256:432ed4114652e2ba",
+        "take": "8",
+        "feature.explainability": "true"
+      },
+      "timestamp": "2026-10-30T15:55:40.115Z",
+      "requestId": "sha256:7eedab7f69cd2789",
+      "httpStatus": 200
+    },
+    "requested": 8,
+    "returned": 8,
+    "discarded": 0,
+    "warnings": null,
+    "explainability": {
+      "signal.interests.entities": {
+        "effect_on_top3_recs": [
+          {
+            "entity_id": "sha256:432ed4114652e2ba",
+            "avg_score": 1
+          }
+        ],
+        "effect_on_top5_recs": [
+          {
+            "entity_id": "sha256:432ed4114652e2ba",
+            "avg_score": 1
+          }
+        ],
+        "effect_on_top10_recs": [
+          {
+            "entity_id": "sha256:432ed4114652e2ba",
+            "avg_score": 1
+          }
+        ],
+        "effect_on_all_recs": [
+          {
+            "entity_id": "sha256:432ed4114652e2ba",
+            "avg_score": 1
+          }
+        ]
+      }
+    },
+    "limitations": [
+      "Qloo cultural affinity is an observed relationship, not a probability of satisfaction.",
+      "Only validated movie identities returned by Qloo are shown; favorites and duplicates are excluded.",
+      "Missing affinity or explainability remains unavailable; no plot, genre or causal explanation is invented.",
+      "Poster display rights are not verified; graphic placeholders are used."
+    ]
+  },
+  "imageMetadata": [
+    {
+      "idHash": "9b11b682ccb2bfd5",
+      "imagePresent": true,
+      "imageType": "object"
+    },
+    {
+      "idHash": "6f3d9012c8bb3cbe",
+      "imagePresent": true,
+      "imageType": "object"
+    },
+    {
+      "idHash": "a58cc62302cb572e",
+      "imagePresent": true,
+      "imageType": "object"
+    },
+    {
+      "idHash": "fd4f274f6bbe179a",
+      "imagePresent": true,
+      "imageType": "object"
+    },
+    {
+      "idHash": "3aee10b5afa949c7",
+      "imagePresent": true,
+      "imageType": "object"
+    },
+    {
+      "idHash": "42496559d79c02f1",
+      "imagePresent": true,
+      "imageType": "object"
+    },
+    {
+      "idHash": "3ed006a1e9d39662",
+      "imagePresent": true,
+      "imageType": "object"
+    },
+    {
+      "idHash": "e5c11d50da711463",
+      "imagePresent": true,
+      "imageType": "object"
+    }
+  ],
+  "rawValidation": {
+    "returned": 8,
+    "favoritePresent": false,
+    "duplicateIDs": false
+  }
+}

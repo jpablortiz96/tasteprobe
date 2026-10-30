@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-10-30T18:01:50.682Z",
+  "results": [
+    {
+      "name": "tests",
+      "exitCode": 0,
+      "total": 82
+    },
+    {
+      "name": "typecheck",
+      "exitCode": 0
+    },
+    {
+      "name": "build",
+      "exitCode": 0
+    },
+    {
+      "name": "integration",
+      "exitCode": 0,
+      "total": 5,
+      "evidenceMode": "MOCK_HTTP_ONLY"
+    },
+    {
+      "name": "audit",
+      "exitCode": 0,
+      "vulnerabilities": 0
+    }
+  ],
+  "clientFilesScanned": 27,
+  "configuredKeyPresent": true,
+  "credentialFoundInClient": false,
+  "offlineChecksQlooRequests": 0,
+  "browserAcceptance": "PENDING_OPERATOR",
+  "liveEvidence": "gate2e-live.json",
+  "note": "Commands recorded in gate2e logs; audit captured separately outside sandbox. Summary finalized after audit artifact encoding normalization."
+}

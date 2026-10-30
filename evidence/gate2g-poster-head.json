@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-30T19:30:27.052Z",
+  "method": "HEAD",
+  "host": "image.tmdb.org",
+  "httpStatus": 200,
+  "contentType": "image/jpeg",
+  "contentLength": "50166",
+  "newTmdbApiRequests": 0,
+  "liveQlooRequests": 0,
+  "limitation": "Image CDN availability check, not browser rendering or visual approval"
+}

@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-10-30T17:55:37.681Z",
+  "authorizedMaximum": 7,
+  "reservedAttempts": 2,
+  "attempts": [
+    {
+      "index": 1,
+      "method": "POST",
+      "url": "http://127.0.0.1:3000/api/entities/search",
+      "origin": "http://127.0.0.1:3000",
+      "host": "127.0.0.1:3000",
+      "query": "Arrival",
+      "localStatus": 200,
+      "upstreamStatus": 200,
+      "category": null,
+      "diagnostic": null,
+      "matches": [
+        {
+          "name": "Arrival",
+          "year": 2016,
+          "type": "urn:entity:movie"
+        },
+        {
+          "name": "The Arrival",
+          "year": 1996,
+          "type": "urn:entity:movie"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "via": "OPERATOR_CHROME",
+      "method": "POST",
+      "url": "http://127.0.0.1:3000/api/entities/search",
+      "query": "Arrival",
+      "localStatus": 502,
+      "upstreamStatus": null,
+      "category": "NETWORK",
+      "diagnostic": {
+        "requestId": "f29f868c-4e4c-4ce8-8de1-dcb3dfae7dde",
+        "upstreamAttempted": true,
+        "upstreamStatus": null,
+        "transportCode": "ENOTFOUND"
+      }
+    }
+  ],
+  "status": "STOPPED_TRANSPORT_ERROR_NO_MORE_LIVE",
+  "operatorSearch": {
+    "reservedIndex": 2,
+    "status": "REPORTED_FAILED",
+    "executed": true
+  },
+  "remainingUnconsumed": 5,
+  "continuationRequires": "Explicit permission to resume after transport error and server recovery"
+}
