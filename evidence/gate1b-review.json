@@ -1,0 +1,84 @@
+{
+  "timestamp": "2026-10-29T21:51:00.903Z",
+  "commit": "c80659b18dd56492d956364fe46b9c78284600da",
+  "original37TestsUnchanged": true,
+  "trackedWhitespaceCheck": "PASS",
+  "newFileChecks": [
+    {
+      "path": "evidence/AGENTIC_REVIEW.md",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/GATE1A_HISTORY.md",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-audit.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-build.txt",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-integration.txt",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-mock-integration.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-routes.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-tests.txt",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-typecheck.txt",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "lib/browser-request.ts",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "tests/contrast.test.mjs",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "tests/gate1b.test.mjs",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "tests/integration/mock-qloo-preload.mjs",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "tests/integration/workflow.test.mjs",
+      "pass": true,
+      "diagnostics": ""
+    }
+  ],
+  "diffStat": "DEVPOST_SUBMISSION_DRAFT_EN.md |   8 ++-\n EVIDENCE.md                    | 145 ++++++++++++++++++++---------------------\n README.md                      |   9 ++-\n app/globals.css                |   2 +-\n app/page.tsx                   |  23 ++++---\n evidence/QLOO_CONTRACT.md      |  15 ++++-\n lib/qloo/service.ts            |   9 ++-\n package.json                   |   3 +-\n scripts/verify-local.mjs       |  10 ++-\n scripts/verify-secrets.mjs     |   4 +-\n 10 files changed, 130 insertions(+), 98 deletions(-)",
+  "status": "M DEVPOST_SUBMISSION_DRAFT_EN.md\n M EVIDENCE.md\n M README.md\n M app/globals.css\n M app/page.tsx\n M evidence/QLOO_CONTRACT.md\n M lib/qloo/service.ts\n M package.json\n M scripts/verify-local.mjs\n M scripts/verify-secrets.mjs\n?? evidence/AGENTIC_REVIEW.md\n?? evidence/GATE1A_HISTORY.md\n?? evidence/gate1b-audit.json\n?? evidence/gate1b-build.txt\n?? evidence/gate1b-integration.txt\n?? evidence/gate1b-mock-integration.json\n?? evidence/gate1b-routes.json\n?? evidence/gate1b-tests.txt\n?? evidence/gate1b-typecheck.txt\n?? lib/browser-request.ts\n?? tests/contrast.test.mjs\n?? tests/gate1b.test.mjs\n?? tests/integration/",
+  "newCommitCreated": false,
+  "pushed": false,
+  "published": false,
+  "logFormatting": "UTF-8, LF and trailing output whitespace normalized; command results preserved"
+}

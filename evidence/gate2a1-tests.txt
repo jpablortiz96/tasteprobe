@@ -1,0 +1,60 @@
+
+> tasteprobe@0.0.0 test
+> node --test tests/*.test.mjs
+
+✔ textarea placeholder meets 4.5:1 contrast on its authored solid background (1.995ms)
+✔ MOCK documented Search 404 becomes empty choices with actual HTTP provenance (21.5251ms)
+✔ MOCK browser network failure is actionable and does not expose exception details (0.8492ms)
+✔ MOCK browser timeout is distinguished from connectivity failure (0.2634ms)
+✔ MOCK malformed response and unrecognized remote messages never become raw UI text (2.1313ms)
+✔ readiness can be retried after failure without a live Qloo probe (0.7881ms)
+✔ MOCK Insights 404 remains an error rather than being interpreted as empty Search evidence (3.6651ms)
+✔ MOCK A/B with unchanged evidence is inconclusive (1.5284ms)
+✔ MOCK A/B detects raw affinity change even when order is unchanged (0.2276ms)
+✔ A/B refuses extra changed parameters (1.1ms)
+✔ MOCK partial, duplicate or missing numeric evidence is inconclusive (0.9821ms)
+✔ missing key abstains without making a network request (2.1784ms)
+✔ rejects alternate hosts before exposing credentials (0.1916ms)
+✔ MOCK transport verifies GET, exact host, header, and encoded search (17.4885ms)
+✔ MOCK HTTP 401 abstains, redacts upstream text, and never retries (0.3795ms)
+✔ MOCK HTTP 403 abstains, redacts upstream text, and never retries (0.2137ms)
+✔ MOCK HTTP 429 abstains, redacts upstream text, and never retries (0.175ms)
+✔ MOCK HTTP 500 abstains, redacts upstream text, and never retries (0.1527ms)
+✔ MOCK HTTP 400 abstains, redacts upstream text, and never retries (0.1386ms)
+✔ MOCK TimeoutError becomes safe TIMEOUT (0.2834ms)
+✔ MOCK TypeError becomes safe NETWORK (0.1871ms)
+✔ MOCK malformed JSON is rejected (0.5074ms)
+✔ MOCK response size is bounded (1.2291ms)
+✔ MOCK request budget stops at six and obsolete paths are rejected (0.8757ms)
+✔ blocked export keeps original input order and abstains without fabricated evidence (3.1654ms)
+✔ export strips identity authorization proofs and marks a failed evaluation as abstained (0.2277ms)
+✔ MOCK upstream cannot echo the API credential into a normalized response (22.5707ms)
+✔ stalled incoming request is bounded by the real body deadline (3005.2787ms)
+✔ service without credential abstains and makes zero calls (3.0042ms)
+✔ MOCK full flow preserves original order, compares returned order, and never invents affinity (18.8531ms)
+✔ strict search validation rejects unsupported fields, control characters, size, and wrong types before network (0.458ms)
+✔ MOCK Search returns ambiguous choices without selecting them and filters non-movies (1.3035ms)
+✔ MOCK empty Search is empty evidence (0.4407ms)
+✔ unconfirmed, fabricated, edited, expired, or duplicate identities cannot reach Insights (1.6602ms)
+✔ identity proofs from a different server session are rejected (0.7278ms)
+✔ audit list boundaries and unexpected input fields are rejected (0.2634ms)
+✔ MOCK partial coverage 0/3 abstains from revised ranking and uses null for missing evidence (0.9882ms)
+✔ MOCK partial coverage 1/3 abstains from revised ranking and uses null for missing evidence (0.8224ms)
+✔ MOCK partial coverage 2/3 abstains from revised ranking and uses null for missing evidence (0.7632ms)
+✔ MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected (1.0532ms)
+✔ MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected (2.155ms)
+✔ MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected (0.7646ms)
+✔ MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected (0.7472ms)
+✔ MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected (0.6064ms)
+✔ shared request budgets survive client recreation and cap the process at 60 calls (2.8437ms)
+✔ HTTP input bounds, content type, origin and malformed JSON are enforced (2.9897ms)
+✔ CLI persists honest BLOCKED_LIVE evidence without a key (64.0073ms)
+✔ MOCK credential cannot bypass documentation review (56.0001ms)
+ℹ tests 48
+ℹ suites 0
+ℹ pass 48
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3242.5269

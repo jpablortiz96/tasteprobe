@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-10-30T14:19:51.523Z",
+  "clientFilesScanned": 23,
+  "configuredKeyPresent": true,
+  "exactCredentialValueFound": false,
+  "findings": [],
+  "limitation": "Client build reviewed without printing any credential value."
+}

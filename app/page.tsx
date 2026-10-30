@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import type { AuditResult, Entity, Health, SearchResult } from '../lib/contracts';
 import { createReport } from '../lib/report';
+import { requestJson } from '../lib/browser-request';
 
 type Film = { query: string; role: 'interest' | 'recommendation'; selected?: Entity; matches?: Entity[] };
 const messages: Record<string, string> = {
@@ -17,13 +18,6 @@ const messages: Record<string, string> = {
   DUPLICATE_ENTITY: 'Choose different movies for your interests and shortlist.',
 };
 const lines = (value: string) => value.split('\n').map(x => x.trim()).filter(Boolean);
-async function post<T>(url: string, data: unknown): Promise<T> {
-  const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data), signal: AbortSignal.timeout(15000) });
-  const result = await response.json();
-  if (!response.ok) throw new Error(typeof result.error === 'string' ? result.error : 'UNAVAILABLE');
-  return result as T;
-}
-
 export default function Home() {
   const [health, setHealth] = useState<Health | null>(null);
   const [healthError, setHealthError] = useState(false);
@@ -39,7 +33,12 @@ export default function Home() {
   const confirmed = films.filter(x => x.selected).length;
   const ready = health?.status === 'CONFIGURED_NOT_VERIFIED';
   const current = films[active];
-  useEffect(() => { fetch('/api/health', { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(setHealth).catch(() => setHealthError(true)); }, []);
+  async function checkHealth() {
+    setHealth(null); setHealthError(false);
+    try { setHealth(await requestJson<Health>('/api/health', undefined, fetch, 5000)); }
+    catch { setHealthError(true); }
+  }
+  useEffect(() => { void checkHealth(); }, []);
   function prepare() {
     const seeds = lines(interests), list = lines(recommendations);
     if (seeds.length < 1 || seeds.length > 3 || list.length < 3 || list.length > 5 || [...seeds, ...list].some(x => x.length < 2 || x.length > 80 || /[<>\u0000-\u001f\u007f]/.test(x))) { setError('Add 1–3 interest movies and 3–5 recommendations, one title per line (2–80 characters each).'); return; }
@@ -51,7 +50,7 @@ export default function Home() {
     if (!current) return;
     setBusy(true); setError(''); setSearched(false); setResult(null);
     try {
-      const data = await post<SearchResult>('/api/entities/search', { query: current.query });
+      const data = await requestJson<SearchResult>('/api/entities/search', { query: current.query });
       setFilms(items => items.map((f, i) => i === active ? { ...f, matches: data.entities, selected: undefined } : f));
       setSearched(true);
     } catch (e) { setError(e instanceof Error ? e.message : 'UNAVAILABLE'); }
@@ -65,7 +64,7 @@ export default function Home() {
     setBusy(true); setError(''); setResult(null);
     try {
       const selection = (f: Film) => ({ id: f.selected!.id, proof: f.selected!.proof, confirmed: true });
-      const data = await post<AuditResult>('/api/audit', { interests: films.filter(f => f.role === 'interest').map(selection), recommendations: films.filter(f => f.role === 'recommendation').map(selection) });
+      const data = await requestJson<AuditResult>('/api/audit', { interests: films.filter(f => f.role === 'interest').map(selection), recommendations: films.filter(f => f.role === 'recommendation').map(selection) });
       setResult(data); setStep(2);
     } catch (e) { setError(e instanceof Error ? e.message : 'UNAVAILABLE'); }
     finally { setBusy(false); }
@@ -76,10 +75,10 @@ export default function Home() {
     const a = document.createElement('a'); a.href = url; a.download = 'tasteprobe-report.json'; a.click(); URL.revokeObjectURL(url);
   }
   return <div className="shell">
-    <aside className="sidebar"><a className="brand" href="/" aria-label="TasteProbe home"><span className="brand-icon">◈</span> TasteProbe<span className="brand-dot">.</span></a><span className="workspace-label">YOUR WORKSPACE</span><nav aria-label="Workspace"><a className="nav-active" href="#workspace">▦ <span>Movie audit</span><span className="nav-count">01</span></a><a href="#method">◎ <span>How it works</span></a></nav><div className="sidebar-note"><span className="tiny-label">BUILT ON EVIDENCE</span><p>A little more context.<br/>A more considered shortlist.</p><div className="source-mark">Q <span>Powered by Qloo data<br/><small>When live access is available</small></span></div></div><span className="sidebar-foot">GATE 1A · LOCAL PREVIEW</span></aside>
+    <aside className="sidebar"><a className="brand" href="/" aria-label="TasteProbe home"><span className="brand-icon">◈</span> TasteProbe<span className="brand-dot">.</span></a><span className="workspace-label">YOUR WORKSPACE</span><nav aria-label="Workspace"><a className="nav-active" href="#workspace">▦ <span>Movie audit</span><span className="nav-count">01</span></a><a href="#method">◎ <span>How it works</span></a></nav><div className="sidebar-note"><span className="tiny-label">BUILT ON EVIDENCE</span><p>A little more context.<br/>A more considered shortlist.</p><div className="source-mark">Q <span>Powered by Qloo data<br/><small>When live access is available</small></span></div></div><span className="sidebar-foot">LOCAL PREVIEW</span></aside>
     <main id="workspace"><header><div className="breadcrumb">Workspace <span>/</span> <strong>Movie audit</strong></div><button className="button secondary small" onClick={exportReport}>↓ Export report</button></header>
       <section className="hero"><div><p className="eyebrow">CULTURAL INTELLIGENCE, WITH A PAPER TRAIL</p><h1>A good list.<br/><span>A better understanding.</span></h1><p className="intro">Your agent recommends. TasteProbe verifies.<br/>Explore how a movie shortlist relates to the culture you love.</p></div><div className="hero-seal" aria-hidden="true"><div className="seal-inner">◈</div><span>CONTEXT OVER GUESSWORK</span></div></section>
-      <div className={`connection ${ready ? 'configured' : ''}`} role="status"><span className="status-dot"/><div><strong>{healthError ? 'Connection status unavailable' : health ? ready ? 'Server configured · live access unverified' : 'BLOCKED_LIVE · Qloo access required' : 'Checking workspace readiness…'}</strong><p>{ready ? 'Search and evaluation use real Qloo requests. A configured key does not prove authorized access.' : 'Prepare your list now. Live identity lookup and evaluation require an authorized server credential.'}</p></div><span className="pill">{ready ? 'NOT VERIFIED' : 'NO LIVE RESULTS'}</span></div>
+      <div className={`connection ${ready ? 'configured' : ''}`} role="status"><span className="status-dot"/><div><strong>{healthError ? 'Connection status unavailable' : health ? ready ? 'Server configured · live access unverified' : 'BLOCKED_LIVE · Qloo access required' : 'Checking workspace readiness…'}</strong><p>{ready ? 'Search and evaluation use real Qloo requests. A configured key does not prove authorized access.' : 'Prepare your list now. Live identity lookup and evaluation require an authorized server credential.'}</p></div>{healthError && <button className="button secondary small" onClick={() => void checkHealth()}>Retry connection</button>}<span className="pill">{ready ? 'NOT VERIFIED' : 'NO LIVE RESULTS'}</span></div>
       <section className="metrics" aria-label="Audit overview"><div><span>YOUR INTERESTS</span><strong>{String(lines(interests).length).padStart(2,'0')}<small> / 03 movies</small></strong></div><div><span>ORIGINAL SHORTLIST</span><strong>{String(lines(recommendations).length).padStart(2,'0')}<small> / 05 movies</small></strong></div><div><span>CONFIRMED IDENTITIES</span><strong>{String(confirmed).padStart(2,'0')}<small> / {films.length || '—'}</small></strong></div><div><span>EVIDENCE COVERAGE</span><strong>{result ? `${result.coverage.returned}/${result.coverage.total}` : '—'}<small>{result ? ' returned' : ' awaiting evaluation'}</small></strong></div></section>
       <div className="section-top"><div><p className="eyebrow">THE AUDIT WORKSPACE</p><h2>From intuition to inspection.</h2></div><span className="private-label">◇ Server-side credentials</span></div>
       <nav className="steps" aria-label="Audit steps">{['Prepare your list', 'Confirm identities', 'Compare evidence'].map((label, i) => <button key={label} className={step === i ? 'step active' : 'step'} aria-current={step === i ? 'step' : undefined} disabled={busy || (i === 1 && !films.length) || (i === 2 && !result)} onClick={() => { setStep(i); setError(''); }}><span>{i + 1}</span>{label}<small>{i === 0 ? 'THE INPUT' : i === 1 ? 'THE MATCH' : 'THE REVIEW'}</small></button>)}</nav>

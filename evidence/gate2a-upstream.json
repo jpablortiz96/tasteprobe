@@ -1,0 +1,654 @@
+{
+  "mode": "LIVE_PROVIDER_OBSERVATION",
+  "timestamp": "2026-10-30T14:09:55.914Z",
+  "maximumHTTPResponses": 5,
+  "maximumTransportAttempts": 8,
+  "records": [
+    {
+      "index": 1,
+      "endpoint": "/search",
+      "parameterNames": [
+        "query",
+        "take"
+      ],
+      "timestamp": "2026-10-30T13:58:28.544Z",
+      "errorCategory": "NETWORK_NO_HTTP_RESPONSE"
+    },
+    {
+      "index": 2,
+      "endpoint": "/search",
+      "parameterNames": [
+        "query",
+        "take"
+      ],
+      "timestamp": "2026-10-30T14:00:25.842Z",
+      "errorCategory": "NETWORK_NO_HTTP_RESPONSE",
+      "errorName": "TypeError",
+      "errorCode": "ENOTFOUND"
+    },
+    {
+      "index": 3,
+      "endpoint": "/search",
+      "parameterNames": [
+        "query",
+        "take"
+      ],
+      "timestamp": "2026-10-30T14:02:30.001Z",
+      "errorCategory": "NETWORK_NO_HTTP_RESPONSE",
+      "errorName": "TypeError",
+      "errorCode": "ENOTFOUND"
+    },
+    {
+      "index": 4,
+      "endpoint": "/search",
+      "parameterNames": [
+        "query",
+        "take"
+      ],
+      "timestamp": "2026-10-30T14:09:54.002Z",
+      "httpStatus": 200,
+      "structure": {
+        "results": {
+          "type": "array",
+          "count": 5,
+          "sample": [
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string",
+                "release_year": "number"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string",
+                "release_year": "number"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {}
+            }
+          ]
+        }
+      },
+      "entities": [
+        {
+          "idHash": "432ed4114652e2ba",
+          "types": [
+            "urn:entity:movie"
+          ],
+          "subtypeMovie": false,
+          "hasYear": true,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "046f6eda1f4aaa90",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "ac17c06a204369ab",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "42ddf5b84998f475",
+          "types": [
+            "urn:entity:movie"
+          ],
+          "subtypeMovie": false,
+          "hasYear": true,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "46724ddb9e2f60cb",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "endpoint": "/search",
+      "parameterNames": [
+        "query",
+        "take"
+      ],
+      "timestamp": "2026-10-30T14:09:54.657Z",
+      "httpStatus": 200,
+      "structure": {
+        "results": {
+          "type": "array",
+          "count": 5,
+          "sample": [
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string",
+                "release_year": "number"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {}
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {}
+            }
+          ]
+        }
+      },
+      "entities": [
+        {
+          "idHash": "1f587ef103d4fb93",
+          "types": [
+            "urn:entity:movie"
+          ],
+          "subtypeMovie": false,
+          "hasYear": true,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "ed798d58ad405c1e",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "12518d2dd41d52f7",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "ef980b04589a257d",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "caf8e18eb95fd0f0",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "endpoint": "/search",
+      "parameterNames": [
+        "query",
+        "take"
+      ],
+      "timestamp": "2026-10-30T14:09:54.896Z",
+      "httpStatus": 200,
+      "structure": {
+        "results": {
+          "type": "array",
+          "count": 5,
+          "sample": [
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string",
+                "release_year": "number"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {}
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {}
+            }
+          ]
+        }
+      },
+      "entities": [
+        {
+          "idHash": "a58cc62302cb572e",
+          "types": [
+            "urn:entity:movie"
+          ],
+          "subtypeMovie": false,
+          "hasYear": true,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "5a69c38b429c88f0",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "60a398ec5165c36b",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "a2587d421b8759f8",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "2ccca257677dc3a8",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "endpoint": "/search",
+      "parameterNames": [
+        "query",
+        "take"
+      ],
+      "timestamp": "2026-10-30T14:09:55.313Z",
+      "httpStatus": 200,
+      "structure": {
+        "results": {
+          "type": "array",
+          "count": 5,
+          "sample": [
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string",
+                "release_year": "number"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string",
+                "release_year": "number"
+              }
+            },
+            {
+              "name": "string",
+              "entity_id": "string",
+              "types": {
+                "type": "array",
+                "count": 1,
+                "sample": [
+                  "string"
+                ]
+              },
+              "properties": {
+                "release_date": "string"
+              }
+            }
+          ]
+        }
+      },
+      "entities": [
+        {
+          "idHash": "70ee1ade4a1d16fb",
+          "types": [
+            "urn:entity:movie"
+          ],
+          "subtypeMovie": false,
+          "hasYear": true,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "57d40d3bb2f196b0",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "3597f418960969f7",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "bc91836929563de1",
+          "types": [
+            "urn:entity:movie"
+          ],
+          "subtypeMovie": false,
+          "hasYear": true,
+          "affinityFieldPresent": false
+        },
+        {
+          "idHash": "c8f550baae310600",
+          "types": [],
+          "subtypeMovie": false,
+          "hasYear": false,
+          "affinityFieldPresent": false
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "endpoint": "/v2/insights",
+      "parameterNames": [
+        "filter.type",
+        "signal.interests.entities",
+        "filter.results.entities",
+        "take"
+      ],
+      "timestamp": "2026-10-30T14:09:55.725Z",
+      "httpStatus": 200,
+      "structure": {
+        "success": "boolean",
+        "results": {
+          "entities": {
+            "type": "array",
+            "count": 3,
+            "sample": [
+              {
+                "name": "string",
+                "entity_id": "string",
+                "type": "string",
+                "subtype": "string",
+                "properties": {
+                  "release_date": "string",
+                  "release_year": "number"
+                },
+                "query": {
+                  "affinity": "number"
+                }
+              },
+              {
+                "name": "string",
+                "entity_id": "string",
+                "type": "string",
+                "subtype": "string",
+                "properties": {
+                  "release_date": "string",
+                  "release_year": "number"
+                },
+                "query": {
+                  "affinity": "number"
+                }
+              },
+              {
+                "name": "string",
+                "entity_id": "string",
+                "type": "string",
+                "subtype": "string",
+                "properties": {
+                  "release_date": "string",
+                  "release_year": "number"
+                },
+                "query": {
+                  "affinity": "number"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "entities": [
+        {
+          "idHash": "a58cc62302cb572e",
+          "types": [],
+          "subtypeMovie": true,
+          "hasYear": true,
+          "affinityFieldPresent": true,
+          "returnedAffinity": 0.9132748362394222
+        },
+        {
+          "idHash": "1f587ef103d4fb93",
+          "types": [],
+          "subtypeMovie": true,
+          "hasYear": true,
+          "affinityFieldPresent": true,
+          "returnedAffinity": 0.8368126484416831
+        },
+        {
+          "idHash": "70ee1ade4a1d16fb",
+          "types": [],
+          "subtypeMovie": true,
+          "hasYear": true,
+          "affinityFieldPresent": true,
+          "returnedAffinity": 0.8013815822511426
+        }
+      ],
+      "sentSignalHashes": [
+        "432ed4114652e2ba"
+      ],
+      "sentCandidateHashes": [
+        "1f587ef103d4fb93",
+        "a58cc62302cb572e",
+        "70ee1ade4a1d16fb"
+      ],
+      "allReturnedIdsBelongToRequestedCandidates": true,
+      "returnedCount": 3,
+      "requestParametersEchoed": {
+        "filter.type": false,
+        "signal.interests.entities": false,
+        "filter.results.entities": false,
+        "take": false
+      }
+    }
+  ]
+}

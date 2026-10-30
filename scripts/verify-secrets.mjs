@@ -4,6 +4,8 @@ import assert from 'node:assert/strict';
 
 const skip = new Set(['node_modules', '.next', '.git', '.npm-cache', '.codex', '.agents', '.aws', 'private']);
 const findings = [];
+const gate = process.argv[2] ?? 'gate1a';
+assert.ok(['gate1a', 'gate1b', 'gate2a', 'gate2a1'].includes(gate));
 let files = 0;
 async function scan(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -19,6 +21,6 @@ async function scan(directory) {
   }
 }
 await scan('.');
-await writeFile('evidence/gate1a-secret-review.json', JSON.stringify({ timestamp: new Date().toISOString(), filesScanned: files, findings, configuredKeyPresent: Boolean(process.env.QLOO_API_KEY?.trim()), limitation: 'Pattern review plus optional exact configured-key match, not a guarantee against every secret format. Private environment files are intentionally not read.' }, null, 2) + '\n');
+await writeFile(`evidence/${gate}-secret-review.json`, JSON.stringify({ timestamp: new Date().toISOString(), filesScanned: files, findings, configuredKeyPresent: Boolean(process.env.QLOO_API_KEY?.trim()), limitation: 'Pattern review plus optional exact configured-key match, not a guarantee against every secret format. Private environment files are intentionally not read.' }, null, 2) + '\n');
 assert.equal(findings.length, 0, 'Possible secrets detected; inspect file names in evidence, never print secret values.');
 console.log(`PASS: ${files} project text files reviewed; no findings.`);

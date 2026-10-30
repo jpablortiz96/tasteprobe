@@ -1,0 +1,53 @@
+{
+  "mode": "MOCK_INTEGRATION_TEST_ONLY",
+  "timestamp": "2026-10-30T14:15:19.798Z",
+  "liveQlooRequests": 0,
+  "browserUsed": false,
+  "checks": [
+    "ambiguous choices",
+    "confirmation required",
+    "complete comparison",
+    "report serialization without proofs or credential",
+    "partial abstention",
+    "documented Search 404",
+    "redacted auth failure"
+  ],
+  "observations": [
+    {
+      "path": "/api/entities/search",
+      "httpStatus": 200
+    },
+    {
+      "path": "/api/entities/search",
+      "httpStatus": 200
+    },
+    {
+      "path": "/api/entities/search",
+      "httpStatus": 200
+    },
+    {
+      "path": "/api/entities/search",
+      "httpStatus": 200
+    },
+    {
+      "path": "/api/audit",
+      "httpStatus": 400
+    },
+    {
+      "path": "/api/audit",
+      "httpStatus": 200
+    },
+    {
+      "path": "/api/audit",
+      "httpStatus": 200
+    },
+    {
+      "path": "/api/entities/search",
+      "httpStatus": 200
+    },
+    {
+      "path": "/api/entities/search",
+      "httpStatus": 502
+    }
+  ]
+}

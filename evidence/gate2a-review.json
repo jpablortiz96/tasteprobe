@@ -1,0 +1,189 @@
+{
+  "timestamp": "2026-10-30T14:20:31.525Z",
+  "baseCommit": "c80659b18dd56492d956364fe46b9c78284600da",
+  "original37TestsUnchangedFromCommit": true,
+  "gate1b44TestsPassed": true,
+  "trackedWhitespace": "PASS",
+  "newFileChecks": [
+    {
+      "path": "evidence/AGENTIC_REVIEW.md",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/GATE1A_HISTORY.md",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/GATE1B_HISTORY.md",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-audit.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-build.txt",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-integration.txt",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-mock-integration.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-review.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-routes.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-secret-review.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-tests.txt",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate1b-typecheck.txt",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-audit.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-build.txt",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-client-review.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-live.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-mock-integration.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-mock-integration.txt",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-report-redacted.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-secret-review.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-smoke-redacted.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-tests.txt",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-typecheck.txt",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-upstream.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/gate2a-verification.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "evidence/qloo-reference-review.json",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "lib/browser-request.ts",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "scripts/gate2a-live.mjs",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "scripts/gate2a-observe.mjs",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "scripts/gate2a-session.mjs",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "scripts/verify-gate2a.mjs",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "tests/contrast.test.mjs",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "tests/gate1b.test.mjs",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "tests/integration/mock-qloo-preload.mjs",
+      "pass": true,
+      "diagnostics": ""
+    },
+    {
+      "path": "tests/integration/workflow.test.mjs",
+      "pass": true,
+      "diagnostics": ""
+    }
+  ],
+  "status": "M DEVPOST_SUBMISSION_DRAFT_EN.md\n M EVIDENCE.md\n M README.md\n M app/globals.css\n M app/page.tsx\n M evidence/QLOO_CONTRACT.md\n M evidence/qloo-smoke-history.jsonl\n M evidence/qloo-smoke-redacted.json\n M lib/qloo/service.ts\n M package.json\n M scripts/verify-local.mjs\n M scripts/verify-secrets.mjs\n?? evidence/AGENTIC_REVIEW.md\n?? evidence/GATE1A_HISTORY.md\n?? evidence/GATE1B_HISTORY.md\n?? evidence/gate1b-audit.json\n?? evidence/gate1b-build.txt\n?? evidence/gate1b-integration.txt\n?? evidence/gate1b-mock-integration.json\n?? evidence/gate1b-review.json\n?? evidence/gate1b-routes.json\n?? evidence/gate1b-secret-review.json\n?? evidence/gate1b-tests.txt\n?? evidence/gate1b-typecheck.txt\n?? evidence/gate2a-audit.json\n?? evidence/gate2a-build.txt\n?? evidence/gate2a-client-review.json\n?? evidence/gate2a-live.json\n?? evidence/gate2a-mock-integration.json\n?? evidence/gate2a-mock-integration.txt\n?? evidence/gate2a-report-redacted.json\n?? evidence/gate2a-secret-review.json\n?? evidence/gate2a-smoke-redacted.json\n?? evidence/gate2a-tests.txt\n?? evidence/gate2a-typecheck.txt\n?? evidence/gate2a-upstream.json\n?? evidence/gate2a-verification.json\n?? evidence/qloo-reference-review.json\n?? lib/browser-request.ts\n?? scripts/gate2a-live.mjs\n?? scripts/gate2a-observe.mjs\n?? scripts/gate2a-session.mjs\n?? scripts/verify-gate2a.mjs\n?? tests/contrast.test.mjs\n?? tests/gate1b.test.mjs\n?? tests/integration/",
+  "gitWrite": "BLOCKED: index.lock permission denied",
+  "commitCreated": false,
+  "pushed": false,
+  "deployed": false
+}

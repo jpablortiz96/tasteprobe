@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-10-30T14:15:18.493Z",
+  "mode": "OFFLINE_VERIFICATION_OF_LIVE_CAPTURE",
+  "status": "PASS",
+  "confirmedHTTPResponses": 6,
+  "searchHTTPResponses": 5,
+  "insightsHTTPResponses": 1,
+  "transportFailuresWithoutHTTP": 4,
+  "verifiedIdentities": 4,
+  "coverage": {
+    "returned": 3,
+    "total": 3
+  },
+  "exactCandidateSet": true,
+  "movieDomain": true,
+  "returnedOrderMatchesDescendingObservedAffinity": true,
+  "signalSentMatchesConfirmedInterest": true,
+  "signalParameterEchoPresent": false,
+  "limitations": [
+    "The response does not echo the requested signal; accepted request parameters and same-candidate results do not independently prove provider internals or causality.",
+    "One Insights response was captured. No repeat or alternate-signal control was requested, to respect the six-response API budget.",
+    "Numeric affinity was observed at query.affinity but the current product remains rank-only and retains affinity=null.",
+    "Offline verification makes zero additional Qloo requests."
+  ]
+}

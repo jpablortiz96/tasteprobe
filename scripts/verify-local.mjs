@@ -3,7 +3,10 @@ import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 // Exercises the real compiled Next server. Never enables a key or mocks an API route.
-const base = 'http://127.0.0.1:3000';
+const base = process.argv[2] ?? 'http://127.0.0.1:3000';
+const gate = process.argv[3] ?? 'gate1a';
+assert.match(base, /^http:\/\/127\.0\.0\.1:[0-9]{1,5}$/);
+assert.ok(['gate1a', 'gate1b'].includes(gate));
 const checks = [];
 async function check(name, path, init, status, expected) {
   const response = await fetch(base + path, { ...init, signal: AbortSignal.timeout(5000) });
@@ -41,5 +44,6 @@ async function scan(directory) {
 }
 await scan('.next/static');
 checks.push({ name: 'client build excludes server credentials, transport and MOCK fixtures', chunks, result: 'PASS' });
-await writeFile('evidence/gate1a-routes.json', JSON.stringify({ timestamp: new Date().toISOString(), liveQlooRequests: 0, checks, browserVisualQA: 'BLOCKED: integrated browser unavailable; native app authorization timed out' }, null, 2) + '\n');
-console.log(`${checks.length} checks PASS; ${chunks} client files scanned; 0 live Qloo calls. Evidence: evidence/gate1a-routes.json`);
+const artifact = `evidence/${gate}-routes.json`;
+await writeFile(artifact, JSON.stringify({ timestamp: new Date().toISOString(), liveQlooRequests: 0, checks, browserVisualQA: 'VISUAL_REVIEW_BLOCKED: browser access host unavailable' }, null, 2) + '\n');
+console.log(`${checks.length} checks PASS; ${chunks} client files scanned; 0 live Qloo calls. Evidence: ${artifact}`);

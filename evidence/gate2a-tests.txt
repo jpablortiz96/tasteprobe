@@ -1,0 +1,56 @@
+
+> tasteprobe@0.0.0 test
+> node --test tests/*.test.mjs
+
+✔ textarea placeholder meets 4.5:1 contrast on its authored solid background (1.4298ms)
+✔ MOCK documented Search 404 becomes empty choices with actual HTTP provenance (21.7778ms)
+✔ MOCK browser network failure is actionable and does not expose exception details (0.8094ms)
+✔ MOCK browser timeout is distinguished from connectivity failure (0.3571ms)
+✔ MOCK malformed response and unrecognized remote messages never become raw UI text (2.202ms)
+✔ readiness can be retried after failure without a live Qloo probe (0.6833ms)
+✔ MOCK Insights 404 remains an error rather than being interpreted as empty Search evidence (4.0544ms)
+✔ missing key abstains without making a network request (2.819ms)
+✔ rejects alternate hosts before exposing credentials (0.2862ms)
+✔ MOCK transport verifies GET, exact host, header, and encoded search (23.1406ms)
+✔ MOCK HTTP 401 abstains, redacts upstream text, and never retries (0.449ms)
+✔ MOCK HTTP 403 abstains, redacts upstream text, and never retries (0.2189ms)
+✔ MOCK HTTP 429 abstains, redacts upstream text, and never retries (0.6127ms)
+✔ MOCK HTTP 500 abstains, redacts upstream text, and never retries (0.3319ms)
+✔ MOCK HTTP 400 abstains, redacts upstream text, and never retries (0.4722ms)
+✔ MOCK TimeoutError becomes safe TIMEOUT (0.4924ms)
+✔ MOCK TypeError becomes safe NETWORK (0.3215ms)
+✔ MOCK malformed JSON is rejected (0.7129ms)
+✔ MOCK response size is bounded (1.9996ms)
+✔ MOCK request budget stops at six and obsolete paths are rejected (1.5559ms)
+✔ blocked export keeps original input order and abstains without fabricated evidence (2.347ms)
+✔ export strips identity authorization proofs and marks a failed evaluation as abstained (0.2219ms)
+✔ MOCK upstream cannot echo the API credential into a normalized response (21.3469ms)
+✔ stalled incoming request is bounded by the real body deadline (3011.8816ms)
+✔ service without credential abstains and makes zero calls (2.3556ms)
+✔ MOCK full flow preserves original order, compares returned order, and never invents affinity (20.1481ms)
+✔ strict search validation rejects unsupported fields, control characters, size, and wrong types before network (0.4551ms)
+✔ MOCK Search returns ambiguous choices without selecting them and filters non-movies (1.2358ms)
+✔ MOCK empty Search is empty evidence (0.4261ms)
+✔ unconfirmed, fabricated, edited, expired, or duplicate identities cannot reach Insights (1.5419ms)
+✔ identity proofs from a different server session are rejected (0.6467ms)
+✔ audit list boundaries and unexpected input fields are rejected (0.2787ms)
+✔ MOCK partial coverage 0/3 abstains from revised ranking and uses null for missing evidence (1.017ms)
+✔ MOCK partial coverage 1/3 abstains from revised ranking and uses null for missing evidence (1.0248ms)
+✔ MOCK partial coverage 2/3 abstains from revised ranking and uses null for missing evidence (0.678ms)
+✔ MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected (0.8084ms)
+✔ MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected (1.62ms)
+✔ MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected (0.5922ms)
+✔ MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected (0.5347ms)
+✔ MOCK malformed, unrelated, duplicate, or wrong-domain Insights is rejected (0.4349ms)
+✔ shared request budgets survive client recreation and cap the process at 60 calls (3.201ms)
+✔ HTTP input bounds, content type, origin and malformed JSON are enforced (2.9151ms)
+✔ CLI persists honest BLOCKED_LIVE evidence without a key (63.5101ms)
+✔ MOCK credential cannot bypass documentation review (48.3539ms)
+ℹ tests 44
+ℹ suites 0
+ℹ pass 44
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3214.6447

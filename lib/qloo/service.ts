@@ -44,7 +44,14 @@ export function createService({ apiKey, fetchImpl = fetch, now = Date.now, secre
     if (total >= 60 || minuteCalls >= 12) throw new QlooError('REQUEST_BUDGET');
     total++; minuteCalls++;
     const client = createQlooClient({ apiKey, fetchImpl, baseUrl });
-    const { data, status } = await client.get(path, parameters);
+    let response;
+    try { response = await client.get(path, parameters); }
+    catch (error) {
+      // Search explicitly documents 404 as no results. Do not apply this to Insights.
+      if (path !== '/search' || !(error instanceof QlooError) || error.status !== 404) throw error;
+      response = { data: { results: [] }, status: 404 };
+    }
+    const { data, status } = response;
     if (data.success === false || JSON.stringify(data).includes(apiKey)) throw new QlooError('INVALID_RESPONSE');
     const provenance: Provenance = { source: 'Qloo REST', host: QLOO_BASE_URL, endpoint: path, parameters, timestamp: new Date(now()).toISOString(), requestId: randomUUID(), httpStatus: status };
     return { data, provenance };

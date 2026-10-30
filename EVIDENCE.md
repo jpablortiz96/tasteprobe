@@ -1,107 +1,95 @@
-# TasteProbe — GATE 1A evidence
+# TasteProbe — GATE 2A.1 controlled Qloo A/B
 
-Observed 2026-10-29. Only **GATE 1A** is active. The prior record is preserved in [GATE0_HISTORY.md](evidence/GATE0_HISTORY.md); its dependency/build/Git observations describe an earlier environment and are superseded by the results below. Original planning documents and the submission draft were not modified.
+Observed **2026-10-30, 14:46 UTC / 09:46 Colombia**. **GATE 2A.1: PASS** for the authorized bounded control. Prior evidence is preserved in [GATE2A_HISTORY.md](evidence/GATE2A_HISTORY.md). No next gate, publication or deployment was started.
 
-## GATE / STATUS
+## Experiment and budget
 
-**GATE 1A: AT_RISK — automated local foundation PASS; full product acceptance remains pending visual browser QA and the unresolved event REST contract items.**
+The prior four resolved identities are **Arrival (2016), the signal**, plus **three candidates: Interstellar (2014), Blade Runner 2049 (2017), Her (2013)**. Four identities resolved and three candidates compared are different counts; the 3/3 coverage was correct.
 
-**G0_LIVE_PASS: BLOCKED_LIVE.** No `QLOO_API_KEY` was present in the process environment; `.env.local` was absent. No authorized Qloo request, real identity resolution, affinity, successful live case, or falsifier pass is claimed. No public deployment, authentication, payments, or secondary product scope was added.
+The original full UUIDs were read from the ignored private prior session and checked against the hashes, titles and years in the authentic Gate 2A report. No signed identity or proof was modified. A second signal was not already among these identities, so one Search was necessary. Paddington 2 (2017) was chosen as a family-comedy contrast to Arrival's science fiction; that contrast is the experiment rationale, not a Qloo-generated classification. Search returned exactly one matching movie/title/year identity, distinct from every existing film.
 
-| Check | Actual result | Evidence |
+| Attempt | Actual request | Outcome |
 |---|---|---|
-| Sandbox read/write/execute | PASS | Created `.sandbox-probe.tmp`, read back its known text, executed Node, removed only that file in `finally` |
-| Workspace inspection | PASS | Read package manifest, lockfile, all initial app/lib/scripts/tests files, ignore rules and prior evidence; no applicable workspace/parent AGENTS.md found |
-| Harness dependency | NOT REQUIRED | `rg` found no `@qloo/qloo-harness` references in package.json, package-lock.json, app/, lib/, scripts/ or tests/. It was already absent; no uninstall was necessary |
-| Dependency audit | PASS | Final approved registry audit: 0 info/low/moderate/high/critical vulnerabilities; 60 dependency entries. [Raw JSON](evidence/gate1a-audit.json) |
-| Tests | PASS | 37 tests, 37 passed, 0 failed/skipped. [Output](evidence/gate1a-tests.txt) |
-| Typecheck | PASS | `npm.cmd run typecheck`, exit 0. [Output](evidence/gate1a-typecheck.txt) |
-| Production build | PASS | `npm.cmd run build`, exit 0; page plus health/search/audit routes compiled. [Output](evidence/gate1a-build.txt) |
-| Compiled HTTP routes | PASS | 9 checks against actual loopback Next.js server, including client bundle scan; zero Qloo calls. [Artifact](evidence/gate1a-routes.json) |
-| Credential isolation | PASS within checked scope | Server wrapper uses `server-only`; client imports typed contracts and report builder only. 23 client JS/HTML files contain no credential variable, X-Api-Key, Qloo host/transport, or MOCK credential marker. Server rejects responses that echo its key |
-| Source secret review | PASS within pattern scope | [Secret review](evidence/gate1a-secret-review.json); no findings. Environment files and unrelated private directories were not read. No secret scanner can establish absence of every possible credential format |
-| Browser/visual QA | BLOCKED | In-app browser reported unavailable access host. Native Chrome selection then timed out waiting for app authorization. No screenshot, actual click-through, mobile render, visual contrast audit or successful browser E2E is claimed |
-| Git write / commit | BLOCKED | Git repository exists on unborn `master`; no tracked files/commits. `git add` failed creating `.git/index.lock`: Permission denied. No commit created or escalation attempted |
+| 1 | GET `/search`, `query=Paddington 2`, `take=5` | HTTP 200; one exact verified identity |
+| 2 | GET `/v2/insights`, scenario A: Arrival | HTTP 200; exact candidates, 3/3 |
+| 3 | GET `/v2/insights`, scenario B: Paddington 2 | HTTP 200; exact candidates, 3/3 |
 
-## Working product behavior
+**Exactly 3 attempts, 0 failed/no-response attempts, 0 retries, 2 Insights requests.** The new budget explicitly counts every attempt before fetch. The runner creates its ledger atomically and refuses any replay, even after a failure. No other Qloo API call was made in this gate. Official documentation retrieval and npm audit are not Qloo API requests.
 
-- User-editable intake for 1–3 interest films and 3–5 original recommendations; original order is the entered line order. Sample button supplies **input titles only**, never generated recommendations or Qloo outcomes.
-- Three-step responsive dashboard: prepare, explicitly confirm identities, compare evidence. Includes disabled controls with a clear missing-key explanation, loading, empty results, safe error, partial evidence and complete-response views. CSS includes mobile breakpoints, focus states and reduced-motion support. These layouts are implemented but visually unverified.
-- Live Search adapter accepts bounded title queries, requests five choices, filters for explicit movie identities, and never automatically accepts a choice. Names, optional release years and signed identity proofs come only from the actual response.
-- Audit verifies all proofs and explicit confirmations before one Insights request. It compares the original order with the returned order for the same IDs. Full coverage permits rank shifts; incomplete coverage sets shifts to `null` and proposes no revised ranking. Unreturned candidates are not assigned zero or labeled poor recommendations.
-- Export works from any step through a browser download action. The tested report builder preserves input order, records missing evidence/errors, strips identity proofs, and includes actual provenance/limitations when a result exists. The download click itself was not verified in a browser.
-- Current real local behavior is **BLOCKED_LIVE**. Complete/partial remote response paths are verified only through isolated MOCK transport tests. No runtime mock or fallback is installed.
+## Controlled parameters and explainability
 
-## Backend contract and security
-
-See [QLOO_CONTRACT.md](evidence/QLOO_CONTRACT.md) for immutable official documentation references and pending items. The official `qloo/docs-public` repository was read at commit `d4a0eb978518f7fb404993d1509d11b21239ada6` after direct documentation pages failed. Its `openapi-schema.json` is an OpenAPI meta-schema, not a Qloo endpoint specification.
-
-Verified from official documentation: `X-Api-Key`, Search `query`/`take`, movie Insights `filter.type`, `signal.interests.entities`, `filter.results.entities`, `take`, the Insights entity envelope, and returned affinity ordering. Search `types` enum spelling is not established by the retrieved reference, so no guessed type parameter is sent.
-
-**Pending:** independent official verification of the event host (currently pinned to the user-specified `https://hackathon.api.qloo.com`), event acceptance of direct REST access (the official kit lists harness surfaces), actual Search response envelope, live identity/coverage behavior, numeric affinity path/scale, and explainability. Numeric affinity remains `null`, and explainability is not requested. No undocumented numeric field is interpreted.
-
-Controls implemented:
-
-- Credential read only by server wrapper; no client key form, NEXT_PUBLIC credential or model-provider dependency.
-- Exact host, two GET paths, redirects disabled, no-store, 8-second deadline, 512,000-byte response cap, no automatic retries, no alternative credentials/host.
-- Per-process shared budget of 12 upstream attempts/minute and 60/process lifetime, counting failures; a fresh HTTP request does not reset the budget.
-- HMAC identity proof over ID, movie type, title, year and Search timestamp; 30-minute expiry and random process secret; uniqueness across interests and candidates; user confirmation required.
-- Incoming JSON limited to 8,192 bytes and 3 seconds, strict keys/types/cardinalities, cross-origin browser rejection. Upstream bodies, credential values and arbitrary errors are not echoed.
-- Typed normalized entities, search responses, reports, comparisons and provenance. Reports expose actual endpoint, bounded parameters, timestamp, HTTP status and a locally generated request reference (not claimed as a Qloo-provided trace ID).
-
-The local quota/proof implementation is deliberately **not ready for multiple deployment instances**. Restarting resets quota and invalidates confirmations; distributed hosting needs shared quota state and a stable server-side signing secret. Public deployment remains out of scope.
-
-## Commands and observed results
-
-Initial baseline: 15 tests passed, typecheck passed, build passed. Initial npm audit failed to reach the registry inside the sandbox; an approved external-network audit then returned zero vulnerabilities. A later artifact-saving audit also hit the network restriction and was rerun with approved access; its successful JSON is preserved. No `npm audit --force` was used and no dependency versions were changed.
-
-Final checks:
-
-```powershell
-npm.cmd test                       # exit 0, 37/37
-npm.cmd run typecheck              # exit 0
-npm.cmd run build                  # exit 0
-npm.cmd audit --json --cache .npm-cache --fetch-retries=0 --fetch-timeout=15000
-                                  # exit 0, vulnerabilities.total = 0
-npm.cmd start                     # production server bound to 127.0.0.1:3000
-npm.cmd run verify:local           # exit 0, 9 checks, 23 client files, zero Qloo calls
-node scripts/verify-secrets.mjs    # no findings; artifact records exact file count
-```
-
-HTTP verifier checks: health 200/BLOCKED_LIVE; valid Search 503/BLOCKED_LIVE; short query 400; invalid audit 400; fabricated proof 400; cross-origin request 403; oversized JSON 400; actual page HTML 200 with product workflow; client bundle isolation. It refuses to run its missing-key test against a configured server and never injects a key.
-
-The tests additionally exercise ambiguity, empty results, confirmed identity binding/expiry/session separation, duplicate IDs, full and 0/1/2-of-3 partial coverage, unexpected response IDs/domains/shapes, exact Insights parameters, HTTP 400/401/403/429/500, timeout/network errors, bounded response size, real stalled-body deadline, shared quotas, credential-echo refusal, blocked export and proof stripping. MOCK fixtures are fictional and confined to tests.
-
-## Git / diff / original files
-
-`core.excludesfile` is unset. Git attempts its default user ignore path `C:/Users/jpabl/.config/git/ignore`, which the sandbox cannot read. No global Git configuration was changed. Per-command `-c core.excludesfile=.gitignore` lets read operations use the accessible project rules. `NUL` was tried for one command but Git rejected it as an exclude file; no setting was persisted.
-
-All project files are untracked and the branch has no commits, so ordinary `git diff` is empty and cannot demonstrate the new source. Source was reviewed directly, and new-file whitespace checks use `git diff --no-index --check`. The add attempt failed at `.git/index.lock`; no staging or commit was completed. The [final review artifact](evidence/gate1a-worktree-review.json) records whitespace review outcomes (`--no-index` returns 1 for a new file; empty diagnostics mean no whitespace findings).
-
-Original planning source SHA256 values remain unchanged:
+Both scenarios used exactly:
 
 ```text
-CODEX_MASTER_TASTEPROBE.md 075D3605B3BEFBBC1CEF1EE1C6D82DE647B27E859A2CA216652BAA3BBA924C1A
-PLAN_24H_GATES.md          6321FC74D72AB62816A15C946109EEAEE4ECA5597E450452C5DB92CC4B498366
+GET https://hackathon.api.qloo.com/v2/insights
+filter.type = urn:entity:movie
+filter.results.entities = same three verified UUIDs, same order
+take = 3
+feature.explainability = true
 ```
 
-After inspecting the files in an external PowerShell with write access to `.git`, the local commit can be made with:
+**Only `signal.interests.entities` changed.** A used Arrival; B used Paddington 2. [The redacted A/B report](evidence/gate2a1-ab.json) contains the actual parameter names and consistently hashed IDs. The verifier checks that the sent request records match the scenario parameters and that the sole changed key is the signal.
+
+Before execution, the [official Insights deep dive](https://github.com/qloo/docs-public/blob/main/reference/insights-api-deep-dive.md) was consulted: it defines `feature.explainability` as a global feature for recommendation results and includes movie in the endpoint's allowed entity types. The entity-specific movie table does not repeat the global feature. Movie acceptance was then directly established in this experiment: A and B both returned HTTP 200 and per-result/aggregate explainability.
+
+## Actual differences
+
+Values below are the raw numeric `query.affinity` values returned by Qloo, not percentages or probabilities.
+
+| Candidate | Rank A: Arrival | Affinity A | Rank B: Paddington 2 | Affinity B |
+|---|---:|---:|---:|---:|
+| Interstellar | 2 | 0.8368126484416831 | 3 | 0.6520280790170352 |
+| Blade Runner 2049 | 1 | 0.9132748362394222 | 1 | 0.7550398789035522 |
+| Her | 3 | 0.8013815822511426 | 2 | 0.6823637842971437 |
+
+A order: **Blade Runner 2049 → Interstellar → Her**.
+
+B order: **Blade Runner 2049 → Her → Interstellar**.
+
+Both scenarios returned exactly the same three verified movie identities with **3/3 coverage**. All three affinities changed; Her and Interstellar exchanged positions. Blade Runner 2049 stayed first. The report records exact B-minus-A numeric differences without interpreting them as changes in satisfaction or recommendation quality.
+
+Each candidate returned `query.explainability['signal.interests.entities']` naming the active signal ID with score 1. Aggregate explainability sections also name the active signal with `avg_score=1`. With a single input, those attribution values are not probabilities of satisfaction. Sections named top5/top10 do not mean more than the three actual candidates were returned. The redactor replaces full UUIDs in both fields and nested metadata with consistent hash labels.
+
+No warnings were present in the captured top-level, candidate or aggregate explainability warning fields. No error, ambiguous identity or partial result was accepted. Had the evidence been unchanged, the comparator would have returned **INCONCLUSIVE**; local tests cover that behavior.
+
+The new A result also matches the earlier Gate 2A Arrival affinity values and order exactly. The old request omitted explainability, so this observation is not treated as a third controlled request with fully identical parameters.
+
+## Interpretation and limits
+
+This bounded pair demonstrates that changing the signal while keeping candidates and other parameters fixed changed the returned cultural-affinity evidence. Explainability attributes results to the corresponding signal. This closes the earlier missing-control finding for this specific case.
+
+There is one request per scenario, no randomized statistical replication, and no person-level satisfaction measurement. The result does not establish causality about people, a generally superior list, confidence intervals, effect significance or universal ranking stability. Affinity scales were not converted or calibrated across populations. The production UI remains rank-only; numeric/explainability presentation was not enabled by this diagnostic.
+
+## Reproducible offline evidence
+
+- [A/B report, including request ledger and returned metadata](evidence/gate2a1-ab.json)
+- [Offline verification artifact](evidence/gate2a1-verification.json)
+- [Current contract findings](evidence/QLOO_CONTRACT.md)
 
 ```powershell
-Set-Location D:\Hackathons\TasteProbe
-git -c core.excludesfile=.gitignore add -- .env.example .gitignore app lib scripts tests package.json package-lock.json tsconfig.json next-env.d.ts README.md EVIDENCE.md evidence experiments CODEX_MASTER_TASTEPROBE.md PLAN_24H_GATES.md DEVPOST_SUBMISSION_DRAFT_EN.md
-git diff --cached --check
-git diff --cached --stat
-git commit -m "Build secure TasteProbe product foundation"
-git status --short
+node scripts/verify-gate2a1.mjs
 ```
 
-## CHANGED_FILES
+The verifier performs **zero additional HTTP requests**. It checks attempt/error-stop limits, exact scenario/request agreement, the sole changed parameter, identical candidate IDs, coverage, affinities, rank differences and attribution metadata. It recomputes the comparison rather than accepting the report's PASS label alone. The LIVE runner is intentionally not rerunnable against the exhausted budget.
 
-Updated: `app/page.tsx`, `app/globals.css`, `app/layout.tsx`, `lib/qloo/client.mjs`, `package.json`, `tsconfig.json`, `.env.example`, `README.md`, `EVIDENCE.md`.
+## Tests, security and build
 
-Created: `app/api/health/route.ts`, `app/api/entities/search/route.ts`, `app/api/audit/route.ts`, `lib/contracts.ts`, `lib/http.ts`, `lib/report.ts`, `lib/qloo/service.ts`, `lib/qloo/server.ts`, `tests/service.test.mjs`, `tests/security.test.mjs`, `tests/report.test.mjs`, `scripts/verify-local.mjs`, `scripts/verify-secrets.mjs`, `scripts/review-worktree.mjs`, and the GATE 1A evidence artifacts linked above, plus `evidence/GATE0_HISTORY.md` and the final review artifact. Lockfile and ignore rules were inspected and preserved.
+| Check | Actual result |
+|---|---|
+| `npm.cmd test` | **48 PASS, 0 FAIL/skipped**: original 44 preserved plus 4 focused A/B comparator tests. [Output](evidence/gate2a1-tests.txt) |
+| `npm.cmd run typecheck` | Exit 0. [Output](evidence/gate2a1-typecheck.txt) |
+| `npm.cmd run build` | Exit 0. [Output](evidence/gate2a1-build.txt) |
+| `npm.cmd audit --json ...` | Exit 0, **0 vulnerabilities**. [JSON](evidence/gate2a1-audit.json). Sandbox registry access failed once; approved registry access succeeded. This consumed no Qloo request; no --force or dependencies added |
+| `node scripts/verify-gate2a1.mjs` | Verification PASS, experiment PASS, 3 attempts / 0 failed, 2 Insights, no additional HTTP |
+| Exact-key source review | [Secret scan](evidence/gate2a1-secret-review.json); credential loaded only into the scanner process, never printed |
+| Client/diff/Git review | [Final review](evidence/gate2a1-review.json); client isolation, original tests, whitespace and Git status |
 
-## RISKS / NEXT_ACTION
+The LIVE experiment used the existing server/CLI transport with a real event credential; no test fixture or MOCK provider was injected. The four new local tests use labeled MOCK data and cannot call Qloo. No key or authentication header was saved. `.env.local` and private prior identity proofs remain ignored and unversioned.
 
-GATE 1A remains AT_RISK until the actual rendered desktop/mobile workflow is reviewed; no UI screenshot evidence exists. GATE 1B should resolve event REST authorization/host, configure an authorized local credential, confirm exact Search/Insights envelopes with bounded real calls, and evaluate the original G0 falsifier. Numeric affinity and explainability must remain pending until their actual fields and semantics are verified. Do not deploy, publish, or claim G0_LIVE_PASS before that evidence exists.
+## Files, Git and next action
+
+Created: `scripts/gate2a1-ab.mjs`, `scripts/qloo-ab-compare.mjs`, `scripts/verify-gate2a1.mjs`, `tests/qloo-ab.test.mjs`, `evidence/GATE2A_HISTORY.md` and the GATE 2A.1 artifacts linked above. Updated: `EVIDENCE.md`, `evidence/QLOO_CONTRACT.md`, `README.md` and the secret scanner's allowed gate label. No dependency or product architecture change.
+
+Baseline remains **c80659b**. Gate 1B, 2A and 2A.1 changes remain in the working tree; this task reports Git state and does not push or deploy. The existing sandbox restriction on `.git/index.lock` was recorded in Gate 2A; no new staging attempt was needed for this read-only Git review. The final review artifact records the current commit and pending files. No new commit is claimed.
+
+The control is closed for this case, and the authorized three-attempt budget is exhausted. **Stop at GATE 2A.1.** Next action is operator review of the A/B evidence and pending release work, especially visual QA, agentic-modality positioning, license and a reviewed local commit. A later publication step needs its own review; this gate does not automatically authorize it.

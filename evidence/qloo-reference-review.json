@@ -1,0 +1,22 @@
+{
+  "gate": "2A",
+  "reviewDate": "2026-10-30",
+  "status": "REVIEWED_FOR_BOUNDED_EXPERIMENT",
+  "sources": [
+    "https://github.com/qloo/docs-public/blob/main/reference/get-search.md",
+    "https://github.com/qloo/docs-public/blob/main/reference/insights-api-deep-dive.md"
+  ],
+  "eventGuide": {
+    "url": "https://docs.qloo.com/reference/qloo-llm-hackathon-developer-guide",
+    "retrieval": "UNAVAILABLE",
+    "hostAndRESTAuthorization": "User reports confirmation by Qloo Support in Gate 2A instruction; no support message independently retrieved"
+  },
+  "host": "https://hackathon.api.qloo.com",
+  "allowedEndpoints": ["GET /search", "GET /v2/insights"],
+  "searchParametersReviewed": ["query", "take"],
+  "insightsParametersReviewed": ["filter.type", "signal.interests.entities", "filter.results.entities", "take"],
+  "executionRequiresExplicitFlags": true,
+  "smokeCommand": "npm.cmd run smoke:qloo -- --reference-reviewed --execute --request-file experiments/search.request.json",
+  "guardRemoved": false,
+  "note": "Review record is evidence only; it does not bypass the CLI's explicit review/execution guards or authorize more calls. The initial experiment has ended."
+}

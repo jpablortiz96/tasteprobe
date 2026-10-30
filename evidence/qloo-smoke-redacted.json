@@ -1,10 +1,95 @@
 {
   "gate": 0,
-  "timestamp": "2026-10-29T19:55:11.623Z",
-  "status": "BLOCKED_LIVE",
-  "liveRequests": 0,
-  "request": null,
-  "response": null,
+  "timestamp": "2026-10-30T13:53:44.709Z",
+  "status": "AT_RISK",
+  "liveRequests": 1,
+  "request": {
+    "path": "/search",
+    "parameterNames": [
+      "query"
+    ]
+  },
+  "response": {
+    "status": 200,
+    "structure": {
+      "results": {
+        "type": "array",
+        "count": 20,
+        "sample": [
+          {
+            "name": "string",
+            "entity_id": "string",
+            "types": {
+              "type": "array",
+              "count": 1,
+              "sample": [
+                "string"
+              ]
+            },
+            "properties": {
+              "release_date": "string",
+              "release_year": "number"
+            }
+          },
+          {
+            "name": "string",
+            "entity_id": "string",
+            "types": {
+              "type": "array",
+              "count": 1,
+              "sample": [
+                "string"
+              ]
+            },
+            "properties": {
+              "release_date": "string"
+            }
+          },
+          {
+            "name": "string",
+            "entity_id": "string",
+            "types": {
+              "type": "array",
+              "count": 1,
+              "sample": [
+                "string"
+              ]
+            },
+            "properties": {
+              "release_date": "string"
+            }
+          },
+          {
+            "name": "string",
+            "entity_id": "string",
+            "types": {
+              "type": "array",
+              "count": 1,
+              "sample": [
+                "string"
+              ]
+            },
+            "properties": {
+              "release_date": "string",
+              "release_year": "number"
+            }
+          },
+          {
+            "name": "string",
+            "entity_id": "string",
+            "types": {
+              "type": "array",
+              "count": 1,
+              "sample": [
+                "string"
+              ]
+            },
+            "properties": {}
+          }
+        ]
+      }
+    }
+  },
   "falsifier": {
     "resolvedTitles": null,
     "comparableAffinities": null,
@@ -12,5 +97,5 @@
     "result": "NOT_EVALUATED"
   },
   "explainability": "NOT_VALIDATED",
-  "errorCategory": "BLOCKED_LIVE"
+  "errorCategory": "LIVE_RESPONSE_REQUIRES_MANUAL_REVIEW"
 }

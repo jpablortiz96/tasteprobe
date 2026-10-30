@@ -1,0 +1,13 @@
+
+> tasteprobe@0.0.0 test:integration
+> node --test tests/integration/*.test.mjs
+
+✔ MOCK HTTP integration: ambiguous Search → human confirmation → Insights → comparison → serialized report (609.114ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 713.0051

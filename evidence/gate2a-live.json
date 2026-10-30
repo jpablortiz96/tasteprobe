@@ -1,0 +1,79 @@
+{
+  "mode": "LIVE_HTTP_TOOL_FLOW",
+  "timestamp": "2026-10-30T14:09:53.964Z",
+  "status": "SUCCESS",
+  "expectedHumanConfirmation": "User confirmed exact titles, years and original order in conversation",
+  "identities": [
+    {
+      "title": "Arrival",
+      "year": 2016,
+      "role": "interest",
+      "upstreamHttpStatus": 200,
+      "returnedChoices": 2,
+      "exactMatches": 1,
+      "idHash": "432ed4114652e2ba"
+    },
+    {
+      "title": "Interstellar",
+      "year": 2014,
+      "role": "recommendation",
+      "upstreamHttpStatus": 200,
+      "returnedChoices": 1,
+      "exactMatches": 1,
+      "idHash": "1f587ef103d4fb93"
+    },
+    {
+      "title": "Blade Runner 2049",
+      "year": 2017,
+      "role": "recommendation",
+      "upstreamHttpStatus": 200,
+      "returnedChoices": 1,
+      "exactMatches": 1,
+      "idHash": "a58cc62302cb572e"
+    },
+    {
+      "title": "Her",
+      "year": 2013,
+      "role": "recommendation",
+      "upstreamHttpStatus": 200,
+      "returnedChoices": 2,
+      "exactMatches": 1,
+      "idHash": "70ee1ade4a1d16fb"
+    }
+  ],
+  "maximumToolCalls": 5,
+  "audit": {
+    "upstreamHttpStatus": 200,
+    "coverage": {
+      "returned": 3,
+      "total": 3
+    },
+    "rows": [
+      {
+        "idHash": "1f587ef103d4fb93",
+        "name": "Interstellar",
+        "originalRank": 1,
+        "qlooRank": 2,
+        "shift": -1,
+        "affinity": null
+      },
+      {
+        "idHash": "a58cc62302cb572e",
+        "name": "Blade Runner 2049",
+        "originalRank": 2,
+        "qlooRank": 1,
+        "shift": 1,
+        "affinity": null
+      },
+      {
+        "idHash": "70ee1ade4a1d16fb",
+        "name": "Her",
+        "originalRank": 3,
+        "qlooRank": 3,
+        "shift": 0,
+        "affinity": null
+      }
+    ],
+    "report": "evidence/gate2a-report-redacted.json"
+  }
+}

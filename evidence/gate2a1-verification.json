@@ -1,0 +1,65 @@
+{
+  "timestamp": "2026-10-30T14:52:16.841Z",
+  "mode": "OFFLINE_AB_VERIFICATION",
+  "verification": "PASS",
+  "experimentStatus": "PASS",
+  "attemptCount": 3,
+  "failedAttempts": 0,
+  "insightsRequests": 2,
+  "comparison": {
+    "status": "PASS",
+    "reason": "Observed affinity or order differs under the changed cultural signal",
+    "changedParameters": [
+      "signal.interests.entities"
+    ],
+    "affinityChanged": true,
+    "orderChanged": true,
+    "differences": [
+      {
+        "idHash": "1f587ef103d4fb93",
+        "name": "Interstellar",
+        "rankA": 2,
+        "rankB": 3,
+        "affinityA": 0.8368126484416831,
+        "affinityB": 0.6520280790170352,
+        "affinityDeltaBMinusA": -0.18478456942464794,
+        "explainabilityChanged": true
+      },
+      {
+        "idHash": "a58cc62302cb572e",
+        "name": "Blade Runner 2049",
+        "rankA": 1,
+        "rankB": 1,
+        "affinityA": 0.9132748362394222,
+        "affinityB": 0.7550398789035522,
+        "affinityDeltaBMinusA": -0.15823495733587,
+        "explainabilityChanged": true
+      },
+      {
+        "idHash": "70ee1ade4a1d16fb",
+        "name": "Her",
+        "rankA": 3,
+        "rankB": 2,
+        "affinityA": 0.8013815822511426,
+        "affinityB": 0.6823637842971437,
+        "affinityDeltaBMinusA": -0.11901779795399892,
+        "explainabilityChanged": true
+      }
+    ]
+  },
+  "explanationChecks": {
+    "A": {
+      "perCandidateMatchesActiveSignal": true,
+      "aggregateMatchesActiveSignal": true,
+      "warningsReturned": false
+    },
+    "B": {
+      "perCandidateMatchesActiveSignal": true,
+      "aggregateMatchesActiveSignal": true,
+      "warningsReturned": false
+    }
+  },
+  "priorArrivalAffinityAndOrderRepeated": true,
+  "priorComparisonCaveat": "The prior request omitted feature.explainability; this is an observed repeat of affinity/order, not a further controlled request pair.",
+  "additionalHTTPRequests": 0
+}

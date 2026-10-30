@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-10-29T21:48:31.241Z",
+  "liveQlooRequests": 0,
+  "checks": [
+    {
+      "name": "health abstains",
+      "path": "/api/health",
+      "httpStatus": 200,
+      "result": "PASS"
+    },
+    {
+      "name": "missing credential",
+      "path": "/api/entities/search",
+      "httpStatus": 503,
+      "result": "PASS"
+    },
+    {
+      "name": "invalid search",
+      "path": "/api/entities/search",
+      "httpStatus": 400,
+      "result": "PASS"
+    },
+    {
+      "name": "invalid audit",
+      "path": "/api/audit",
+      "httpStatus": 400,
+      "result": "PASS"
+    },
+    {
+      "name": "fabricated identity",
+      "path": "/api/audit",
+      "httpStatus": 400,
+      "result": "PASS"
+    },
+    {
+      "name": "cross-origin refusal",
+      "path": "/api/entities/search",
+      "httpStatus": 403,
+      "result": "PASS"
+    },
+    {
+      "name": "oversized body",
+      "path": "/api/entities/search",
+      "httpStatus": 400,
+      "result": "PASS"
+    },
+    {
+      "name": "rendered HTML contains product workflow",
+      "path": "/",
+      "httpStatus": 200,
+      "result": "PASS"
+    },
+    {
+      "name": "client build excludes server credentials, transport and MOCK fixtures",
+      "chunks": 23,
+      "result": "PASS"
+    }
+  ],
+  "browserVisualQA": "VISUAL_REVIEW_BLOCKED: browser access host unavailable"
+}

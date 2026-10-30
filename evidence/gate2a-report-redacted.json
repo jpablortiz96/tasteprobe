@@ -1,0 +1,131 @@
+{
+  "mode": "LIVE_REDACTED_REPORT",
+  "identifiers": "SHA256 prefix, not Qloo IDs",
+  "product": "TasteProbe",
+  "generatedAt": "2026-10-30T14:09:55.917Z",
+  "status": "SUCCESS",
+  "liveResponseReceived": true,
+  "originalInput": {
+    "interests": [
+      "Arrival"
+    ],
+    "recommendations": [
+      "Interstellar",
+      "Blade Runner 2049",
+      "Her"
+    ]
+  },
+  "confirmedIdentities": [
+    {
+      "role": "interest",
+      "id": "432ed4114652e2ba",
+      "name": "Arrival",
+      "year": 2016
+    },
+    {
+      "role": "recommendation",
+      "id": "1f587ef103d4fb93",
+      "name": "Interstellar",
+      "year": 2014
+    },
+    {
+      "role": "recommendation",
+      "id": "a58cc62302cb572e",
+      "name": "Blade Runner 2049",
+      "year": 2017
+    },
+    {
+      "role": "recommendation",
+      "id": "70ee1ade4a1d16fb",
+      "name": "Her",
+      "year": 2013
+    }
+  ],
+  "evaluation": {
+    "status": "SUCCESS",
+    "coverage": {
+      "returned": 3,
+      "total": 3
+    },
+    "rows": [
+      {
+        "id": "1f587ef103d4fb93",
+        "name": "Interstellar",
+        "year": 2014,
+        "originalRank": 1,
+        "qlooRank": 2,
+        "shift": -1,
+        "affinity": null
+      },
+      {
+        "id": "a58cc62302cb572e",
+        "name": "Blade Runner 2049",
+        "year": 2017,
+        "originalRank": 2,
+        "qlooRank": 1,
+        "shift": 1,
+        "affinity": null
+      },
+      {
+        "id": "70ee1ade4a1d16fb",
+        "name": "Her",
+        "year": 2013,
+        "originalRank": 3,
+        "qlooRank": 3,
+        "shift": 0,
+        "affinity": null
+      }
+    ],
+    "provenance": {
+      "source": "Qloo REST",
+      "host": "https://hackathon.api.qloo.com",
+      "endpoint": "/v2/insights",
+      "parameters": {
+        "filter.type": "urn:entity:movie",
+        "signal.interests.entities": "432ed4114652e2ba",
+        "filter.results.entities": "1f587ef103d4fb93,a58cc62302cb572e,70ee1ade4a1d16fb",
+        "take": "3"
+      },
+      "timestamp": "2026-10-30T14:09:55.916Z",
+      "requestId": "2e64cb62-865c-446d-9331-953734808603",
+      "httpStatus": 200
+    },
+    "identities": [
+      {
+        "id": "432ed4114652e2ba",
+        "name": "Arrival",
+        "year": 2016,
+        "searchedAt": "2026-10-30T14:09:54.643Z"
+      },
+      {
+        "id": "1f587ef103d4fb93",
+        "name": "Interstellar",
+        "year": 2014,
+        "searchedAt": "2026-10-30T14:09:54.892Z"
+      },
+      {
+        "id": "a58cc62302cb572e",
+        "name": "Blade Runner 2049",
+        "year": 2017,
+        "searchedAt": "2026-10-30T14:09:55.309Z"
+      },
+      {
+        "id": "70ee1ade4a1d16fb",
+        "name": "Her",
+        "year": 2013,
+        "searchedAt": "2026-10-30T14:09:55.706Z"
+      }
+    ],
+    "limitations": [
+      "Qloo order reflects aggregate cultural relationships within this one request, not personal satisfaction or recommendation quality.",
+      "Numeric affinity field and scale remain pending verification against an authorized live response. No numeric affinity is inferred.",
+      "Explanations describe observed rank changes only; causal reasons and Qloo explainability are not verified."
+    ]
+  },
+  "limitations": [
+    "Qloo order reflects aggregate cultural relationships within this one request, not personal satisfaction or recommendation quality.",
+    "Numeric affinity field and scale remain pending verification against an authorized live response. No numeric affinity is inferred.",
+    "Explanations describe observed rank changes only; causal reasons and Qloo explainability are not verified."
+  ],
+  "lastError": null
+}
