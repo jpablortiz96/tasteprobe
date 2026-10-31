@@ -1,0 +1,11 @@
+npm warn config production Use `--omit=dev` instead.
+
+> tasteprobe@0.0.0 start:public
+> node scripts/start-public.mjs
+
+▲ Next.js 16.4.3
+- Local:         http://localhost:8080
+- Network:       http://0.0.0.0:8080
+✓ Ready in 84ms
+✓ Running next.config took 6ms
+Starting Container

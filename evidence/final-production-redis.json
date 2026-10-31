@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-10-31T01:44:11.598Z",
+  "result": "PRODUCTION_REDIS_PASS",
+  "proof": "PUBLIC_RAILWAY_REQUESTS_EXECUTED_REAL_ATOMIC_HTTP_ADMISSION",
+  "sessionPreserved": true,
+  "toolResult": "ABSTAINED",
+  "providerCallsByReleaseAgent": 0,
+  "limitsConfigured": {
+    "qloo": 40,
+    "tmdb": 200
+  },
+  "lastSuccessfulOperatorCounterRead": {
+    "qlooUsed": 0,
+    "qlooRemaining": 40,
+    "tmdbUsed": 0,
+    "tmdbRemaining": 200
+  },
+  "operatorDiagnosticLimitations": [
+    "Optional Railway SSH quota-read timed out",
+    "Subsequent direct Windows-to-Upstash MGET failed with ENOTFOUND; hosting admission remains successful"
+  ],
+  "officialProviderBalanceVerified": false
+}

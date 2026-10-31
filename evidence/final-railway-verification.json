@@ -1,0 +1,23 @@
+{
+  "serviceCount": 1,
+  "name": "tasteprobe",
+  "id": "4687284f-fb16-46bf-92f9-4f83e9ca9da7",
+  "status": "SUCCESS",
+  "replicas": {
+    "configured": 1,
+    "running": 1,
+    "crashed": 0,
+    "exited": 0,
+    "total": 1
+  },
+  "regions": [
+    {
+      "name": "us-west2",
+      "location": "US West",
+      "configured": 1
+    }
+  ],
+  "url": "https://tasteprobe-production.up.railway.app",
+  "deployment": "0a5456be-095c-4cb2-bd9a-f89c741cd89a",
+  "volumes": []
+}

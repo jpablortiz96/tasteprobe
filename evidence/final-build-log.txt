@@ -1,0 +1,149 @@
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%
+(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%
+(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ...
+6228 files and directories currently installed.)
+
+Preparing to unpack .../libatomic1_14.2.0-19_amd64.deb ...
+
+Unpacking libatomic1:amd64 (14.2.0-19) ...
+
+Setting up libatomic1:amd64 (14.2.0-19) ...
+
+Processing triggers for libc-bin (2.41-12+deb13u4) ...
+
+install apt packages: libatomic1
+docker-image://ghcr.io/railwayapp/railpack-builder:mise-2026.10.14
+docker-image://ghcr.io/railwayapp/railpack-builder:mise-2026.10.14
+docker-image://ghcr.io/railwayapp/railpack-builder:mise-2026.10.14
+docker-image://ghcr.io/railwayapp/railpack-builder:mise-2026.10.14
+docker-image://ghcr.io/railwayapp/railpack-builder:mise-2026.10.14
+mkdir /etc/mise
+mkdir /etc/mise
+create mise config
+create mise config
+install mise packages: node
+mise by @jdx – installing 1 tool
+
+mise node@24.22.0 v24.22.0
+
+mise node@24.22.0 11.19.1
+mise ✓ node@24.22.0  1.4s  node-v24.22.0-linux-x64.tar.gz
+
+mise ████████████████ 1/1 · installed 1 tool in 1.5s
+
+install mise packages: node
+mkdir -p /app/node_modules/.cache
+mkdir -p /app/node_modules/.cache
+copy package-lock.json
+copy package-lock.json
+copy package.json
+copy /mise/shims
+copy /mise/shims
+copy package.json
+npm install
+npm warn config production Use `--omit=dev` instead.
+
+copy /mise/installs
+copy /mise/installs
+copy /usr/local/bin/mise
+copy /usr/local/bin/mise
+copy /etc/mise/config.toml
+copy /etc/mise/config.toml
+copy /root/.local/state/mise
+copy /root/.local/state/mise
+
+added 34 packages, and audited 35 packages in 6s
+
+
+found 0 vulnerabilities
+
+npm install
+copy / /app
+copy / /app
+copy .
+copy .
+npm ci --include=dev && npm run build
+npm warn config production Use `--omit=dev` instead.
+
+
+added 34 packages, and audited 35 packages in 5s
+
+
+found 0 vulnerabilities
+
+npm warn config production Use `--omit=dev` instead.
+
+
+> tasteprobe@0.0.0 build
+> next build --webpack
+
+
+▲ Next.js 16.4.3 (webpack)
+
+✓ Running next.config took 11ms
+
+  Creating an optimized production build ...
+
+✓ Compiled successfully in 4.4s
+
+  Running TypeScript ...
+
+  Finished TypeScript in 2.4s ...
+
+  Collecting page data using 3 workers ...
+
+  Generating static pages using 3 workers (0/8) ...
+
+  Generating static pages using 3 workers (2/8)
+
+  Generating static pages using 3 workers (4/8)
+
+  Generating static pages using 3 workers (6/8)
+
+✓ Generating static pages using 3 workers (8/8) in 220ms
+
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/audit
+├ ƒ /api/discover
+├ ƒ /api/entities/search
+├ ƒ /api/health
+├ ƒ /api/tools
+├ ƒ /api/visuals
+└ ƒ /review
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+npm ci --include=dev && npm run build
+copy /root/.cache
+copy /root/.cache
+copy /app/node_modules
+copy /app
+copy /app/node_modules
+copy /app
+[railpack] merge $packages:apt:runtime, $packages:mise, $build, $build
+[railpack] merge $packages:apt:runtime, $packages:mise, $build, $build
+exporting to docker image format
+exporting to docker image format
+containerimage.config.digest: sha256:934b2ab85fb7528a3dcb8135a22a2c92cbf709186ccd636c6bf1d7f64849629c
+containerimage.digest: sha256:c864f910abf31e9e02dd4f02b35663d42fe6997984b397835213922e858923b5
+containerimage.descriptor: eyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQub2NpLmltYWdlLm1hbmlmZXN0LnYxK2pzb24iLCJkaWdlc3QiOiJzaGEyNTY6Yzg2NGY5MTBhYmYzMWU5ZTAyZGQ0ZjAyYjM1NjYzZDQyZmU2OTk3OTg0YjM5NzgzNTIxMzkyMmU4NTg5MjNiNSIsInNpemUiOjIzODcsImFubm90YXRpb25zIjp7Im9yZy5vcGVuY29udGFpbmVycy5pbWFnZS5jcmVhdGVkIjoiMjAyNi0xMC0zMVQwMTozMzo0MFoifSwicGxhdGZvcm0iOnsiYXJjaGl0ZWN0dXJlIjoiYW1kNjQiLCJvcyI6ImxpbnV4In19
+image push
+====================
+Starting Healthcheck
+====================
+
+Path: /api/health
+Retry window: 1m0s
+[1/1] Healthcheck succeeded!

@@ -2,7 +2,12 @@
 
 **Your agent recommends. TasteProbe verifies.**
 
-Submission draft. No public repository or demo URL has been created by this gate. Add real reviewed links only after publication authorization. Public deployment readiness remains conditional; see [deployment blockers](DEPLOYMENT.md).
+Submission draft: ready for operator review, not submitted.
+
+- Source: https://github.com/jpablortiz96/tasteprobe
+- Public HTTPS demo: https://tasteprobe-production.up.railway.app
+
+Both URLs were verified. Railway build/healthcheck, one running replica, static assets, exact-origin CSRF, production Redis admission and a retained tool session passed without provider calls. Fresh public Discover/Audit LIVE user acceptance remains pending separate authorization. See [deployment details](DEPLOYMENT.md).
 
 ## Inspiration
 
@@ -36,7 +41,7 @@ Verifiable identity, provenance and abstention make cultural tools more useful t
 
 ## What's next
 
-Freeze features. Complete shared public request/spend controls, confirm judge allowance and verify the chosen HTTPS deployment origin. Publish only after operator approval. A separately authorized full agent-driven LIVE audit is future validation, not an existing accomplishment.
+Features are frozen. GitHub and Railway are published with shared quota admission and verified HTTPS origin behavior. Complete separately authorized public LIVE acceptance and record operator feedback. A separately authorized full agent-driven LIVE audit is future validation, not an existing accomplishment.
 
 ## Technologies
 
@@ -44,7 +49,7 @@ Qloo REST Search and Insights; TMDB API; Next.js; React; TypeScript; Node.js nat
 
 ## Instructions for judges
 
-Until a reviewed public demo URL exists, run locally using README. Configure your authorized server-only credentials and explicitly agree a request budget before LIVE use. For Discover, search Arrival and confirm the 2016 movie, then discover and inspect Why this movie and the Passport. For Audit, use the exact four titles/years above, confirm every identity, evaluate once, inspect Before/After and generate Rescue. Approve or Keep original list records a local decision; export the Passport to inspect it. Do not repeat evaluations to try to recreate a historical order.
+Open the public HTTPS demo above. No account or browser API key is required. Operators should agree a bounded request budget before LIVE acceptance; the shared demo has conservative global/client limits. Self-hosting instructions and private server configuration are in README. For Discover, search Arrival and confirm the 2016 movie, then discover and inspect Why this movie and the Passport. For Audit, use the exact four titles/years above, confirm every identity, evaluate once, inspect Before/After and generate Rescue. Approve or Keep original list records a local decision; export the Passport to inspect it. Do not repeat evaluations to try to recreate a historical order.
 
 For the agent demonstration, use the documented Codex/MCP script with the default zero Qloo allowance. It demonstrates authentic missing-evidence abstention without consuming a provider request. Synthetic /review is development-only, explicitly NOT LIVE and unavailable in production.
 
@@ -55,6 +60,8 @@ For the agent demonstration, use the documented Codex/MCP script with the defaul
 - [Actual Codex MCP events](../evidence/gate2h2-codex-mcp.json).
 - Operator-confirmed desktop/mobile usability exists; authentic screenshot files have not been supplied to the repository. No screenshots are fabricated.
 - Partial coverage means no revised ranking. Explainability may be absent. Rankings are query-specific; affinity is not calibrated satisfaction.
-- No public deployment, shared durable quota or judge allowance is claimed as verified.
+- Public deployment and real Redis reservation/admission are verified. Internal caps of 40 Qloo / 200 TMDB do not establish provider balances; 30 Qloo requests are planned for judges. Fresh public LIVE user acceptance remains pending.
+- Ordinary Railway resource usage is metered under the existing plan; no upgrade was made.
+- Video is being prepared separately; no video URL or submitted Devpost status is invented.
 
 This product uses the TMDB API but is not endorsed or certified by TMDB. Source code is MIT; provider data, artwork and trademarks are governed separately by their owners. See [third-party notices](../THIRD_PARTY_NOTICES.md).

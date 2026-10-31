@@ -1,3 +1,27 @@
+# TasteProbe - FINAL RELEASE PUBLISHED
+
+2026-10-30 Colombia. GitHub and Railway publication executed. **Infrastructure PASS; fresh public LIVE user acceptance PENDING separate authorization.**
+
+- Source: https://github.com/jpablortiz96/tasteprobe (public, master, MIT, README/Mermaid verified).
+- Demo: https://tasteprobe-production.up.railway.app .
+- Deployment: 0a5456be-095c-4cb2-bd9a-f89c741cd89a, SUCCESS, deployed app commit 0592062.
+- Actual build: Next.js 16.4.3/Node 24.22.0, TypeScript/build PASS; healthcheck PASS; start:public on 0.0.0.0:8080.
+- Actual runtime: one configured/running replica, zero crashed/exited, no volumes.
+- Public HTTPS, home/eight assets, own-origin tool calls, foreign-origin 403 and production /review 404 PASS. Known secrets absent from inspected client assets/responses/logs.
+- Real production Redis admission and session persistence PASS through hosted API; structured ABSTAINED with zero provider budget used. Optional SSH metadata read timed out and direct operator Windows-to-Upstash MGET was intermittent/ENOTFOUND; hosted admission remained successful.
+- Internal caps 40 Qloo/200 TMDB; planned Qloo judge reserve 30. These are not official balances or a guarantee of availability.
+- New Qloo/TMDB requests by release agent: **0**. Historical Discover/Audit evidence remains historical. No new LIVE affinities or autonomous-agent audit fabricated.
+- Ordinary existing-plan consumption was explicitly authorized; no upgrade/subscription change or unrelated service modification. Private variable values transferred via stdin, retained by preserve(), never committed.
+- Final Devpost draft has verified source/demo URLs and remains NOT SUBMITTED. Video is handled separately.
+
+The application code is frozen. Subsequent repository changes document the verified release and add operator checks; they do not automatically redeploy or invalidate current Audit sessions. Prior 121 tests/seven MOCK HTTP E2E remain retained; targeted typecheck, actual remote build and install/audit checks passed without another long local test cycle.
+
+[Full release report](evidence/FINAL_RELEASE.md) | [Real public HTTP evidence](evidence/final-public-verification.json) | [Actual replica state](evidence/final-railway-verification.json) | [Public LIVE acceptance instructions](docs/PUBLIC_ACCEPTANCE.md)
+
+Historical gate reports below retain their original statuses; this release summary supersedes earlier no-repository/no-deployment statements.
+
+---
+
 # TasteProbe - GATE 4B.2 Redis real diagnosis
 
 2026-10-30 Colombia. **REDIS_REAL_PASS: operational preflight. Public deployment still on hold.** No Qloo/TMDB call, public service/deployment or billing/plan modification.

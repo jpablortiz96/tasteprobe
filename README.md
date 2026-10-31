@@ -1,6 +1,6 @@
 # TasteProbe
 
-Source: https://github.com/jpablortiz96/tasteprobe
+[Open TasteProbe](https://tasteprobe-production.up.railway.app) | [GitHub source](https://github.com/jpablortiz96/tasteprobe)
 
 Discover new movies from films you love, or audit another AI's shortlist with verifiable cultural evidence.
 
@@ -70,7 +70,7 @@ For no-API UI review, set TASTEPROBE_VISUAL_REVIEW=synthetic and run dev on a se
 - Reports preserve source, request reference, retrieval date, candidate coverage, observed scores, limitations and actual tool events. They exclude authorization proofs and private model reasoning.
 - Operator LIVE budgets are explicit and independent of technical caps. Do not replay historical smoke scripts or A/B experiments without fresh authorization.
 
-Original source is licensed under [MIT](LICENSE). Provider artwork, data and branding are governed separately; see [third-party notices](THIRD_PARTY_NOTICES.md). Public LIVE deployment remains blocked by shared consumption controls, judge quota verification and hosting Origin/session acceptance. No remote, push or deploy is performed. See [deployment preparation](docs/DEPLOYMENT.md), [Devpost draft](docs/DEVPOST_FINAL.md) and [EVIDENCE.md](EVIDENCE.md).
+Original source is licensed under [MIT](LICENSE). Provider artwork, data and branding are governed separately; see [third-party notices](THIRD_PARTY_NOTICES.md). TasteProbe is published on GitHub and Railway. HTTPS, exact-origin CSRF, one running replica, production Redis admission, static assets and cross-request tool state are verified. Fresh public Discover/Audit LIVE user acceptance remains pending a separate authorized budget. See [deployment preparation](docs/DEPLOYMENT.md), [Devpost draft](docs/DEVPOST_FINAL.md) and [EVIDENCE.md](EVIDENCE.md).
 
 ## Architecture
 
@@ -123,6 +123,14 @@ This product uses the TMDB API but is not endorsed or certified by TMDB. The app
 
 Use `npm run start:public` only for an explicitly approved external deployment. It binds 0.0.0.0/$PORT and refuses incomplete HTTPS/signing/shared-quota configuration. Primary target: one Railway replica; Vercel is not supported unchanged because Audit/Rescue state remains in memory.
 
-Public provider attempts require an atomic Redis reservation before fetch; storage failure denies consumption. Total allowances must be explicitly approved, not guessed from historical tests. Redis and signing credentials are server-only. Missing configuration cannot fall back to unlimited public usage. Redis/Lua was also verified against real Upstash in isolated preflight namespaces: two processes, exact global cap, independent providers, client/operation caps and shared halt. Provider allowance, database-level persistence/eviction confirmation, hosting cost approval and actual hosting Origin/header behavior remain pending. No PRODUCTION_READY claim is made. See [exact variables and operator commands](docs/DEPLOYMENT.md).
+Public provider attempts require an atomic Redis reservation before fetch; storage failure denies consumption. Total allowances must be explicitly approved, not guessed from historical tests. Redis and signing credentials are server-only. Missing configuration cannot fall back to unlimited public usage. Redis/Lua was also verified against real Upstash in isolated preflight namespaces: two processes, exact global cap, independent providers, client/operation caps and shared halt. The public Railway deployment now also verifies own/foreign Origin handling, real Redis admission and retained session state. Official provider balance and fresh public LIVE user acceptance are not inferred from those checks. No PRODUCTION_READY claim is made. See [exact variables and operator commands](docs/DEPLOYMENT.md).
 
 Redis diagnostics: `node scripts/check-public-quota.mjs --preflight` and `node scripts/verify-shared-quota.mjs` automatically load quota variables from ignored .env.local and reject conflicting process variables without printing values. Run from an external PowerShell when the restricted sandbox reports EACCES. See [real Redis evidence](evidence/gate4b2-real-redis.json). Railway Config as Code is deprecated for new services: use the reviewed current IaC workflow in [deployment instructions](docs/DEPLOYMENT.md); the old JSON is archived under docs and does not configure a new service.
+
+## Published release
+
+The demo runs on one Railway replica with PORT=8080, start:public, healthcheck /api/health and no persistent filesystem requirement. Source upload/deployment used CLI after reviewing the IaC plan. Existing runtime secrets are preserved in .railway/railway.ts without storing values there. The pinned Railway SDK is a development-only infrastructure dependency. The current workspace plan is unchanged; ordinary resource consumption is metered, not claimed to be free.
+
+[Public verification](evidence/final-public-verification.json) covers home/assets, HTTPS, production /review 404, foreign-origin rejection and a real session/tool abstention with zero Qloo/TMDB calls. It is not a fresh LIVE recommendation acceptance test or an autonomous LLM audit. Previous genuine Qloo Discover/Audit evidence is historical and remains dated.
+
+Public demo internal caps are 40 Qloo / 200 TMDB; planned Qloo reserve for judges is 30. These are not provider-account balances. Anonymous callers share a conservative bucket because no user-controlled IP header is trusted. For an explicitly authorized seven-request operator acceptance, complete Discover (up to two Qloo calls), wait at least 61 seconds, then Audit the four exact identities (up to five). Stop on the first auth/quota/network/contract failure, do not retry and do not run Challenge. Rescue review/approval/rejection and export do not need additional Qloo calls.

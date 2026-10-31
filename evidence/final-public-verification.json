@@ -1,0 +1,114 @@
+{
+  "timestamp": "2026-10-31T01:35:53.351Z",
+  "url": "https://tasteprobe-production.up.railway.app",
+  "result": "PUBLIC_ZERO_PROVIDER_HTTP_PASS",
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/_next/static/css/711c7ab7eb74e208.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/_next/static/chunks/webpack-44d8aec3c26a0cdc.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/_next/static/chunks/794-216401842b802bd7.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/_next/static/chunks/main-app-1a6aaf075bf9cd72.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/_next/static/chunks/950-ed20a9d6e0c2c013.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/_next/static/chunks/app/page-e09d250c02403f82.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/review",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/.env.local",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/scripts/tasteprobe-mcp.mjs",
+      "status": 404
+    },
+    {
+      "method": "POST",
+      "path": "/api/entities/search",
+      "status": 403,
+      "originAllowed": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/tools",
+      "status": 200,
+      "originAllowed": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/tools",
+      "status": 200,
+      "originAllowed": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/tools",
+      "status": 200,
+      "originAllowed": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/tools",
+      "status": 200,
+      "originAllowed": true
+    }
+  ],
+  "clientAssetsScanned": 8,
+  "configuredSecretMatches": 0,
+  "health": "CONFIGURED_NOT_VERIFIED",
+  "httpsVerified": true,
+  "csrfOwnOrigin": true,
+  "csrfForeignOriginRejected": true,
+  "redisFromProduction": "ATOMIC_HTTP_ADMISSION_SUCCEEDED",
+  "sessionAcrossRequests": true,
+  "realToolInvocation": "propose_evidence_based_revision -> ABSTAINED (HTTP caller, not an LLM demo)",
+  "providerCalls": 0,
+  "liveUserTest": "PENDING_SEPARATE_AUTHORIZATION",
+  "sessionTokenRecorded": false
+}
