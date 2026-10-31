@@ -1,0 +1,21 @@
+{
+  "exitCode": 0,
+  "source": "SHARED_OPERATOR_LIMITS_NOT_PROVIDER_QUOTA",
+  "qloo": {
+    "used": 0,
+    "limit": 40,
+    "remaining": 40,
+    "halted": false
+  },
+  "tmdb": {
+    "used": 0,
+    "limit": 200,
+    "remaining": 200,
+    "halted": false
+  },
+  "scope": "PREFLIGHT_ONLY",
+  "environment": {
+    "source": "ENV_LOCAL_WITH_PROCESS_CONFLICT_CHECK",
+    "conflicts": []
+  }
+}

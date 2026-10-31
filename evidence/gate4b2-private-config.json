@@ -1,0 +1,14 @@
+{
+  "addedVariableNames": [
+    "TASTEPROBE_SIGNING_SECRET",
+    "TASTEPROBE_QUOTA_NAMESPACE",
+    "TASTEPROBE_QLOO_TOTAL_LIMIT",
+    "TASTEPROBE_TMDB_TOTAL_LIMIT"
+  ],
+  "existingCredentialsChanged": false,
+  "secretGeneratedWith": "node:crypto.randomBytes(32)",
+  "secretPrinted": false,
+  "environmentIgnored": true,
+  "environmentTracked": false,
+  "limitsSource": "PREVIOUS_OPERATOR_DELEGATION_40_QLOO_200_TMDB_NOT_OFFICIAL_QUOTA"
+}

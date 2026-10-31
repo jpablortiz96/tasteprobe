@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-31T01:11:15.742Z",
+  "assets": 58,
+  "findings": [],
+  "configuredSecretsChecked": 5,
+  "providerRequests": 0,
+  "successfulRealRedisCommands": 28,
+  "sandboxTransportFailures": 2,
+  "productionNamespaceModified": false,
+  "productionDeployment": false
+}

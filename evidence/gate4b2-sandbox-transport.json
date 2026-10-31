@@ -1,0 +1,12 @@
+{
+  "exitCode": 1,
+  "result": "BLOCKED",
+  "diagnostic": {
+    "phase": "quota-status",
+    "category": "REDIS_NETWORK",
+    "command": "MGET",
+    "httpStatus": null,
+    "transportCode": "EACCES"
+  },
+  "providerRequests": 0
+}

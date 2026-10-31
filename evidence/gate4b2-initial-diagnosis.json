@@ -1,0 +1,67 @@
+{
+  "variables": [
+    {
+      "name": "UPSTASH_REDIS_REST_URL",
+      "filePresent": true,
+      "processPresent": false,
+      "processConflicts": false
+    },
+    {
+      "name": "UPSTASH_REDIS_REST_TOKEN",
+      "filePresent": true,
+      "processPresent": false,
+      "processConflicts": false
+    },
+    {
+      "name": "TASTEPROBE_SIGNING_SECRET",
+      "filePresent": false,
+      "processPresent": false,
+      "processConflicts": false
+    },
+    {
+      "name": "TASTEPROBE_QUOTA_NAMESPACE",
+      "filePresent": false,
+      "processPresent": false,
+      "processConflicts": false
+    },
+    {
+      "name": "TASTEPROBE_QLOO_TOTAL_LIMIT",
+      "filePresent": false,
+      "processPresent": false,
+      "processConflicts": false
+    },
+    {
+      "name": "TASTEPROBE_TMDB_TOTAL_LIMIT",
+      "filePresent": false,
+      "processPresent": false,
+      "processConflicts": false
+    }
+  ],
+  "urlFormatValid": true,
+  "reproductions": [
+    {
+      "script": "scripts/check-public-quota.mjs",
+      "explicitEnvFile": false,
+      "exitCode": 1,
+      "genericMessage": true
+    },
+    {
+      "script": "scripts/check-public-quota.mjs",
+      "explicitEnvFile": true,
+      "exitCode": 1,
+      "genericMessage": true
+    },
+    {
+      "script": "scripts/verify-shared-quota.mjs",
+      "explicitEnvFile": false,
+      "exitCode": 1,
+      "genericMessage": true
+    },
+    {
+      "script": "scripts/verify-shared-quota.mjs",
+      "explicitEnvFile": true,
+      "exitCode": 1,
+      "genericMessage": true
+    }
+  ]
+}

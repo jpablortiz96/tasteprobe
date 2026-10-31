@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-10-31T01:07:40.720Z",
+  "head": "011c454dbebdbd24bf423629b9b2650a483b9d73",
+  "commits": 6,
+  "objects": 459,
+  "blobs": 386,
+  "configuredCredentialsChecked": 5,
+  "findings": [],
+  "scope": "All locally reachable refs; pattern and exact configured-secret matches. Not a guarantee against unknown formats, dangling objects, external clones or previously rotated unknown credentials."
+}

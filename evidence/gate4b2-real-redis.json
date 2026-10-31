@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-10-31T01:01:48.856Z",
+  "exitCode": 0,
+  "elapsedMs": 2883,
+  "result": "REAL_REDIS_ATOMIC_RESERVATION_PASS",
+  "testNamespace": "tasteprobe-hackathon-202-preflight-856a211a",
+  "processes": 2,
+  "concurrentAttempts": 8,
+  "allowed": 3,
+  "denied": 5,
+  "totalTTL": -1,
+  "minuteTTL": 60,
+  "independentProviderBudgets": true,
+  "clientAndOperationLimits": true,
+  "sharedHaltFlag": true,
+  "storageOutage": "INJECTED_TRANSPORT_FAILURE_DENIED",
+  "redisRequests": 27,
+  "providerRequests": 0,
+  "note": "TEST counters retained. Controlled halt uses the actual Redis flag, not a real upstream failure. Verify durable storage/no eviction separately; do not delete production counters."
+}

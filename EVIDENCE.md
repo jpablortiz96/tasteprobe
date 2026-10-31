@@ -1,3 +1,21 @@
+# TasteProbe - GATE 4B.2 Redis real diagnosis
+
+2026-10-30 Colombia. **REDIS_REAL_PASS: operational preflight. Public deployment still on hold.** No Qloo/TMDB call, public service/deployment or billing/plan modification.
+
+Exact original causes: standalone Node scripts did not auto-load .env.local; the file contained Upstash credentials but lacked signing secret, namespace and both required internal limits. Even explicit env-file loading therefore failed before any Redis request. No process-variable conflict existed. Completed only the missing private local configuration using a securely generated signing secret and previously delegated 40/200 limits, without printing values or changing existing credentials.
+
+CLI scripts now auto-load quota variables, fail on process/file conflicts, and emit redacted layer/category/HTTP/transport/field diagnostics. Public API errors remain generic and fail closed. A separate sandbox transport failure was identified as **EACCES** with no HTTP; an approved external process succeeded with the same credentials and TLS validation intact.
+
+Real Redis: **28 successful commands**, entirely in random preflight namespaces; two Node processes, 8 concurrent reservations, exactly 3 allowed/5 denied, exhausted total, independent Qloo/TMDB budgets, client/operation caps, shared halt with unused allowance, total TTL -1 and minute TTL 60. Outage failure is explicitly injected; database-wide persistence/no-eviction settings still need console confirmation. Production demo counters untouched. Two sandbox MGET transport attempts received no HTTP.
+
+Quality: **121 tests PASS**, **7 MOCK HTTP E2E PASS**, typecheck/build PASS, audit zero vulnerabilities; /review production 404 retained. Six prior commits/386 blobs reviewed without configured-secret/pattern findings; active runtime build unchanged.
+
+Railway current documentation confirms Config as Code is deprecated and unavailable for new services. Archived root railway.json as docs/railway-legacy-reference.json; corrected instructions to current .railway/railway.ts / CLI plan workflow. No IaC apply/migration/new SDK or cloud resource was created. Billing acceptance remains unresolved, so no publication advancement is claimed.
+
+[Full diagnosis](evidence/GATE4B2_REDIS_DIAGNOSIS.md) | [Actual Redis result](evidence/gate4b2-real-redis.json) | [Redacted sandbox cause](evidence/gate4b2-sandbox-transport.json) | [Current deployment instructions](docs/DEPLOYMENT.md)
+
+---
+
 # TasteProbe - GATE 4B Release preflight
 
 2026-10-30 Colombia. **AT_RISK / PUBLICATION ON HOLD.** GitHub and Railway CLI authentication verified; authenticated owner checked, tasteprobe repository does not exist. No repository, project/service/domain, push or deployment created. Qloo/TMDB/real Redis calls by Codex: zero.
