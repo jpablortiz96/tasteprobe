@@ -533,3 +533,13 @@ Created: `scripts/gate2a1-ab.mjs`, `scripts/qloo-ab-compare.mjs`, `scripts/verif
 Baseline remains **c80659b**. Gate 1B, 2A and 2A.1 changes remain in the working tree; this task reports Git state and does not push or deploy. The existing sandbox restriction on `.git/index.lock` was recorded in Gate 2A; no new staging attempt was needed for this read-only Git review. The final review artifact records the current commit and pending files. No new commit is claimed.
 
 The control is closed for this case, and the authorized three-attempt budget is exhausted. **Stop at GATE 2A.1.** Next action is operator review of the A/B evidence and pending release work, especially visual QA, agentic-modality positioning, license and a reviewed local commit. A later publication step needs its own review; this gate does not automatically authorize it.
+
+## GATE 5 - authentic public visual delivery
+
+Fresh production Chrome acceptance on October 30, 2026 (Colombia) used exactly seven authorized Qloo attempts: Discover Search + Insights, then four Audit Search calls + Insights, without retries or Challenge. Discover returned eight unique movies with Arrival excluded; Audit returned the exact three confirmed candidates with 3/3 coverage. Both Insights provenance objects report HTTP 200.
+
+Rescue proposed the verified Qloo order. APPROVED and REJECTED Passports downloaded from the same current analysis preserve identical evaluation/proposal. Discover Passport also downloaded and parsed. Desktop 1440x900 and mobile 390x844 were captured; neither mobile mode had horizontal overflow. All 15 WebP files were visually reviewed; no DOM replacements, mocked responses or compositing.
+
+Shared counters: Qloo 7/40 used, 33 remaining; TMDB 14/200 used. Internal limits are not provider balances. The default local DNS resolver failed Redis; explicit DNS resolution with intact TLS verified real counters. No application code or deployment configuration changed. Existing 121 tests/seven MOCK E2E/build/typecheck/audit results were retained, not rerun for documentation-only changes.
+
+[Capture manifest](docs/screenshots/MANIFEST.md), [public redacted evidence](evidence/gate5-visual-delivery.json), [Devpost media guide](docs/DEVPOST_MEDIA_GUIDE.md). Private downloaded Passports and temporary PNG/controller files remain ignored. Actual MCP abstention remains separately documented; these UI captures do not imply autonomous LLM execution.

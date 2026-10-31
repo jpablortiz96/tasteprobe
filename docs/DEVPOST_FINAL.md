@@ -7,7 +7,7 @@ Submission draft: ready for operator review, not submitted.
 - Source: https://github.com/jpablortiz96/tasteprobe
 - Public HTTPS demo: https://tasteprobe-production.up.railway.app
 
-Both URLs were verified. Railway build/healthcheck, one running replica, static assets, exact-origin CSRF, production Redis admission and a retained tool session passed without provider calls. Fresh public Discover/Audit LIVE user acceptance remains pending separate authorization. See [deployment details](DEPLOYMENT.md).
+Both URLs were verified. Railway build/healthcheck, one running replica, static assets, exact-origin CSRF, production Redis admission and a retained tool session passed without provider calls. Fresh public Chrome acceptance now passed Discover, Audit 3/3, Rescue, Approve, Reject and Passport downloads. Fifteen authentic screenshots document the journey. See [deployment details](DEPLOYMENT.md).
 
 ## Inspiration
 
@@ -31,7 +31,7 @@ Identity ambiguity mattered more than a successful HTTP status: choosing a diffe
 
 ## Accomplishments
 
-The operator verified Discover with authentic Qloo recommendations and TMDB artwork in Chrome. Audit with Arrival (2016), Interstellar (2014), Blade Runner 2049 (2017) and Her (2013) achieved 3/3 coverage. Its actual response ordered Blade Runner 2049, Interstellar, then Her. The APPROVED Passport preserves this request and observed values; later queries may differ. Rescue, approval and download were verified by the operator on desktop and mobile. Same-analysis Reject serialization is additionally covered offline with clearly synthetic test data; the corresponding original LIVE Reject export was lost and is not claimed as verified.
+The operator verified Discover with authentic Qloo recommendations and TMDB artwork in Chrome. Audit with Arrival (2016), Interstellar (2014), Blade Runner 2049 (2017) and Her (2013) achieved 3/3 coverage. Its actual response ordered Blade Runner 2049, Interstellar, then Her. The APPROVED Passport preserves this request and observed values; later queries may differ. Rescue, approval and download were verified by the operator on desktop and mobile. Same-analysis Reject was subsequently verified with a fresh production evaluation: APPROVED and REJECTED downloads retain identical evidence and proposal. The earlier lost export is not used as proof.
 
 A dated controlled A/B experiment compared Arrival and Paddington 2 signals with the same three candidates. Both returned 3/3, with differences in order and query.affinity. The historical artifact has an offline verifier. One comparison does not establish general causality or personal satisfaction.
 
@@ -41,7 +41,7 @@ Verifiable identity, provenance and abstention make cultural tools more useful t
 
 ## What's next
 
-Features are frozen. GitHub and Railway are published with shared quota admission and verified HTTPS origin behavior. Complete separately authorized public LIVE acceptance and record operator feedback. A separately authorized full agent-driven LIVE audit is future validation, not an existing accomplishment.
+Features are frozen. GitHub and Railway are published with shared quota admission and verified HTTPS origin behavior. Public LIVE browser acceptance and the visual delivery are complete; finalize the submission and record judge feedback. A separately authorized full agent-driven LIVE audit is future validation, not an existing accomplishment.
 
 ## Technologies
 
@@ -58,10 +58,14 @@ For the agent demonstration, use the documented Codex/MCP script with the defaul
 - [LIVE and offline evidence ledger](../EVIDENCE.md).
 - [Historical A/B artifact](../evidence/gate2a1-ab.json) and `node scripts/verify-gate2a1.mjs` (offline).
 - [Actual Codex MCP events](../evidence/gate2h2-codex-mcp.json).
-- Operator-confirmed desktop/mobile usability exists; authentic screenshot files have not been supplied to the repository. No screenshots are fabricated.
+- [Fifteen authentic production Chrome screenshots](screenshots/MANIFEST.md), including desktop and mobile, are now published. STATIC inputs and LIVE results are distinguished.
 - Partial coverage means no revised ranking. Explainability may be absent. Rankings are query-specific; affinity is not calibrated satisfaction.
-- Public deployment and real Redis reservation/admission are verified. Internal caps of 40 Qloo / 200 TMDB do not establish provider balances; 30 Qloo requests are planned for judges. Fresh public LIVE user acceptance remains pending.
+- Public deployment and real Redis reservation/admission are verified. Internal caps of 40 Qloo / 200 TMDB do not establish provider balances; 30 Qloo requests are planned for judges. Fresh public browser acceptance used seven authorized Qloo attempts; the observed shared counter retained 33/40.
 - Ordinary Railway resource usage is metered under the existing plan; no upgrade was made.
 - Video is being prepared separately; no video URL or submitted Devpost status is invented.
 
 This product uses the TMDB API but is not endorsed or certified by TMDB. Source code is MIT; provider data, artwork and trademarks are governed separately by their owners. See [third-party notices](../THIRD_PARTY_NOTICES.md).
+
+## Submission media
+
+Use the [Devpost media guide](DEVPOST_MEDIA_GUIDE.md) for an ordered eight-image narrative. The screenshots were captured on October 30, 2026 (Colombia) from the public demo, not from synthetic /review. [Machine-readable acceptance and provenance](../evidence/gate5-visual-delivery.json) preserves the current request references and observed values. Devpost is prepared, not claimed as submitted.

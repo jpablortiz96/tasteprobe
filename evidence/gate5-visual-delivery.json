@@ -1,0 +1,405 @@
+{
+  "gate": "GATE 5",
+  "status": "PASS",
+  "date": "2026-10-31T02:22:05.600Z",
+  "demo": "https://tasteprobe-production.up.railway.app",
+  "browser": "Installed Google Chrome controlled through isolated Playwright-core; headless real browser, fresh context. No response mocks or DOM replacements.",
+  "qlooAttempts": [
+    {
+      "attempt": 1,
+      "operation": "/api/entities/search",
+      "time": "2026-10-31T02:11:40.361Z",
+      "localHttpStatus": 200,
+      "upstreamHttpStatus": null,
+      "upstreamStatusNote": "Valid live Qloo identity response; separate upstream HTTP status not retained."
+    },
+    {
+      "attempt": 2,
+      "operation": "/api/discover",
+      "time": "2026-10-31T02:12:44.267Z",
+      "localHttpStatus": 200,
+      "upstreamHttpStatus": 200,
+      "upstreamStatusNote": "Preserved in actual response provenance"
+    },
+    {
+      "attempt": 3,
+      "operation": "resolve_entities",
+      "time": "2026-10-31T02:15:27.583Z",
+      "localHttpStatus": 200,
+      "upstreamHttpStatus": null,
+      "upstreamStatusNote": "Valid live Qloo identity response; separate upstream HTTP status not retained."
+    },
+    {
+      "attempt": 4,
+      "operation": "resolve_entities",
+      "time": "2026-10-31T02:16:02.656Z",
+      "localHttpStatus": 200,
+      "upstreamHttpStatus": null,
+      "upstreamStatusNote": "Valid live Qloo identity response; separate upstream HTTP status not retained."
+    },
+    {
+      "attempt": 5,
+      "operation": "resolve_entities",
+      "time": "2026-10-31T02:16:33.824Z",
+      "localHttpStatus": 200,
+      "upstreamHttpStatus": null,
+      "upstreamStatusNote": "Valid live Qloo identity response; separate upstream HTTP status not retained."
+    },
+    {
+      "attempt": 6,
+      "operation": "resolve_entities",
+      "time": "2026-10-31T02:17:00.859Z",
+      "localHttpStatus": 200,
+      "upstreamHttpStatus": null,
+      "upstreamStatusNote": "Valid live Qloo identity response; separate upstream HTTP status not retained."
+    },
+    {
+      "attempt": 7,
+      "operation": "evaluate_candidates",
+      "time": "2026-10-31T02:17:57.010Z",
+      "localHttpStatus": 200,
+      "upstreamHttpStatus": 200,
+      "upstreamStatusNote": "Preserved in actual response provenance"
+    }
+  ],
+  "quota": {
+    "time": "2026-10-31T02:18:22.324Z",
+    "http": 200,
+    "dns": "explicit-resolver-TLS-verified",
+    "qloo": {
+      "used": 7,
+      "remaining": 33,
+      "halted": false
+    },
+    "tmdb": {
+      "used": 14,
+      "remaining": 186,
+      "halted": false
+    }
+  },
+  "discover": {
+    "status": "PASS",
+    "coverage": 8,
+    "requested": 8,
+    "provenance": {
+      "source": "Qloo REST",
+      "host": "https://hackathon.api.qloo.com",
+      "endpoint": "/v2/insights",
+      "parameters": {
+        "filter.type": "urn:entity:movie",
+        "signal.interests.entities": "c7ec4ca9-1ccc-4991-b738-55f075441b3f",
+        "filter.exclude.entities": "c7ec4ca9-1ccc-4991-b738-55f075441b3f",
+        "take": "8",
+        "feature.explainability": "true"
+      },
+      "timestamp": "2026-10-31T02:12:46.847Z",
+      "requestId": "effa81ae-afa7-4eeb-baec-ecc394dfb594",
+      "httpStatus": 200
+    },
+    "movies": [
+      {
+        "id": "a67bcfb9-3466-41b0-b1f7-64883dbca3d1",
+        "name": "Passengers",
+        "year": 2016,
+        "rank": 1,
+        "affinity": 0.9429151905073924
+      },
+      {
+        "id": "97c52254-e749-43de-9745-5db1e38c4328",
+        "name": "Alien: Covenant",
+        "year": 2017,
+        "rank": 2,
+        "affinity": 0.9156606072764641
+      },
+      {
+        "id": "3a02361c-987b-4f7e-9aad-071c3853ad92",
+        "name": "Blade Runner 2049",
+        "year": 2017,
+        "rank": 3,
+        "affinity": 0.9132748362394222
+      },
+      {
+        "id": "948f694f-63fe-44a6-97a2-33e2736a79af",
+        "name": "Life",
+        "year": 2017,
+        "rank": 4,
+        "affinity": 0.9111431939684876
+      },
+      {
+        "id": "5369e9ff-a701-443c-9c2b-cc0d4990423b",
+        "name": "10 Cloverfield Lane",
+        "year": 2016,
+        "rank": 5,
+        "affinity": 0.9047973930498805
+      },
+      {
+        "id": "1a532b56-045e-4edf-a403-f7ae9c102171",
+        "name": "The Discovery",
+        "year": 2017,
+        "rank": 6,
+        "affinity": 0.9030368330534584
+      },
+      {
+        "id": "d3072382-05fe-4923-9f91-4629733463f0",
+        "name": "Ghost in the Shell",
+        "year": 2017,
+        "rank": 7,
+        "affinity": 0.9017654911373728
+      },
+      {
+        "id": "fa8f9289-2b06-4ed3-9e3e-a0dbe295f86b",
+        "name": "Nocturnal Animals",
+        "year": 2016,
+        "rank": 8,
+        "affinity": 0.9010065069606542
+      }
+    ],
+    "favorites": [
+      {
+        "id": "c7ec4ca9-1ccc-4991-b738-55f075441b3f",
+        "name": "Arrival",
+        "year": 2016
+      }
+    ],
+    "favoritesExcluded": true,
+    "uniqueMovies": true,
+    "passportDownloaded": true
+  },
+  "audit": {
+    "status": "SUCCESS",
+    "coverage": {
+      "returned": 3,
+      "total": 3
+    },
+    "provenance": {
+      "source": "Qloo REST",
+      "host": "https://hackathon.api.qloo.com",
+      "endpoint": "/v2/insights",
+      "parameters": {
+        "filter.type": "urn:entity:movie",
+        "signal.interests.entities": "c7ec4ca9-1ccc-4991-b738-55f075441b3f",
+        "filter.results.entities": "057da9d9-399b-437e-8bca-a80e499125ef,3a02361c-987b-4f7e-9aad-071c3853ad92,4f8ebd51-46db-4527-bc61-75b56472a50e",
+        "take": "3",
+        "feature.explainability": "true"
+      },
+      "timestamp": "2026-10-31T02:17:58.473Z",
+      "requestId": "18dafad2-481a-4bb0-8057-66df27cb71d7",
+      "httpStatus": 200
+    },
+    "rows": [
+      {
+        "id": "057da9d9-399b-437e-8bca-a80e499125ef",
+        "name": "Interstellar",
+        "year": 2014,
+        "originalRank": 1,
+        "qlooRank": 2,
+        "shift": -1,
+        "affinity": 0.8368126484416831
+      },
+      {
+        "id": "3a02361c-987b-4f7e-9aad-071c3853ad92",
+        "name": "Blade Runner 2049",
+        "year": 2017,
+        "originalRank": 2,
+        "qlooRank": 1,
+        "shift": 1,
+        "affinity": 0.9132748362394222
+      },
+      {
+        "id": "4f8ebd51-46db-4527-bc61-75b56472a50e",
+        "name": "Her",
+        "year": 2013,
+        "originalRank": 3,
+        "qlooRank": 3,
+        "shift": 0,
+        "affinity": 0.8013815822511426
+      }
+    ],
+    "proposalStatus": "PROPOSED",
+    "approvePassport": "APPROVED",
+    "rejectPassport": "REJECTED",
+    "sameEvaluation": true,
+    "sameProposal": true
+  },
+  "responsive": {
+    "desktop": "1440x900",
+    "mobile": "390x844",
+    "discoverHorizontalOverflow": false,
+    "auditHorizontalOverflow": false
+  },
+  "limitations": [
+    "Captured results are dated observations, not a promise that later queries return the same order.",
+    "Affinity is not personal satisfaction probability. Individual attribution was unavailable in this Discover response.",
+    "Arrival and Her artwork retained safe illustrative fallbacks; TMDB cannot confirm Qloo identity.",
+    "The capture session is browser-driven human workflow automation, not an autonomous LLM audit. Actual Codex MCP abstention is documented separately.",
+    "Local default DNS failed resolving Redis; explicit DNS resolution with intact TLS verified the counters.",
+    "No general browser console audit is claimed; route responses and visible interactions were checked."
+  ],
+  "screenshots": [
+    {
+      "file": "01-home-desktop.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 49388,
+      "sha256": "a93cffb7fc265fc191c5958fc8ee7360d4344772ec5633845209299102d9a442",
+      "capturedAt": "2026-10-31T02:10:30.643Z",
+      "state": "STATIC",
+      "mode": "DISCOVER",
+      "description": "Discover starts with a favorite, not a prebuilt shortlist."
+    },
+    {
+      "file": "02-discover-input.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 49310,
+      "sha256": "c52708098489256df304f5834cee21032008b790a5c80f54f31a905f389ae7b1",
+      "capturedAt": "2026-10-31T02:10:31.046Z",
+      "state": "STATIC",
+      "mode": "DISCOVER",
+      "description": "Arrival entered before any provider search."
+    },
+    {
+      "file": "03-arrival-identity-search.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 54444,
+      "sha256": "566693872c6c500b6dd05312732d83082c6d6e4b9fe3c02e961a5bcdd3b729a9",
+      "capturedAt": "2026-10-31T02:12:16.750Z",
+      "state": "LIVE",
+      "mode": "DISCOVER",
+      "description": "Live Qloo identities distinguish Arrival (2016) from The Arrival (1996)."
+    },
+    {
+      "file": "04-confirmed-favorite.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 51060,
+      "sha256": "525161f6c0273abff15035cb93e90b1a810940a2d2854ce759b35658b0a4f17c",
+      "capturedAt": "2026-10-31T02:12:20.394Z",
+      "state": "LIVE",
+      "mode": "DISCOVER",
+      "description": "Arrival (2016) explicitly confirmed; discovery is enabled."
+    },
+    {
+      "file": "05-cultural-dashboard.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 76578,
+      "sha256": "a1010df8d0573cd31568535c8b7198dc6269b1675a457b7fba8b1aa971a7850a",
+      "capturedAt": "2026-10-31T02:13:23.292Z",
+      "state": "LIVE",
+      "mode": "DISCOVER",
+      "description": "Eight authentic recommendations with observed affinity and source coverage."
+    },
+    {
+      "file": "06-featured-recommendation.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 89214,
+      "sha256": "ba2588b24530fe655c5fe343b5cbf01456e88dfd2a3d8f10ca31d363037d6594",
+      "capturedAt": "2026-10-31T02:20:05.996Z",
+      "state": "LIVE",
+      "mode": "DISCOVER",
+      "description": "Passengers (2016), the highest observed affinity in this result set, with matched TMDB artwork."
+    },
+    {
+      "file": "07-recommendation-grid.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 138828,
+      "sha256": "be33c0bad96c42b0ce95d3ad365c22383fa545999bcfa6487a5d4fee2357d880",
+      "capturedAt": "2026-10-31T02:20:05.675Z",
+      "state": "LIVE",
+      "mode": "DISCOVER",
+      "description": "Additional authentic Qloo results retain their returned positions."
+    },
+    {
+      "file": "08-why-this-movie.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 100296,
+      "sha256": "a80a6e869154c39eb0e80ff6ad5384b153693130e71693258757442a39564ffa",
+      "capturedAt": "2026-10-31T02:13:27.679Z",
+      "state": "LIVE",
+      "mode": "DISCOVER",
+      "description": "Expanded evidence states that individual attribution is unavailable; no explanation is invented."
+    },
+    {
+      "file": "09-discover-passport.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 53000,
+      "sha256": "be9675e3970febe3c8e6b7e0ef8a3b13a38df7e442ded7a8e3470bb91d21878b",
+      "capturedAt": "2026-10-31T02:14:05.531Z",
+      "state": "LIVE",
+      "mode": "DISCOVER",
+      "description": "The downloaded Discover Passport preserves identities, results and limitations."
+    },
+    {
+      "file": "10-audit-input.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 53626,
+      "sha256": "49fa59a927ff81d478350b87ff588fb78cbaaad28b402d343bf61a1c54be663c",
+      "capturedAt": "2026-10-31T02:10:33.297Z",
+      "state": "STATIC",
+      "mode": "AUDIT",
+      "description": "The original Audit input: Arrival and three ordered candidates."
+    },
+    {
+      "file": "11-audit-confirmed-identities.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 61838,
+      "sha256": "29a3de77af0f29accc2abbe8a1c693c6e9308d7971c557697739e2ee66f1d1af",
+      "capturedAt": "2026-10-31T02:17:46.298Z",
+      "state": "LIVE",
+      "mode": "AUDIT",
+      "description": "Four Qloo identities confirmed, including Her (2013), with safe artwork fallbacks."
+    },
+    {
+      "file": "12-audit-before-after.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 61932,
+      "sha256": "3b6198471c57315a94a39e3458a08d89fa2c7105817a7ac2a8f027c723c2ee14",
+      "capturedAt": "2026-10-31T02:18:47.852Z",
+      "state": "LIVE",
+      "mode": "AUDIT",
+      "description": "Live 3/3 comparison: Blade Runner 2049, Interstellar, Her."
+    },
+    {
+      "file": "13-rescue-proposal.webp",
+      "width": 1440,
+      "height": 900,
+      "bytes": 65778,
+      "sha256": "dc2c082c50b3c44cfc7eb56b8298f98f8b2abdff8113a8d4eaa0e78693eb7edb",
+      "capturedAt": "2026-10-31T02:18:49.186Z",
+      "state": "LIVE",
+      "mode": "AUDIT",
+      "description": "Rescue proposes the verified Qloo order for human approval or rejection."
+    },
+    {
+      "file": "14-discover-mobile.webp",
+      "width": 390,
+      "height": 844,
+      "bytes": 37052,
+      "sha256": "a8ee8109934e35392f5d0de4d667183bccade73d923e842482d152e339e0738b",
+      "capturedAt": "2026-10-31T02:19:21.589Z",
+      "state": "LIVE",
+      "mode": "DISCOVER",
+      "description": "The same loaded Discover evidence at a mobile viewport."
+    },
+    {
+      "file": "15-audit-mobile.webp",
+      "width": 390,
+      "height": 844,
+      "bytes": 28900,
+      "sha256": "f4520edfb2c7d2bb34ab82490d3c6203b9d0636131625f55b38b62871753b2d7",
+      "capturedAt": "2026-10-31T02:19:18.443Z",
+      "state": "LIVE",
+      "mode": "AUDIT",
+      "description": "The same loaded Audit comparison at a mobile viewport; the page continues below the capture."
+    }
+  ]
+}
