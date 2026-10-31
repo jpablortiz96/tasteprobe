@@ -1,0 +1,24 @@
+{
+  "verified": true,
+  "configuredNames": [
+    "QLOO_API_KEY",
+    "QLOO_BASE_URL",
+    "TMDB_READ_ACCESS_TOKEN",
+    "TASTEPROBE_DEPLOYMENT",
+    "TASTEPROBE_PUBLIC_ORIGIN",
+    "TASTEPROBE_SIGNING_SECRET",
+    "UPSTASH_REDIS_REST_URL",
+    "UPSTASH_REDIS_REST_TOKEN",
+    "TASTEPROBE_QUOTA_NAMESPACE",
+    "TASTEPROBE_QLOO_TOTAL_LIMIT",
+    "TASTEPROBE_TMDB_TOTAL_LIMIT",
+    "NODE_ENV"
+  ],
+  "secretValuesPrinted": false,
+  "signingSecretMatchesLocal": true,
+  "preflightNamespaceReused": false,
+  "optionalTrustedIpHeader": "UNSET_ANONYMOUS_BUCKET",
+  "qlooLimit": 40,
+  "tmdbLimit": 200,
+  "judgeReserve": 30
+}

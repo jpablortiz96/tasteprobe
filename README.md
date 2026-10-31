@@ -1,5 +1,7 @@
 # TasteProbe
 
+Source: https://github.com/jpablortiz96/tasteprobe
+
 Discover new movies from films you love, or audit another AI's shortlist with verifiable cultural evidence.
 
 **Qloo provides discovery, ranking and observed affinity. TMDB provides optional artwork.** TasteProbe keeps identity confirmation, cultural evidence, visual metadata and human review separate. Affinity is never presented as a probability of satisfaction.
