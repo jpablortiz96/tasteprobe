@@ -51,10 +51,10 @@ npm.cmd run typecheck
 npm.cmd run build
 npm.cmd run test:integration
 npm.cmd audit
-node --env-file=.env.local scripts/verify-secrets.mjs gate3
+node --env-file=.env.local scripts/verify-secrets.mjs gate4a
 ~~~
 
-Current checks preserve the original suites: **106 tests, six isolated MOCK HTTP E2E**, typecheck/build and audit pass. Gate 2H.2 built a source-only snapshot without touching the operator's active Next build. Tests do not substitute for real-browser acceptance; [EVIDENCE.md](EVIDENCE.md) and [GATE 2H.2 review](evidence/GATE2H2_REVIEW.md) distinguish operator observations, downloaded LIVE exports, protocol tests and actual Codex client events.
+Current checks preserve the original suites: **116 tests, seven isolated MOCK HTTP E2E**, typecheck/build and audit pass. Gate 2H.2 built a source-only snapshot without touching the operator's active Next build. Tests do not substitute for real-browser acceptance; [EVIDENCE.md](EVIDENCE.md) and [GATE 2H.2 review](evidence/GATE2H2_REVIEW.md) distinguish operator observations, downloaded LIVE exports, protocol tests and actual Codex client events.
 
 [TMDB integration](docs/TMDB_INTEGRATION.md) documents identity matching, actual provider checks and required attribution. Arrival (2016) currently retains fallback because TMDB has two same-title/year/original-title movies and no trusted Qloo external-ID binding is available. No poster is chosen by popularity or a guessed URL.
 
@@ -63,7 +63,7 @@ For no-API UI review, set TASTEPROBE_VISUAL_REVIEW=synthetic and run dev on a se
 ## Security and evidence boundaries
 
 - Qloo transport is server-only, fixed host/endpoints, eight-second timeout, bounded response, no redirects or automatic retries. Signed movie identities require human confirmation. Browser requests use relative same-origin paths with strict origin/port validation.
-- Local Qloo cap: 12 attempts/minute and 60/process, including failures. Tool sessions: 12 conservative reservations, 16 steps, 20 minutes. Identity proofs expire after 30 minutes or restart. MCP additionally enforces its own explicit allowance before dispatch.
+- Local Qloo cap: 12 attempts/minute and 60/process, including failures. Tool sessions: 12 conservative reservations, 16 steps, 20 minutes; at most 20 concurrent sessions. Configured server signing secrets preserve identity proofs across instances/restarts until their 30-minute expiry; loopback without a secret retains ephemeral signing. Audit sessions still require a single process. MCP additionally enforces its own explicit allowance before dispatch.
 - TMDB is independently bounded/cache-backed and cannot change Qloo ranking or affinity. Credentials and raw provider headers are not returned to the browser or Passport.
 - Reports preserve source, request reference, retrieval date, candidate coverage, observed scores, limitations and actual tool events. They exclude authorization proofs and private model reasoning.
 - Operator LIVE budgets are explicit and independent of technical caps. Do not replay historical smoke scripts or A/B experiments without fresh authorization.
@@ -86,7 +86,7 @@ flowchart LR
   UI --> Passport[Browser JSON Evidence Passport / human decision]
 ```
 
-Only Qloo supplies cultural ranking and observed affinity. TMDB imagery cannot affect ordering. The agent chooses bounded tools; missing evidence produces structured abstention. Human approval never automatically replaces the source ranking. Runtime sessions, signing secrets and counters are process-local, so this diagram does not imply distributed production readiness.
+Only Qloo supplies cultural ranking and observed affinity. TMDB imagery cannot affect ordering. The agent chooses bounded tools; missing evidence produces structured abstention. Human approval never automatically replaces the source ranking. Audit sessions and optional visual caches are process-local; identity signing can be stable and public provider budgets use shared Redis. The full workflow still requires one long-running process.
 
 ## Controlled cultural stress test
 
@@ -107,8 +107,8 @@ No authentic screenshot files have been supplied to the repository. [Screenshot 
 For source and history checks without provider requests:
 
 ```powershell
-node --env-file=.env.local scripts/verify-secrets.mjs gate3
-node --env-file=.env.local scripts/verify-release-history.mjs
+node --env-file=.env.local scripts/verify-secrets.mjs gate4a
+node --env-file=.env.local scripts/verify-release-history.mjs gate4a
 ```
 
 Do not run smoke:qloo or LIVE runners without a new explicit budget. Copy .env.example to ignored .env.local and populate values manually; never put credentials in client variables, source, logs or screenshots. Existing validation scripts may write dated evidence artifacts; review their diff before committing.
@@ -116,3 +116,9 @@ Do not run smoke:qloo or LIVE runners without a new explicit budget. Copy .env.e
 ## Credits
 
 This product uses the TMDB API but is not endorsed or certified by TMDB. The application Credits section displays the approved TMDB logo. Non-commercial attribution conditions and separate artwork rights apply; [TMDB FAQ](https://developer.themoviedb.org/docs/faq). Qloo is the cultural evidence provider. TasteProbe is not a guarantee of personal satisfaction.
+
+## Public hardening - GATE 4A
+
+Use `npm run start:public` only for an explicitly approved external deployment. It binds 0.0.0.0/$PORT and refuses incomplete HTTPS/signing/shared-quota configuration. Primary target: one Railway replica; Vercel is not supported unchanged because Audit/Rescue state remains in memory.
+
+Public provider attempts require an atomic Redis reservation before fetch; storage failure denies consumption. Total allowances must be explicitly approved, not guessed from historical tests. Redis and signing credentials are server-only. Missing configuration cannot fall back to unlimited public usage. Quota code is tested with an isolated REST emulator; real Redis/Lua execution, provider allowance and actual hosting Origin/header behavior remain pending. No PRODUCTION_READY claim is made. See [exact variables and operator commands](docs/DEPLOYMENT.md).

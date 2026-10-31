@@ -76,7 +76,7 @@ For a different local port set `TASTEPROBE_LOCAL_URL=http://127.0.0.1:PORT`. Rem
 ## Controls and demo limits
 
 - 12 conservative Qloo request reservations and 16 tool steps per 20-minute session; failed/invalid attempted operations may consume reservations before a network request. These are upper bounds, not a claimed provider traffic counter.
-- Maximum 20 sessions per process lifetime. Shared Qloo transport caps 60 attempts per process and 12 per minute, including failures.
+- Maximum 20 concurrent sessions per process; expired sessions are reclaimed. Local Qloo transport caps 60 attempts per process and 12 per minute, including failures. Public mode additionally requires atomic shared provider/HTTP admission; see DEPLOYMENT.md. Full Audit/Rescue session state still requires one long-running process.
 - Concurrent operations in one session are rejected. Signed identities expire after 30 minutes. Sessions expire after 20.
 - Eight-second upstream timeout; bounded response/body size; no retries; no user/model-defined hosts, headers or endpoints. Any tool execution error stops that session and clears previous proposal evidence.
 - Sessions and caps are in memory. Restart loses sessions and resets caps. Multiple deployment instances do not share them. Before anonymous public deployment, configure a shared edge request/quota limit and a provider spend cap, or keep LIVE evaluation disabled. This is a release blocker, not user authentication scope.

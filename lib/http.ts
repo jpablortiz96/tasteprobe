@@ -1,5 +1,6 @@
 import { QlooError } from './qloo/client.mjs';
 import { randomUUID } from 'node:crypto';
+import {publicOrigin} from './production-policy.ts';
 
 export function json(data: unknown, status = 200) {
   return Response.json(data, { status, headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' } });
@@ -8,11 +9,18 @@ const LOOPBACK = new Set(['127.0.0.1', 'localhost', '[::1]']);
 export function validateOrigin(request: Request) {
   if (request.headers.get('sec-fetch-site') === 'cross-site') throw new QlooError('FORBIDDEN_ORIGIN');
   const raw = request.headers.get('origin');
+  const configured=publicOrigin(),effective=new URL(request.url),host=request.headers.get('host');
+  if(configured){
+    // Host is checked against server configuration, never a forwarded header.
+    // Internal HTTP reconstruction is safe only with this exact external authority.
+    if(host?.toLowerCase()!==new URL(configured).host||(raw!==null&&raw!==configured))throw new QlooError('FORBIDDEN_ORIGIN');
+    return;
+  }
+  try{if(!LOOPBACK.has(effective.hostname)||(host&&!LOOPBACK.has(new URL(`http://${host}`).hostname)))throw 0;}catch{throw new QlooError('FORBIDDEN_ORIGIN');}
   if (!raw) return; // Non-browser agent callers still require JSON and bounded bodies.
   let origin: URL;
   try { origin = new URL(raw); } catch { throw new QlooError('FORBIDDEN_ORIGIN'); }
   if (!['http:', 'https:'].includes(origin.protocol) || origin.origin !== raw) throw new QlooError('FORBIDDEN_ORIGIN');
-  const effective = new URL(request.url), host = request.headers.get('host');
   if (origin.origin === effective.origin && (!host || host.toLowerCase() === origin.host)) return;
   // Next may reconstruct a loopback route URL with localhost instead of the browser Host.
   // Recover ONLY the exact browser authority, same HTTP protocol and port, on explicit loopback.
@@ -49,5 +57,7 @@ export function failure(error: unknown) {
     : category === 'TIMEOUT' ? 504 : 502;
   const diagnostic = { requestId: randomUUID(), upstreamAttempted: error instanceof QlooError && error.upstreamAttempted,
     upstreamStatus: error instanceof QlooError ? error.status : null, transportCode: error instanceof QlooError ? error.transportCode : null };
-  return json({ error: category, abstained: true, diagnostic }, status);
+  const response=json({ error: category, abstained: true, diagnostic }, status);
+  if(status===429)response.headers.set('Retry-After','60');
+  return response;
 }

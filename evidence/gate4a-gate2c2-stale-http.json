@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-10-31T00:05:48.996Z",
+  "mode": "MOCK_HTTP_REGRESSION_ONLY",
+  "staleGlobalInjected": true,
+  "liveQlooRequests": 0,
+  "oneFavorite": true,
+  "result": "PASS",
+  "checks": [
+    "legacy singleton lacks discover",
+    "current factory replaces stale service",
+    "fresh signed proof survives Search to Discover",
+    "favorite excluded",
+    "optional affinity/explainability tolerated",
+    "review route is 404 in production even with flag"
+  ]
+}

@@ -78,7 +78,7 @@ test('arguments cannot select arbitrary endpoints or inject proposal evidence',a
 });
 test('tool sessions expire and creation is process bounded',async()=>{
   const {tools,session,advance}=setup();advance();assert.throws(()=>tools.passport(session),{category:'SESSION_EXPIRED'});
-  for(let i=0;i<19;i++)tools.create({intent:'MOCK',caller:'external-agent'});
+  for(let i=0;i<20;i++)tools.create({intent:'MOCK',caller:'external-agent'});
   assert.throws(()=>tools.create({intent:'MOCK',caller:'external-agent'}),{category:'REQUEST_BUDGET'});
 });
 test('tool step cap applies even to offline proposals',async()=>{

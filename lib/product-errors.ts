@@ -1,7 +1,7 @@
 export function productError(code: string) {
   const messages: Record<string, string> = {
-    FORBIDDEN_ORIGIN: 'The page address and server address do not match. Reopen TasteProbe at the local address shown by the server and try again.',
-    BLOCKED_LIVE: 'Live recommendations are unavailable. The workspace owner needs to configure authorized Qloo access.',
+    FORBIDDEN_ORIGIN: 'The page address and server address do not match. Reopen TasteProbe at its published address, or the exact local address shown by the server.',
+    BLOCKED_LIVE: 'Live recommendations are unavailable. The workspace owner needs to verify authorized access and usage protection.',
     AUTH: 'Qloo could not authorize this workspace. Ask the owner to check its server credential.',
     RATE_LIMIT: 'The cultural data service has reached its usage limit. Please try later.',
     REQUEST_BUDGET: 'This workspace has reached its request budget. Your selections are still available.',

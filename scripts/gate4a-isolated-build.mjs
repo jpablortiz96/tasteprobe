@@ -1,0 +1,20 @@
+// Preserve the operator's active Next build and signing session; build a source-only snapshot.
+import {cp,mkdir,readFile,writeFile} from 'node:fs/promises';
+import {resolve,join,dirname} from 'node:path';
+import {spawnSync} from 'node:child_process';
+import assert from 'node:assert/strict';
+const root=process.cwd(),target=resolve('out/gate4a-validation');
+assert.equal(dirname(target),resolve(root,'out'));
+await mkdir(target,{recursive:true});
+for(const name of ['app','lib','public','package.json','package-lock.json','tsconfig.json','next-env.d.ts'])await cp(join(root,name),join(target,name),{recursive:true});
+await mkdir(join(target,'evidence'),{recursive:true});
+for(const name of ['gate2a1-ab.json','gate2g-tmdb-passengers.json'])await cp(join(root,'evidence',name),join(target,'evidence',name));
+await writeFile(join(target,'.tasteprobe-validation'),'Source-only isolated validation; no environment files copied.\n');
+const before=await readFile('.next/BUILD_ID','utf8');
+const npm=join(dirname(process.execPath),'node_modules/npm/bin/npm-cli.js');
+const built=spawnSync(process.execPath,[npm,'run','build'],{cwd:target,encoding:'utf8',windowsHide:true,timeout:120000,env:{...process.env,QLOO_API_KEY:'',TMDB_READ_ACCESS_TOKEN:'',TMDB_API_KEY:'',TASTEPROBE_SIGNING_SECRET:'',UPSTASH_REDIS_REST_TOKEN:'',UPSTASH_REDIS_REST_URL:'',TASTEPROBE_DEPLOYMENT:'',TASTEPROBE_PUBLIC_ORIGIN:'',NEXT_TELEMETRY_DISABLED:'1'}});
+await writeFile('evidence/gate4a-build.txt',built.stdout+(built.stderr??''));
+const after=await readFile('.next/BUILD_ID','utf8');assert.equal(before,after,'Active operator build changed');
+await writeFile('evidence/gate4a-isolated-build.json',JSON.stringify({timestamp:new Date().toISOString(),command:'npm run build',directory:'out/gate4a-validation',exitCode:built.status,activeBuildUnchanged:before===after,serverRestarted:false,environmentFilesCopied:false,providerCredentialsInBuild:false,liveQlooRequests:0},null,2)+'\n');
+console.log(JSON.stringify({buildExitCode:built.status,activeBuildUnchanged:before===after,liveQlooRequests:0}));
+assert.equal(built.status,0,'See evidence/gate4a-build.txt');

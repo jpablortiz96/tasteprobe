@@ -23,7 +23,7 @@ function upstreamEntity(value: unknown): Omit<Entity, 'proof'> {
 
 export function createService({ apiKey, fetchImpl = fetch, now = Date.now, secret = randomBytes(32), baseUrl = QLOO_BASE_URL }: { apiKey?: string; fetchImpl?: typeof fetch; now?: () => number; secret?: Buffer; baseUrl?: string } = {}) {
   let total = 0, windowStart = now(), minuteCalls = 0;
-  const sign = (payload: string) => createHmac('sha256', secret).update(payload).digest('base64url');
+  const sign = (payload: string) => createHmac('sha256', secret).update('tasteprobe:movie-identity:v1\0').update(payload).digest('base64url');
   function proof(identity: Identity) { const payload = Buffer.from(JSON.stringify(identity)).toString('base64url'); return `${payload}.${sign(payload)}`; }
   function verify(value: unknown): Identity {
     const v = object(value); exact(v, ['id', 'proof', 'confirmed']);

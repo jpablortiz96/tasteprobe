@@ -1,3 +1,19 @@
+# TasteProbe - GATE 4A Production hardening
+
+2026-10-30. **AT_RISK / NOT PRODUCTION_READY.** No Qloo LIVE, TMDB or real Redis request; no remote, push or deployment. Started clean at 8edf1e8.
+
+Implemented server-configured stable HMAC signing (scoped movie identities, 30-minute expiry), exact public HTTPS Origin/Host validation, a fail-closed public launcher on 0.0.0.0/$PORT, and a native-fetch shared Redis quota adapter. Atomic EVAL reserves global/provider/client/operation allowance before each provider attempt; failures count, no refunds/retries; auth/quota responses persist a shared halt. Unconfigured/unavailable storage cannot authorize public consumption. Defaults do not invent provider allowance.
+
+Sessions remain process-local: Railway **one replica** is the primary supported topology; Vercel/multiple replicas are not ready for the full Audit/Rescue workflow. Expired sessions now release the 20-concurrent-session cap instead of permanently consuming a process lifetime allowance. Qloo rankings and existing product contracts are unchanged.
+
+Quality: **116 tests PASS** (previous 106 retained), **7 MOCK HTTP E2E PASS** (six previous plus public HTTPS/quota contract), typecheck/build PASS, npm audit **0 vulnerabilities**. /review returns 404 in production. New regression fixes quota denial incorrectly reported as an upstream attempt. Isolated build preserves operator runtime. History: four commits/319 blobs without findings; 58 client assets without configured secret matches.
+
+**Pending real blockers:** signing/Redis credentials are absent; Redis/Lua durability/atomicity/TTL are not verified on a real deployment; provider allowance/judge reserve is unknown; actual hosting domain/ingress and fair client limits remain unverified. Shared quota tests use an explicit REST emulator and are not REAL_REDIS_PASS. No new browser/LIVE result is claimed.
+
+[Release hardening report](evidence/GATE4A_RELEASE_REVIEW.md) | [Variables, manual setup and checked CLI templates](docs/DEPLOYMENT.md) | [Public MOCK HTTP observations](evidence/gate4a-public-http.json)
+
+---
+
 # TasteProbe - GATE 3 Release candidate preparation
 
 2026-10-30. **AT_RISK for public LIVE publication. Offline release preparation complete.** Features frozen; no runtime/backend/UI or dependency changes, no provider requests, remote, push or deploy.

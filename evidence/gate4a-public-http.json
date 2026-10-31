@@ -1,0 +1,35 @@
+{
+  "mode": "SYNTHETIC_MOCK_NOT_LIVE",
+  "liveQlooRequests": 0,
+  "realRedisRequests": 0,
+  "observations": [
+    {
+      "path": "/api/entities/search",
+      "status": 403,
+      "category": "FORBIDDEN_ORIGIN"
+    },
+    {
+      "path": "/api/entities/search",
+      "status": 403,
+      "category": "FORBIDDEN_ORIGIN"
+    },
+    {
+      "path": "/api/entities/search",
+      "status": 200,
+      "category": null
+    },
+    {
+      "path": "/api/discover",
+      "status": 200,
+      "category": null
+    },
+    {
+      "path": "/api/entities/search",
+      "status": 429,
+      "category": "REQUEST_BUDGET"
+    }
+  ],
+  "productionReviewStatus": 404,
+  "publicProxy": "exact configured HTTPS Origin and Host; internal HTTP URL",
+  "note": "Emulated REST command contract, not a real Redis/Lua deployment verification."
+}

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-31T00:03:47.122Z",
+  "clientAssetsScanned": 58,
+  "configuredSecretCount": 3,
+  "findings": [],
+  "environmentIgnored": true,
+  "environmentTracked": false,
+  "newCredentialsPresent": {
+    "signing": false,
+    "redis": false
+  },
+  "publicSharedStore": "NOT_CONFIGURED_NOT_VERIFIED",
+  "providerCalls": {
+    "qloo": 0,
+    "tmdb": 0
+  },
+  "realRedisCalls": 0
+}

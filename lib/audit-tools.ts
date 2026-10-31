@@ -16,7 +16,6 @@ export function revisionFrom(result?: AuditResult): Revision {
 }
 export function createAuditTools(service: ReturnType<typeof createService>, now = Date.now) {
   const sessions = new Map<string, Session>();
-  let created = 0;
   function session(id: unknown) {
     if (typeof id !== 'string') throw new QlooError('INVALID_INPUT');
     const s = sessions.get(id);
@@ -31,9 +30,9 @@ export function createAuditTools(service: ReturnType<typeof createService>, now 
       const v = object(input); exact(v, ['intent', 'caller']);
       if (typeof v.intent !== 'string' || !v.intent.trim() || v.intent.length > 500 || /[<>\u0000-\u001f\u007f]/.test(v.intent) || !['human-ui', 'external-agent'].includes(String(v.caller))) throw new QlooError('INVALID_INPUT');
       for (const [id, s] of sessions) if (s.expires <= now()) sessions.delete(id);
-      // Process-wide cap prevents creating fresh sessions to bypass the demo budget.
-      if (created >= 20) throw new QlooError('REQUEST_BUDGET');
-      created++;
+      // Bound concurrent state; expired sessions must not permanently block judges.
+      // Public cross-session consumption is additionally reserved in shared storage.
+      if (sessions.size >= 20) throw new QlooError('REQUEST_BUDGET');
       const id = randomUUID();
       sessions.set(id, { intent: v.intent.trim(), caller: v.caller as Session['caller'], expires: now() + 20 * 60_000, steps: 0, requests: 0, busy: false, stopped: false, events: [] });
       return { session: id, mode: 'AGENT_INVOKABLE_TOOLS', autonomousLLM: false, maximumRequests: 12, maximumSteps: 16, expiresInSeconds: 1200 };
