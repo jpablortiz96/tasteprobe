@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 const skip = new Set(['node_modules', '.next', '.git', '.npm-cache', '.codex', '.agents', '.aws', 'private']);
 const findings = [];
 const gate = process.argv[2] ?? 'gate1a';
-assert.ok(['gate1a', 'gate1b', 'gate2a', 'gate2a1', 'gate2b', 'gate2c1', 'gate2c2', 'gate2d', 'gate2e', 'gate2f', 'gate2g', 'gate2h', 'gate2h2', 'gate3', 'gate4a'].includes(gate));
+assert.ok(['gate1a', 'gate1b', 'gate2a', 'gate2a1', 'gate2b', 'gate2c1', 'gate2c2', 'gate2d', 'gate2e', 'gate2f', 'gate2g', 'gate2h', 'gate2h2', 'gate3', 'gate4a', 'gate4b'].includes(gate));
 let files = 0;
 async function scan(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {

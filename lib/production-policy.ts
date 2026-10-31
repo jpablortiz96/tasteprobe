@@ -16,9 +16,14 @@ export function publicOrigin(env:Environment=process.env):string|null{
 }
 export function publicPolicy(env:Environment=process.env){
   const origin=publicOrigin(env);if(!origin)return null;
+  return {origin,...quotaPolicy(env)};
+}
+// Redis can be verified before Railway assigns a domain. This does not authorize
+// HTTP serving: publicPolicy still requires an explicit canonical HTTPS origin.
+export function quotaPolicy(env:Environment=process.env){
   const secret=signingSecret(env),url=env.UPSTASH_REDIS_REST_URL,token=env.UPSTASH_REDIS_REST_TOKEN,namespace=env.TASTEPROBE_QUOTA_NAMESPACE;
   const integer=(value:string|undefined)=>value&&/^[1-9]\d{0,6}$/.test(value)?Number(value):0;
   const qloo=integer(env.TASTEPROBE_QLOO_TOTAL_LIMIT),tmdb=integer(env.TASTEPROBE_TMDB_TOTAL_LIMIT);
   if(!secret||!url||!/^https:\/\/[a-z0-9-]+\.upstash\.io$/.test(url)||!token?.trim()||!namespace||!/^[a-zA-Z0-9_-]{1,48}$/.test(namespace)||!qloo||!tmdb)throw new QlooError('BLOCKED_LIVE');
-  return {origin,secret,url,token,namespace,limits:{qloo,tmdb}};
+  return {secret,url,token,namespace,limits:{qloo,tmdb}};
 }

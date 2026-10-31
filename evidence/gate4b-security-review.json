@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-10-31T00:37:16.364Z",
+  "assets": 58,
+  "findings": [],
+  "configuredSecretsChecked": 3,
+  "publicDeployment": "PENDING_OPERATOR_REDIS_AND_COST_CONFIRMATION",
+  "providerRequestsByCodex": 0,
+  "realRedisRequestsByCodex": 0
+}

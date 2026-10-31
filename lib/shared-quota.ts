@@ -1,5 +1,5 @@
 import {createHmac} from 'node:crypto';
-import {publicPolicy} from './production-policy.ts';
+import type {quotaPolicy} from './production-policy.ts';
 import {QlooError} from './qloo/client.mjs';
 
 // One atomic reservation. Total has no expiry; short windows start on first admission.
@@ -19,7 +19,7 @@ for i=2,#KEYS do
 end
 return {1,0,remaining}`;
 
-export function createSharedQuota(policy:NonNullable<ReturnType<typeof publicPolicy>>,fetchImpl:typeof fetch=fetch){
+export function createSharedQuota(policy:ReturnType<typeof quotaPolicy>,fetchImpl:typeof fetch=fetch){
   const prefix=`tasteprobe:{${policy.namespace}}`;
   async function command(args:(string|number)[]){
     try{

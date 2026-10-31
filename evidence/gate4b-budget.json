@@ -1,0 +1,11 @@
+{
+  "operatorDelegatedLimitChoice": true,
+  "qlooTotalSelected": 40,
+  "tmdbTotalSelected": 200,
+  "qlooReservedForJudges": 30,
+  "qlooAcceptanceAndContingency": 10,
+  "configurationVerified": false,
+  "providerAccountBalanceVerified": false,
+  "newPublicLiveRequestsAuthorized": 0,
+  "additionalHostingChargesAuthorized": false
+}

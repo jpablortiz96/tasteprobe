@@ -1,3 +1,17 @@
+# TasteProbe - GATE 4B Release preflight
+
+2026-10-30 Colombia. **AT_RISK / PUBLICATION ON HOLD.** GitHub and Railway CLI authentication verified; authenticated owner checked, tasteprobe repository does not exist. No repository, project/service/domain, push or deployment created. Qloo/TMDB/real Redis calls by Codex: zero.
+
+Blocking setup: Redis persistence/eviction-off/cost confirmation and private credentials pending; additional Railway charges are not approved. Operator delegated internal caps of 40 Qloo and 200 TMDB, reserving 30 Qloo for judges; these are selected limits, not verified provider balances or new public LIVE-test authorization. No limits were silently assumed to exist in production.
+
+Fixed a reproduced configuration-order defect: Redis CLI preflight required a public domain before Railway could assign one. Quota validation is now independent for CLI verification; public serving still requires the exact canonical HTTPS origin. Regression failed before the fix and passes afterward. Expanded TEST-namespace Redis verifier is ready, but has not established REAL_REDIS_PASS. railway.json prepares a single-replica public deployment using the official schema; no cloud configuration is claimed as applied.
+
+Local verification: **117 tests PASS**, **7 MOCK HTTP E2E PASS**, typecheck/build PASS, audit zero vulnerabilities. Isolated build preserved the active runtime build; /review 404 is covered by production HTTP tests. Reachable history: five commits/366 blobs, no configured-secret/pattern findings.
+
+[Preflight and pending release conditions](evidence/GATE4B_PREFLIGHT.md) | [Deployment instructions](docs/DEPLOYMENT.md). Actual GitHub/demo URLs, real Redis proof, public browser acceptance and final Devpost URLs remain pending; no historical or MOCK result is presented as public LIVE.
+
+---
+
 # TasteProbe - GATE 4A Production hardening
 
 2026-10-30. **AT_RISK / NOT PRODUCTION_READY.** No Qloo LIVE, TMDB or real Redis request; no remote, push or deployment. Started clean at 8edf1e8.

@@ -4,7 +4,7 @@ import {writeFile} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 function git(args){const r=spawnSync('git',['-c','core.excludesfile=',...args],{encoding:'utf8',windowsHide:true,maxBuffer:32*1024*1024});assert.equal(r.status,0,'Git read failed');return r.stdout;}
 const lines=git(['rev-list','--objects','--all']).trim().split('\n').filter(Boolean);
-const gate=process.argv[2]??'gate3';assert.ok(['gate3','gate4a'].includes(gate));
+const gate=process.argv[2]??'gate3';assert.ok(['gate3','gate4a','gate4b'].includes(gate));
 const secrets=['QLOO_API_KEY','TMDB_READ_ACCESS_TOKEN','TMDB_API_KEY','TASTEPROBE_SIGNING_SECRET','UPSTASH_REDIS_REST_TOKEN'].map(k=>process.env[k]?.trim()).filter(Boolean);
 const findings=[];let blobs=0;
 for(const line of lines){
